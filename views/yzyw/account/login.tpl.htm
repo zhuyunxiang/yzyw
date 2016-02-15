@@ -3,9 +3,12 @@
 <div id="wrapper">
 	<div class="aw-login-box">
 		<div class="mod-body clearfix">
-			<div class="content pull-left">
+			<div class="content">
 				<h1 class="logo"><a href=""></a></h1>
-				<h2><?php echo get_setting('site_name'); ?></h2>
+				<h2 class="register-guide">
+					<span class="bolder">登录</span>
+					<span class="pull-right">还没有账号?<span class="bolder">注册</span></span>
+				</h2>
 				<form id="login_form" method="post" onsubmit="return false" action="account/ajax/login_process/">
 					<input type="hidden" name="return_url" value="<?php echo $this->return_url; ?>" />
 					<ul>
@@ -24,12 +27,19 @@
 								<input type="checkbox" value="1" name="net_auto_login" />
 								<?php _e('记住我'); ?>
 							</label>
-							<a href="account/find_password/">&nbsp;&nbsp;<?php _e('忘记密码'); ?></a>
+							<a href="account/find_password/" class="pull-right">&nbsp;&nbsp;<?php _e('忘记密码?'); ?></a>
+						</li>
+
+						<li class="social-login">
+							<h4 class="pull-left">社交账号登录</h4>
+							<a href="" title="" class="pull-left wechat-href"></a>
+							<a href="" title="" class="pull-left weibo-href"></a>
+							<a href="" title="" class="pull-left qq-href"></a>
 						</li>
 					</ul>
 				</form>
 			</div>
-			<div class="side-bar pull-left">
+			<!-- <div class="side-bar pull-left">
 				<?php if (get_setting('site_close') != 'Y' && (get_setting('sina_weibo_enabled') == 'Y' || get_setting('qq_login_enabled') == 'Y' || get_setting('google_login_enabled') == 'Y' || get_setting('facebook_login_enabled') == 'Y' || get_setting('twitter_login_enabled') == 'Y' || get_setting('weixin_app_id') && get_setting('weixin_app_secret') && get_setting('weixin_account_role') == 'service')) { ?>
 
 					<?php if ($this->return_url) $return_url = 'return_url-' . base64_encode($this->return_url); ?>
@@ -64,14 +74,14 @@
 						<a href="account/openid/twitter/bind/<?php echo $return_url; ?>" class="btn btn-block btn-twitter"> <i class="icon icon-twitter"></i> Twitter 登录</a>
 					<?php } ?>
 				<?php } ?>
-			</div>
+			</div> -->
 		</div>
-		<div class="mod-footer">
+		<!-- <div class="mod-footer">
 			<span>还没有账号?</span>&nbsp;&nbsp;
 			<a href="account/register/"><?php _e('立即注册'); ?></a>&nbsp;&nbsp;•&nbsp;&nbsp;
 			<a href="">游客访问</a>&nbsp;&nbsp;•&nbsp;&nbsp;
 			<a href="reader/"><?php _e('问答阅读'); ?></a>
-		</div>
+		</div> -->
 	</div>
 </div>
 
