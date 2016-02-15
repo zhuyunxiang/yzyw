@@ -1,0 +1,22 @@
+.aw-top-menu-wrap {
+  background-color: #FFFFFF;
+}
+.navbar-collapse {
+  background-color: #FFFFFF;
+}
+.aw-search-box input {
+  border: solid 2px #303045;
+}
+.aw-top-nav > nav > ul > li > a {
+  color: #303045;
+}
+.aw-top-nav > nav > ul > li > a.active {
+  border: none;
+  border-bottom: 2px solid #155faa;
+  background-color: #FFFFFF;
+}
+.aw-top-nav > nav > ul > li > a:hover {
+  background: #FFFFFF;
+  border-bottom: 2px solid #155faa;
+  background-color: #FFFFFF;
+}
