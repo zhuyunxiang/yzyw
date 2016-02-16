@@ -32,6 +32,9 @@
 @login-regist-width: 500px;
 
 // 登录页面
+.aw-register-box .mod-body{
+	padding: 0;
+}
 .aw-login-box ,.aw-register-box
 {
 	width: @login-regist-width;
@@ -41,9 +44,17 @@
 		height: 125px;
 	}
 
-	.register-guide{
-		margin: 13px 0 13px !important;
+	#login_submit, #register_submit{
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		background-color: #303045;
+	}
 
+	.login-guide, .register-guide{
+		margin: 13px 0 13px 0 !important;
+		z-index: 1px;
+		overflow: hidden;
 	}
 	.mod-body {
 		input.form-control{
@@ -54,14 +65,6 @@
 		}
 		.content{
 			width: 100%;
-
-			#login_submit{
-				width: 100%;
-				height: 50px;
-				line-height: 50px;
-				background-color: #303045;
-			}
-
 			.social-login{
 				.wechat-href{
 					width: 35px;
@@ -90,4 +93,12 @@
 // 注册页面
 .aw-register-box{
 	width: @login-regist-width;
+}
+
+.aw-top-menu-wrap{
+	height: 58px;
+	line-height: 58px;
+	.aw-logo {
+		height: 58px;
+	}
 }
