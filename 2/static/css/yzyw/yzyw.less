@@ -29,10 +29,12 @@
 	font-weight: bolder;
 }
 
-// 注册页面
-.aw-login-box 
+@login-regist-width: 500px;
+
+// 登录页面
+.aw-login-box ,.aw-register-box
 {
-	width: 500px;
+	width: @login-regist-width;
 	.logo{
 		background: url('img/login/yan.png') no-repeat;
 		margin: 0 auto;
@@ -82,4 +84,10 @@
 			}
 		}
 	}
+}
+
+
+// 注册页面
+.aw-register-box{
+	width: @login-regist-width;
 }
