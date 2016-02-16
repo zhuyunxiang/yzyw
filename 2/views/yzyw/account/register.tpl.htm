@@ -1,11 +1,16 @@
 <?php TPL::output('global/header_meta.tpl.htm'); ?>
 
 <div class="aw-register-box">
-    <div class="mod-head">
+  <!--   <div class="mod-head">
+        
+        
+    </div> -->
+    <div class="mod-body clearfix">
         <a href=""><img src="<?php echo G_STATIC_URL; ?>/css/<?php echo $this->template_name; ?>/img/login/yan.png" alt="" /></a>
-        <h1><?php _e('注册新用户'); ?></h1>
-    </div>
-    <div class="mod-body">
+        <h2 class="register-guide">
+            <span class="pull-left bolder">注册</span>
+            <span class="pull-right">还没有登录?<span class="bolder"><a href="account/login/">登录</a></span></span>
+        </h2>
         <form class="aw-register-form" action="account/ajax/register_process/" method="post" id="register_form">
             <?php if ($this->icode) { ?><input type="hidden" name="icode" id="icode" value="<?php echo $this->icode; ?>" /><?php } ?>
             <?php if ($this->return_url) { ?><input type="hidden" name="return_url" value="<?php echo $this->return_url; ?>" /><?php } ?>
@@ -74,7 +79,7 @@
 
                 </li>
                 <li class="clearfix">
-                    <button class="btn btn-large btn-blue btn-block" onclick="AWS.ajax_post($('#register_form'), AWS.ajax_processer, 'error_message'); return false;"><?php _e('注册'); ?></button>
+                    <button id="register_submit" class="btn btn-large btn-blue btn-block" onclick="AWS.ajax_post($('#register_form'), AWS.ajax_processer, 'error_message'); return false;"><?php _e('注册'); ?></button>
                 </li>
             </ul>
         </form>
