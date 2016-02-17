@@ -1,3 +1,7 @@
+.commen-btn {
+  background-color: #303045;
+  color: white;
+}
 .aw-top-menu-wrap {
   background-color: #FFFFFF;
 }
@@ -87,11 +91,4 @@
 }
 .aw-register-box {
   width: 500px;
-}
-.aw-top-menu-wrap {
-  height: 58px;
-  line-height: 58px;
-}
-.aw-top-menu-wrap .aw-logo {
-  height: 58px;
 }
