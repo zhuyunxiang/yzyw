@@ -65,38 +65,7 @@
 									</div>
 								</div>
 
-								<h3><?php _e('添加话题'); ?>:</h3>
-								<div class="aw-topic-bar" data-type="publish">
-									<div class="tag-bar clearfix">
-										<?php if ($_GET['topic_title']) { ?>
-										<span class="topic-tag">
-											<a class="text"><?php echo urldecode($_GET['topic_title']); ?></a>
-											<a class="close" onclick="$(this).parents('.topic-tag').remove();">
-												<i class="icon icon-delete"></i>
-											</a>
-											<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['topic_title']); ?>" name="topics[]" />
-										</span>
-										<?php } ?>
-
-										<?php if ($_POST['topics']) { ?>
-										<?php foreach ($_POST['topics'] AS $key => $val) { ?>
-										<span class="topic-tag">
-											<a class="text"><?php echo $val; ?></a>
-											<input type="hidden" value="<?php echo $val; ?>" name="topics[]" />
-										</span>
-										<?php } ?>
-										<?php } else if ($this->article_topics) { ?>
-										<?php foreach ($this->article_topics AS $key => $val) { ?>
-										<span class="topic-tag">
-											<a class="text"><?php echo $val['topic_title']; ?></a>
-											<input type="hidden" value="<?php echo $val['topic_title']; ?>" name="topics[]" />
-										</span>
-										<?php } ?>
-										<?php } ?>
-
-										<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
-									</div>
-								</div>
+								
 
 								<?php if ($this->recent_topics) { ?>
 								<h3><?php _e('最近话题'); ?>:</h3>
@@ -137,13 +106,39 @@
 				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs">
 					<!-- 文章发起指南 -->
 					<div class="aw-mod publish-help">
-						<div class="mod-head">
-							<h3><?php _e('文章发起指南'); ?></h3>
-						</div>
 						<div class="mod-body">
-							<p><b>• <?php _e('文章标题'); ?>:</b> <?php _e('请用准确的语言描述您发布的文章思想'); ?></p>
-							<p><b>• <?php _e('文章补充'); ?>:</b> <?php _e('详细补充您的文章内容, 并提供一些相关的素材以供参与者更多的了解您所要文章的主题思想'); ?></p>
-							<p><b>• <?php _e('选择话题'); ?>:</b> <?php _e('选择一个或者多个合适的话题, 让您发布的文章得到更多有相同兴趣的人参与. 所有人可以在您发布文章之后添加和编辑该文章所属的话题'); ?></p>
+							<h3><?php _e('所属话题'); ?></h3>
+								<div class="aw-topic-bar" data-type="publish">
+									<div class="tag-bar clearfix">
+										<?php if ($_GET['topic_title']) { ?>
+										<span class="topic-tag">
+											<a class="text"><?php echo urldecode($_GET['topic_title']); ?></a>
+											<a class="close" onclick="$(this).parents('.topic-tag').remove();">
+												<i class="icon icon-delete"></i>
+											</a>
+											<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['topic_title']); ?>" name="topics[]" />
+										</span>
+										<?php } ?>
+
+										<?php if ($_POST['topics']) { ?>
+										<?php foreach ($_POST['topics'] AS $key => $val) { ?>
+										<span class="topic-tag">
+											<a class="text"><?php echo $val; ?></a>
+											<input type="hidden" value="<?php echo $val; ?>" name="topics[]" />
+										</span>
+										<?php } ?>
+										<?php } else if ($this->article_topics) { ?>
+										<?php foreach ($this->article_topics AS $key => $val) { ?>
+										<span class="topic-tag">
+											<a class="text"><?php echo $val['topic_title']; ?></a>
+											<input type="hidden" value="<?php echo $val['topic_title']; ?>" name="topics[]" />
+										</span>
+										<?php } ?>
+										<?php } ?>
+
+										<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
+									</div>
+								</div>
 						</div>
 					</div>
 					<!-- end 文章发起指南 -->
