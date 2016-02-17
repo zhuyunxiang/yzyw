@@ -92,3 +92,23 @@
 .aw-register-box {
   width: 500px;
 }
+.publish-help .aw-topic-bar {
+  padding: 0px;
+  margin: 5px 0;
+}
+.publish-help .form-control {
+  width: 205px !important;
+}
+.publish-help .text,
+.publish-help .close {
+  background-color: #303045;
+  height: 32px;
+  line-height: 32px;
+  padding: 0px 5px;
+}
+.publish-help .add {
+  background-color: #303045;
+}
+.publish-help .add:hover {
+  background-color: #303045 !important;
+}

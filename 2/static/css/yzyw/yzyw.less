@@ -1,5 +1,7 @@
+@gray-color: #303045;
+
 .commen-btn{
-	background-color: #303045;
+	background-color: @gray-color;
 	color: white;
 }
 
@@ -13,11 +15,11 @@
 }
 
 .aw-search-box input {
-	border: solid 2px #303045;
+	border: solid 2px @gray-color;
 }
 
 .aw-top-nav > nav > ul > li > a {
-	color: #303045;
+	color: @gray-color;
 	&.active {
 		  border: none;
   		border-bottom: 2px solid #155faa;
@@ -53,7 +55,7 @@
 		width: 100%;
 		height: 50px;
 		line-height: 50px;
-		background-color: #303045;
+		background-color: @gray-color;
 	}
 
 	.login-guide, .register-guide{
@@ -105,3 +107,30 @@
 		// height: 58px;
 	}
 }
+
+.publish-help{
+	.aw-topic-bar{
+		padding: 0px;
+		margin: 5px 0;
+	}
+
+	.form-control{
+		width: 205px !important;
+	}
+
+	.text, .close{
+		background-color: @gray-color;
+		height: 32px;
+		line-height: 32px;
+		padding: 0px 5px;
+	}
+
+	.add{
+		background-color: @gray-color;
+		&:hover{
+			background-color: @gray-color !important;
+
+		}
+	}
+}
+
