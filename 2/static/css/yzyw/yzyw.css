@@ -2,6 +2,9 @@
   background-color: #303045;
   color: white;
 }
+.commen-btn:hover {
+  background-color: #303045 !important;
+}
 .aw-top-menu-wrap {
   background-color: #FFFFFF;
 }
