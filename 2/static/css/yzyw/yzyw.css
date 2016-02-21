@@ -3,7 +3,7 @@
   color: white;
 }
 .commen-btn:hover {
-  background-color: #303045 !important;
+  background-color: #4A4F54 !important;
 }
 .aw-top-menu-wrap {
   background-color: #FFFFFF;
@@ -30,6 +30,27 @@
 .bolder {
   font-weight: bolder;
 }
+.custom-circle-img {
+  border-radius: 50% !important;
+}
+.msg-ico {
+  background: url('img/msg.png') no-repeat;
+  background-size: 32px 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 0px !important;
+}
+.aw-user-nav {
+  height: 42px;
+}
+.aw-user-nav .aw-user-nav-dropdown {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 0px 0 15px;
+}
+.custom-search-box {
+  float: right;
+}
 .aw-register-box .mod-body {
   padding: 0;
 }
@@ -51,6 +72,12 @@
   height: 50px;
   line-height: 50px;
   background-color: #303045;
+}
+.aw-login-box #login_submit:hover,
+.aw-register-box #login_submit:hover,
+.aw-login-box #register_submit:hover,
+.aw-register-box #register_submit:hover {
+  background-color: #4A4F54;
 }
 .aw-login-box .login-guide,
 .aw-register-box .login-guide,
@@ -109,9 +136,13 @@
   line-height: 32px;
   padding: 0px 5px;
 }
+.publish-help .text:hover,
+.publish-help .close:hover {
+  background-color: #4A4F54;
+}
 .publish-help .add {
   background-color: #303045;
 }
 .publish-help .add:hover {
-  background-color: #303045 !important;
+  background-color: #4A4F54 !important;
 }

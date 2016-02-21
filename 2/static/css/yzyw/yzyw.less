@@ -5,7 +5,7 @@
 	color: white;
 
 	&:hover{
-		background-color: @gray-color !important;
+		background-color: #4A4F54 !important;
 	}
 }
 
@@ -40,6 +40,34 @@
 	font-weight: bolder;
 }
 
+// 页头
+// 头像
+.custom-circle-img{
+	border-radius: 50% !important;
+}
+
+.msg-ico{
+	background: url('img/msg.png') no-repeat;
+	background-size: 32px 32px;
+	width: 32px;
+	height: 32px;
+	border-radius: 0px !important;
+}
+
+.aw-user-nav{
+	height: 42px;
+	.aw-user-nav-dropdown{
+		display: inline-block;
+		overflow: hidden;
+		margin: 0 0px 0 15px;
+	}
+}
+
+// 搜索框
+.custom-search-box{
+	float: right;
+}
+
 @login-regist-width: 500px;
 
 // 登录页面
@@ -60,6 +88,9 @@
 		height: 50px;
 		line-height: 50px;
 		background-color: @gray-color;
+		&:hover{
+			background-color: #4A4F54;
+		}
 	}
 
 	.login-guide, .register-guide{
@@ -127,12 +158,15 @@
 		height: 32px;
 		line-height: 32px;
 		padding: 0px 5px;
+		&:hover{
+			background-color: #4A4F54;
+		}
 	}
 
 	.add{
 		background-color: @gray-color;
 		&:hover{
-			background-color: @gray-color !important;
+			background-color: #4A4F54 !important;
 
 		}
 	}
