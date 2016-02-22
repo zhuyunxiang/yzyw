@@ -5,6 +5,13 @@
 .commen-btn:hover {
   background-color: #4A4F54 !important;
 }
+.commen-white-btn {
+  color: #303045;
+  border: solid 1px;
+}
+.commen-white-btn:hover {
+  background-color: white !important;
+}
 .aw-top-menu-wrap {
   background-color: #FFFFFF;
 }
