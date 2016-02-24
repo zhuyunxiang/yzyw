@@ -160,38 +160,60 @@
   top: 55px;
   width: 75px;
 }
-.self-info-name {
+.self-info .self-info-name {
   position: absolute;
   left: 20px;
+  top: 20px;
   font-size: 15px;
 }
-.text-color-999 {
+.self-info .text-color-999 {
   margin-top: 20px;
 }
-.aw-content-wrap {
+.self-info .self-signature {
+  border: solid 1px;
+  border-color: #e6e6e6;
+  border-width: 0px 0px 1px 0px;
+  padding: 0px 20px;
+}
+.self-info .self-signature .text-color-999 {
+  margin-top: 10px;
+}
+.self-info .aw-user-detail-box .mod-head {
+  padding-top: 60px;
+}
+.self-info .aw-content-wrap {
   background-color: transparent;
   border: none;
 }
-.aw-content-wrap .aw-main-content,
-.aw-content-wrap .aw-side-bar {
+.self-info .aw-content-wrap .aw-main-content,
+.self-info .aw-content-wrap .aw-side-bar {
   background-color: white;
   border-radius: 4px;
   border: none;
 }
-.aw-content-wrap .fans-panel {
+.self-info .aw-content-wrap .fans-panel {
   margin-left: 80px;
 }
-.clearfix {
+.self-info .clearfix {
   overflow: hidden;
 }
-.fans-info {
+.self-info .fans-info {
   margin-right: 50px;
 }
-.fans-info span {
+.self-info .fans-info span {
   font-weight: bolder;
   margin-top: 10px;
   display: block;
 }
-.aw-side-bar .aw-mod {
+.self-info .visit-count-panel {
+  margin-left: 80px;
+  width: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.self-info .fans-panel {
+  width: 250px;
+}
+.self-info .fans-panel .aw-mod {
   padding: 0px;
 }
