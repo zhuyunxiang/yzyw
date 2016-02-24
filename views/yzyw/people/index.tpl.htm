@@ -8,6 +8,7 @@
                     <!-- 用户数据内容 -->
                     <div class="aw-mod aw-user-detail-box">
                         <div class="mod-head">
+                            <h1 class="self-info-name"><?php echo $this->user['user_name']; ?> <?php if ($this->user['verified']) { ?><i class="icon-v <?php if ($this->user['verified'] == 'enterprise') { ?> i-ve<?php } ?>" title="<?php if ($this->user['verified'] == 'enterprise') { ?>企业认证<?php } else { ?>个人认证<?php } ?>"></i><?php } ?></h1>
                             <img src="<?php echo get_avatar_url($this->user['uid'], 'max'); ?>" alt="<?php echo $this->user['user_name']; ?>" />
                             <span class="pull-right operate">
                                 <?php if ($this->user['uid'] != $this->user_id AND $this->user_id) { ?>
@@ -16,7 +17,7 @@
                                 
                                 <?php } ?>
                             </span>
-                            <h1><?php echo $this->user['user_name']; ?> <?php if ($this->user['verified']) { ?><i class="icon-v <?php if ($this->user['verified'] == 'enterprise') { ?> i-ve<?php } ?>" title="<?php if ($this->user['verified'] == 'enterprise') { ?>企业认证<?php } else { ?>个人认证<?php } ?>"></i><?php } ?></h1>
+                            
                             <p class="text-color-999"><?php echo $this->user['signature']; ?></p>
                             <p class="aw-user-flag">
                                 <?php if ($this->user['province']) { ?>
@@ -42,10 +43,11 @@
                         </div>
                         <div class="mod-body">
                             <div class="meta">
-                                <span><i class="icon icon-prestige"></i> <?php _e('威望'); ?> : <em class="aw-text-color-green"><?php echo $this->user['reputation']; ?></em></span>
+                                <!-- <span><i class="icon icon-prestige"></i> <?php _e('威望'); ?> : <em class="aw-text-color-green"><?php echo $this->user['reputation']; ?></em></span> -->
+                                <span>获得</span>
                                 <?php if (get_setting('integral_system_enabled') == 'Y') { ?><span><i class="icon icon-score"></i> <?php _e('积分'); ?> : <em class="aw-text-color-orange"><?php echo $this->user['integral']; ?></em></span><?php } ?>
-                                <span><i class="icon icon-agree"></i> <?php _e('赞同'); ?> : <em class="aw-text-color-orange"><?php echo $this->user['agree_count']; ?></em></span>
-                                <span><i class="icon icon-thank"></i> <?php _e('感谢'); ?> : <em class="aw-text-color-orange"><?php echo $this->user['thanks_count']; ?></em></span>
+                                <span><i class="icon icon-agree"></i> <?php _e('赞'); ?> <em class="aw-text-color-orange"><?php echo $this->user['agree_count']; ?></em></span>
+                                <!-- <span><i class="icon icon-thank"></i> <?php _e('感谢'); ?> : <em class="aw-text-color-orange"><?php echo $this->user['thanks_count']; ?></em></span> -->
                                 <?php if ($this->user['uid'] != $this->user_id AND $this->user_id) { ?>
                                 <?php } else if ($this->user_id == $this->user['uid']) { ?>
                                 <a href="account/setting/profile/" class="pull-right"><span class="glyphicon glyphicon-pencil"></span><?php _e('编辑我的资料'); ?></a>

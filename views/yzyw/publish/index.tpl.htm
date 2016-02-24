@@ -44,14 +44,6 @@
 											</ul>
 										</div>
 									</div>
-									<?php if ($this->question_category_list) { ?>
-									<div class="dropdown">
-										<div class="dropdown-toggle" data-toggle="dropdown">
-											<span id="aw-topic-tags-select" class="aw-hide-txt"><?php _e('选择分类'); ?></span>
-											<a href="javascript:;"><i class="icon icon-down"></i></a>
-										</div>
-									</div>
-									<?php } ?>
 								</div>
 								<!-- end 问题标题 -->
 
@@ -64,13 +56,6 @@
 									</div>
 									<div class="mod-body">
 										<span class="pull-right text-color-999" id="question_detail_message">&nbsp;</span>
-										<?php if (get_setting('upload_enable') == 'Y') { ?>
-										<div class="aw-upload-box">
-											<a class="btn btn-default commen-btn">上传附件</a>
-											<div class="upload-container"></div>
-											<span class="text-color-999 aw-upload-tips hidden-xs"><?php _e('允许'); ?> : <?php echo get_setting('allowed_upload_types'); ?></span>
-										</div>
-										<?php } ?>
 									</div>
 								</div>
 								
@@ -78,15 +63,16 @@
 							<div class="mod-footer clearfix">
 								<?php if (get_setting('integral_system_enabled') == 'Y') { ?><a href="integral/rule/" target="_blank">[<?php _e('积分规则'); ?>]</a><?php } ?>
 								<span class="aw-anonymity">
+									<label class="pull-left"><input type="checkbox" class="pull-left" value="1" name="notcopy" />
+										<?php _e('禁止转载'); ?></label>
+									<label><a href="">存草稿</a></label>&nbsp;&nbsp;
+									<label><a href="">取消</a></label>
 									<?php if ($this->question_info['question_id'] AND ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator'])) { ?>
 									<label><input type="checkbox" class="pull-left" value="1" name="do_delete" />
 										<?php _e('删除问题'); ?></label>
 									<?php } ?>
 									<?php if (!$this->question_info['question_id'] AND get_setting('anonymous_enable') == 'Y') { ?>
-									<label><input type="checkbox" class="pull-left" value="1" name="anonymous" />
-										<?php _e('匿名'); ?></label>
 									<?php } ?>
-
 								</span>
 								<a class="btn btn-large btn-success btn-publish-submit commen-btn" id="publish_submit" onclick="AWS.ajax_post($('#question_form')); return false;"><?php _e('发布'); ?></a>
 							</div>
@@ -147,6 +133,72 @@
 									<em class="auth-img pull-right"><img src="" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" id="captcha"  /></em>
 								</div>
 								<?php } ?>
+
+								<h3><?php _e('关键字'); ?></h3>
+							<div class="aw-topic-bar" data-type="publish">
+								<div class="tag-bar clearfix">
+									<?php if ($_GET['keyword']) { ?>
+									<span class="topic-tag">
+										<a class="text"><?php echo urldecode($_GET['keyword']); ?></a>
+										<a class="close" onclick="$(this).parents('.topic-tag').remove();">
+											<i class="icon icon-delete"></i>
+										</a>
+										<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['keyword']); ?>" name="keywords[]" />
+									</span>
+									<?php } ?>
+
+									<?php if ($_POST['keywords']) { ?>
+									<?php foreach ($_POST['keywords'] AS $key => $val) { ?>
+									<span class="topic-tag">
+										<a class="text"><?php echo $val; ?></a>
+										<input type="hidden" value="<?php echo $val; ?>" name="keywords[]" />
+									</span>
+									<?php } ?>
+									<?php } else if ($this->article_keywords) { ?>
+									<?php foreach ($this->article_keywords AS $key => $val) { ?>
+									<span class="topic-tag">
+										<a class="text"><?php echo $val['keyword']; ?></a>
+										<input type="hidden" value="<?php echo $val['keyword']; ?>" name="keywords[]" />
+									</span>
+									<?php } ?>
+									<?php } ?>
+
+									<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
+								</div>
+							</div>
+
+							<h3><?php _e('文章标签'); ?></h3>
+							<div class="aw-topic-bar" data-type="publish">
+								<div class="tag-bar clearfix">
+									<?php if ($_GET['tag']) { ?>
+									<span class="topic-tag">
+										<a class="text"><?php echo urldecode($_GET['tag']); ?></a>
+										<a class="close" onclick="$(this).parents('.topic-tag').remove();">
+											<i class="icon icon-delete"></i>
+										</a>
+										<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['tag']); ?>" name="tags[]" />
+									</span>
+									<?php } ?>
+
+									<?php if ($_POST['tags']) { ?>
+									<?php foreach ($_POST['tags'] AS $key => $val) { ?>
+									<span class="topic-tag">
+										<a class="text"><?php echo $val; ?></a>
+										<input type="hidden" value="<?php echo $val; ?>" name="tags[]" />
+									</span>
+									<?php } ?>
+									<?php } else if ($this->article_tags) { ?>
+									<?php foreach ($this->article_tags AS $key => $val) { ?>
+									<span class="topic-tag">
+										<a class="text"><?php echo $val['tag']; ?></a>
+										<input type="hidden" value="<?php echo $val['tag']; ?>" name="tags[]" />
+									</span>
+									<?php } ?>
+									<?php } ?>
+
+									<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!-- end 问题发起指南 -->

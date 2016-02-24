@@ -7,7 +7,7 @@ $config['master'] = array (
   'charset' => 'utf8',
   'host' => 'localhost',
   'username' => 'root',
-  'password' => '111111',
-  'dbname' => 'wecenter',
+  'password' => '',
+  'dbname' => 'wecenter_317',
 );
 $config['slave'] = false;
