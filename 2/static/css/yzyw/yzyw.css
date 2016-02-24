@@ -168,3 +168,30 @@
 .text-color-999 {
   margin-top: 20px;
 }
+.aw-content-wrap {
+  background-color: transparent;
+  border: none;
+}
+.aw-content-wrap .aw-main-content,
+.aw-content-wrap .aw-side-bar {
+  background-color: white;
+  border-radius: 4px;
+  border: none;
+}
+.aw-content-wrap .fans-panel {
+  margin-left: 80px;
+}
+.clearfix {
+  overflow: hidden;
+}
+.fans-info {
+  margin-right: 50px;
+}
+.fans-info span {
+  font-weight: bolder;
+  margin-top: 10px;
+  display: block;
+}
+.aw-side-bar .aw-mod {
+  padding: 0px;
+}
