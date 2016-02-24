@@ -153,3 +153,18 @@
 .publish-help .add:hover {
   background-color: #4A4F54 !important;
 }
+.aw-publish-title input {
+  width: 100%;
+}
+.aw-user-detail-box .mod-head img {
+  top: 55px;
+  width: 75px;
+}
+.self-info-name {
+  position: absolute;
+  left: 20px;
+  font-size: 15px;
+}
+.text-color-999 {
+  margin-top: 20px;
+}
