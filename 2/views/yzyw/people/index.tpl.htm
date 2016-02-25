@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="aw-content-wrap clearfix">
-                <div class="col-sm-12 col-md-8 aw-main-content">
+                <div class="col-sm-12 col-md-8 aw-main-content self-info-panel">
                     <!-- 用户数据内容 -->
                     <div class="aw-mod aw-user-detail-box">
                         <div class="mod-head">
@@ -81,7 +81,7 @@
                         </div>
                         <div class="mod-footer">
                             <ul class="nav nav-tabs aw-nav-tabs">
-                                <li class="active"><a href="#overview" id="page_overview" data-toggle="tab"><?php _e('概述'); ?></a></li>
+                                <li class="active"><a href="#actions" id="page_overview" data-toggle="tab"><?php _e('主页'); ?></a></li>
                                 <li><a href="#questions" id="page_questions" data-toggle="tab"><?php _e('提问'); ?><span class="badge"><?php echo $this->user['question_count']; ?></span></a></li>
                                 <li><a href="#answers" id="page_answers" data-toggle="tab"><?php _e('回答'); ?><span class="badge"><?php echo $this->user['answer_count']; ?></span></a></li>
                                 <li><a href="#articles" id="page_articles" data-toggle="tab"><?php _e('文章'); ?><span class="badge"><?php echo $this->user['article_count']; ?></span></a></li>
@@ -98,9 +98,75 @@
                     </div>
                     <!-- end 用户数据内容 -->
 
-                    <div class="aw-user-center-tab">
+                    
+                </div>
+
+                <!-- 侧边栏 -->
+                <div class="col-sm-12 col-md-3">
+                    <div class="aw-side-bar fans-panel">
+                        <div class="aw-mod people-following">
+                            <div class="mod-body clearfix">
+                                <div class="pull-left fans-info">
+                                    关注了<br/><span><?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['friend_count'] . '</em>'); ?></span>
+                                </div>
+                                <div class="pull-left fans-info">
+                                    关注者<br/><span><?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['fans_count'] . '</em>'); ?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aw-mod people-following visit-count-panel">
+                        <?php _e('主页访问量'); ?> : <?php _e('%s 次访问', $this->user['views_count']); ?>
+                    </div>
+                   <div class="aw-side-bar fans-panel">
+                        <div class="aw-mod people-following">
+                            <div class="mod-body clearfix">
+                                <?php _e('关注了 %s 个话题', '<em class="aw-text-color-blue">' . $this->user['topic_focus_count'] . '</em>'); ?>
+                                <?php if ($this->focus_topics) { ?>
+                                <div class="aw-topic-bar">
+                                    <div class="tag-bar clearfix">
+                                        <?php foreach ($this->focus_topics AS $key => $val) { ?>
+                                            <span class="topic-tag">
+                                                <a href="topic/<?php echo $val['url_token']; ?>" class="text" data-id="<?php echo $val['topic_id']; ?>"><?php echo $val['topic_title']; ?></a>
+                                            </span>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <?php _e('关注了 %s 话题', '<em class="aw-text-color-blue">' . $this->user['topic_focus_count'] . '</em>'); ?>
+                            <?php if ($this->focus_topics) { ?>
+                            <div class="aw-topic-bar">
+                                <div class="tag-bar clearfix">
+                                    <?php foreach ($this->focus_topics AS $key => $val) { ?>
+                                        <span class="topic-tag">
+                                            <a href="topic/<?php echo $val['url_token']; ?>" class="text" data-id="<?php echo $val['topic_id']; ?>"><?php echo $val['topic_title']; ?></a>
+                                        </span>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div> -->
+                    <!-- <div class="aw-mod">
+                        <div class="mod-body">
+                            <span class="aw-text-color-666">
+                                <?php _e('主页访问量'); ?> : <?php _e('%s 次访问', $this->user['views_count']); ?>
+                            </span>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- end 侧边栏 -->
+
+                <!-- 主容器 -->
+                <div class="col-sm-12 col-md-8 aw-main-content user-tab-panel">
+                    <div class="aw-user-center-tab ">
                         <div class="tab-content">
-                            <div class="tab-pane active" id="overview">
+                            <div class="tab-pane" id="overview">
                                 <!-- 回复 -->
                                 <div class="aw-mod">
                                     <div class="mod-head">
@@ -283,7 +349,8 @@
                                 </div>
                                 <!-- end 自定义切换 -->
                             </div>
-                            <div class="tab-pane" id="actions">
+                            <!-- 最新动态 -->
+                            <div class="tab-pane active" id="actions">
                                 <div class="aw-mod">
                                     <div class="mod-head">
                                         <h3><?php _e('最新动态'); ?></h3>
@@ -425,67 +492,7 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 侧边栏 -->
-                <div class="col-sm-12 col-md-3">
-                    <div class="aw-side-bar fans-panel">
-                        <div class="aw-mod people-following">
-                            <div class="mod-body clearfix">
-                                <div class="pull-left fans-info">
-                                    关注了<br/><span><?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['friend_count'] . '</em>'); ?></span>
-                                </div>
-                                <div class="pull-left fans-info">
-                                    关注者<br/><span><?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['fans_count'] . '</em>'); ?></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="aw-mod people-following visit-count-panel">
-                        <?php _e('主页访问量'); ?> : <?php _e('%s 次访问', $this->user['views_count']); ?>
-                    </div>
-                   <div class="aw-side-bar fans-panel">
-                        <div class="aw-mod people-following">
-                            <div class="mod-body clearfix">
-                                <?php _e('关注了 %s 个话题', '<em class="aw-text-color-blue">' . $this->user['topic_focus_count'] . '</em>'); ?>
-                                <?php if ($this->focus_topics) { ?>
-                                <div class="aw-topic-bar">
-                                    <div class="tag-bar clearfix">
-                                        <?php foreach ($this->focus_topics AS $key => $val) { ?>
-                                            <span class="topic-tag">
-                                                <a href="topic/<?php echo $val['url_token']; ?>" class="text" data-id="<?php echo $val['topic_id']; ?>"><?php echo $val['topic_title']; ?></a>
-                                            </span>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  <div class="aw-mod people-following">
-                        <div class="mod-body">
-                            <?php _e('关注了 %s 话题', '<em class="aw-text-color-blue">' . $this->user['topic_focus_count'] . '</em>'); ?>
-                            <?php if ($this->focus_topics) { ?>
-                            <div class="aw-topic-bar">
-                                <div class="tag-bar clearfix">
-                                    <?php foreach ($this->focus_topics AS $key => $val) { ?>
-                                        <span class="topic-tag">
-                                            <a href="topic/<?php echo $val['url_token']; ?>" class="text" data-id="<?php echo $val['topic_id']; ?>"><?php echo $val['topic_title']; ?></a>
-                                        </span>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <?php } ?>
-                        </div>
-                    </div> -->
-                    <!-- <div class="aw-mod">
-                        <div class="mod-body">
-                            <span class="aw-text-color-666">
-                                <?php _e('主页访问量'); ?> : <?php _e('%s 次访问', $this->user['views_count']); ?>
-                            </span>
-                        </div>
-                    </div> -->
-                </div>
-                <!-- end 侧边栏 -->
+                <!-- end 主容器 -->
             </div>
         </div>
     </div>
