@@ -39,6 +39,9 @@
   border-bottom: 2px solid #155faa;
   background-color: #FFFFFF;
 }
+.aw-top-nav > nav > ul > li > a:focus {
+  background-color: white;
+}
 .bolder {
   font-weight: bolder;
 }
