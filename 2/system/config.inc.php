@@ -1,14 +1,14 @@
 <?php
 /*
 +--------------------------------------------------------------------------
-|   Anwsion [#RELEASE_VERSION#]
+|   WeCenter [#RELEASE_VERSION#]
 |   ========================================
-|   by Anwsion dev team
-|   (c) 2011 - 2012 Anwsion Software
-|   http://www.anwsion.com
+|   by WeCenter Software
+|   © 2011 - 2014 WeCenter. All Rights Reserved
+|   http://www.wecenter.com
 |   ========================================
-|   Support: zhengqiang@gmail.com
-|   
+|   Support: WeCenter@qq.com
+|
 +---------------------------------------------------------------------------
 */
 
@@ -16,18 +16,18 @@
 define('G_COOKIE_DOMAIN','');
 
 // 定义 Cookies 前缀
-define('G_COOKIE_PREFIX','wsae_');
+define('G_COOKIE_PREFIX','mef_');
 
 // 定义应用加密 KEY
-define('G_SECUKEY','hougreweklrgn');
-define('G_COOKIE_HASH_KEY', '13ropjjmkp1e1');
+define('G_SECUKEY','mmzgvvqqgwol');
+define('G_COOKIE_HASH_KEY', 'amshvzphxgeazox');
 
 define('G_INDEX_SCRIPT', '?/');
 
-define('X_UA_COMPATIBLE', 'Chrome=1,IE=edge');
+define('X_UA_COMPATIBLE', 'IE=edge,Chrome=1');
 
 // GZIP 压缩输出页面
-define('G_GZIP_COMPRESS', TRUE);
+define('G_GZIP_COMPRESS', FALSE);
 
 // Session 存储类型 (db, file)
 define('G_SESSION_SAVE', 'db');
