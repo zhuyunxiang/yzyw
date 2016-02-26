@@ -4,6 +4,7 @@
 }
 .commen-btn:hover {
   background-color: #4A4F54 !important;
+  color: white;
 }
 .commen-white-btn {
   color: #303045;
@@ -170,7 +171,7 @@
   padding-bottom: 0px;
   border-radius: 4px;
 }
-.self-info .text-color-999 {
+.self-info .signature {
   margin-top: 20px;
 }
 .self-info .self-signature {
@@ -241,11 +242,24 @@
 }
 .self-info .user-tab-panel .mod-body #contents_user_actions .aw-item {
   min-height: 100px;
+  position: relative;
 }
 .self-info .user-tab-panel .mod-body #contents_user_actions .aw-item p {
-  margin-left: 70px;
+  margin-left: 80px;
 }
 .self-info .user-tab-panel .mod-body #contents_user_actions .aw-item .dynamic-header-img {
   position: absolute;
   left: 20px;
+}
+.self-info .user-tab-panel .mod-body #contents_user_actions .aw-item .handle-box {
+  position: absolute;
+  left: 80px;
+  bottom: 15px;
+}
+.self-info .user-tab-panel .mod-body #contents_user_actions .aw-item .handle-box span {
+  margin-right: 10px;
+}
+.self-info .aw-topic-bar .topic-head-img {
+  border-radius: 50%;
+  width: 30px;
 }
