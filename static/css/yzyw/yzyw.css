@@ -6,6 +6,10 @@
   background-color: #4A4F54 !important;
   color: white;
 }
+.commen-btn:visited,
+.commen-btn:focus {
+  color: white;
+}
 .commen-white-btn {
   color: #303045;
   border: solid 1px;
@@ -259,7 +263,14 @@
 .self-info .user-tab-panel .mod-body #contents_user_actions .aw-item .handle-box span {
   margin-right: 10px;
 }
+.self-info .user-tab-panel .mod-body #questions .aw-item {
+  min-height: 100px;
+  position: relative;
+}
 .self-info .aw-topic-bar .topic-head-img {
   border-radius: 50%;
   width: 30px;
+}
+.self-info .valign-center {
+  margin: 8px 10px;
 }

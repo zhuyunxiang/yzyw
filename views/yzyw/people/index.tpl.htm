@@ -54,14 +54,15 @@
                                 <?php } ?>
 
                                 <?php if ($this->user['uid'] != $this->user_id AND $this->user_id) { ?>
-                                <a class="pull-right follow btn btn-normal commen-btn" onclick="AWS.dialog('inbox', '<?php echo $this->user['user_name']; ?>');">
+                                <a class="pull-right follow btn btn-sm commen-btn valign-center" onclick="AWS.dialog('inbox', '<?php echo $this->user['user_name']; ?>');">
                                     <i class="icon icon-inbox"></i> 私信
                                 </a>
                 <!--                 <a onclick="AWS.dialog('publish', {category_enable:<?php echo (get_setting('category_enable') == 'Y') ? '1' : '0'; ?>, ask_user_id:<?php echo $this->user['uid']; ?>, ask_user_name:'<?php echo $this->user['user_name']; ?>'});" class="text-color-999 hidden-xs">
                                     <i class="icon icon-at"></i> <?php _e('问Ta'); ?>
                                 </a> -->
-                                <a href="javascript:;" class="pull-right follow btn btn-normal commen-btn<?php if ($this->user_follow_check) { ?> active<?php } ?>" onclick="AWS.User.follow($(this), 'user', <?php echo $this->user['uid']; ?>);">
-                                    <span><?php if ($this->user_follow_check) { ?><?php _e('取消关注'); ?><?php } else { ?><?php _e('关注'); ?><?php } ?></span> 
+                                <a href="javascript:;" class="pull-right follow btn btn-sm commen-btn valign-center<?php if ($this->user_follow_check) { ?> active<?php } ?>" onclick="AWS.User.follow($(this), 'user', <?php echo $this->user['uid']; ?>);">
+                                    <span>
+                                    <i class="icon icon-plus"></i><?php if ($this->user_follow_check) { ?><?php _e('取消关注'); ?><?php } else { ?><?php _e('关注'); ?><?php } ?></span> 
                                 </a>
                                 <?php } else if ($this->user_id == $this->user['uid']) { ?>
                                 
@@ -206,7 +207,7 @@
                                 <!-- end 回复 -->
 
                                 <!-- 发问 -->
-                                <div class="aw-mod">
+                                <div class="aw-mod ask-questions">
                                     <div class="mod-head">
                                         <h3><a class="pull-right aw-more-content" href="javascript:;" onclick="$('#page_questions').click();"><?php _e('更多'); ?> »</a><?php _e('发问'); ?></h3>
                                     </div>
@@ -259,7 +260,7 @@
                             <div class="tab-pane" id="questions">
                                 <div class="aw-mod">
                                     <div class="mod-head">
-                                        <h3><?php _e('发问'); ?></h3>
+                                        <h3><?php _e($this->user['user_name']); ?><?php _e('的提问'); ?></h3>
                                     </div>
                                     <div class="mod-body">
                                         <div class="aw-profile-publish-list" id="contents_user_actions_questions"></div>
