@@ -1,16 +1,32 @@
 <?php if (is_array($this->list)) { ?>
 <?php foreach ($this->list AS $key => $val) { ?>	
-<div class="aw-item">
+<div class="aw-item user_actions_questions_201">
 	<div class="aw-mod">
 		<div class="mod-head">
 			<h4 class="aw-hide-txt">
 				<a href="<?php echo $val['link']; ?>"><?php echo $val['title']; ?></a>
+
+				<span class="pull-right"><?php echo date_friendly($val['answer_info']['add_time']); ?></span>
+				<p class="text-color-999"><?php echo cjk_substr($val['answer_info']['answer_content'], 0, 130, 'UTF-8', '...'); ?></p>
+
+				<div>
+					<span >
+						<i class="icon icon-plus"></i>
+						关注
+						&nbsp;
+						<i class="icon icon-agree"></i>
+						赞
+						<?php echo $val['answer_info']['agree_count']; ?>
+						&nbsp;
+						<i class="icon icon-comment"></i>
+						<?php echo $val['answer_info']['comment_count']; ?>评论
+						&nbsp;
+						<i class="icon icon-favor"></i>收藏
+						&nbsp;
+						<i class="icon icon-favor"></i>举报
+					</span>
+				</div>
 			</h4>
-		</div>
-		<div class="mod-body">
-			<span class="aw-border-radius-5 count pull-left"><i class="icon icon-agree"></i><?php echo $val['answer_info']['agree_count']; ?></span>
-			<p class="text-color-999"><?php echo cjk_substr($val['answer_info']['answer_content'], 0, 130, 'UTF-8', '...'); ?></p>
-			<p class="text-color-999"><?php echo date_friendly($val['answer_info']['add_time']); ?></p>
 		</div>
 	</div>
 </div>

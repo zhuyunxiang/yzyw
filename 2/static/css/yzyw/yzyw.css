@@ -256,7 +256,7 @@
 }
 .self-info .user-tab-panel .mod-body #contents_user_actions .aw-item .dynamic-header-img {
   position: absolute;
-  left: 20px;
+  left: 15px;
 }
 .self-info .user-tab-panel .mod-body #contents_user_actions .aw-item .handle-box {
   position: absolute;
@@ -276,4 +276,13 @@
 }
 .self-info .valign-center {
   margin: 8px 10px;
+}
+.self-info #questions #contents_user_actions_questions {
+  padding-top: 10px;
+}
+.self-info #answers #contents_user_actions_answers {
+  padding-top: 10px;
+}
+.self-info #articles .user-actions {
+  padding-top: 10px;
 }
