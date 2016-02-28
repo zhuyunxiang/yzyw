@@ -47,6 +47,7 @@
 }
 .custom-circle-img {
   border-radius: 50% !important;
+  width: 60px;
 }
 .msg-ico {
   background: url('img/msg.png') no-repeat;
@@ -285,4 +286,12 @@
 }
 .self-info #articles .user-actions {
   padding-top: 10px;
+}
+.self-info #fans .mod-body,
+.self-info #admires .mod-body {
+  padding-top: 20px;
+}
+.self-info #fans .mod-body .float-left,
+.self-info #admires .mod-body .float-left {
+  margin-left: 65px;
 }

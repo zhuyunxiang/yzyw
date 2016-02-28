@@ -118,10 +118,10 @@
                         <div class="aw-mod people-following">
                             <div class="mod-body clearfix">
                                 <div class="pull-left fans-info">
-                                    关注了<br/><span><?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['friend_count'] . '</em>'); ?></span>
+                                    关注了<br/><span><a href="#admires" data-toggle="tab"><?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['friend_count'] . '</em>'); ?></a></span>
                                 </div>
                                 <div class="pull-left fans-info">
-                                    关注者<br/><span><?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['fans_count'] . '</em>'); ?></span>
+                                    关注者<br/><span><a href="#fans" data-toggle="tab"><?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['fans_count'] . '</em>'); ?></a></span>
                                 </div>
                             </div>
                         </div>
@@ -298,6 +298,42 @@
                                     </div>
                                     <div class="mod-body">
                                         <div class="aw-profile-publish-list" id="contents_user_actions_articles"></div>
+                                    </div>
+                                    <div class="mod-footer">
+                                        <!-- 加载更多内容 -->
+                                        <a class="aw-load-more-content" id="bp_user_actions_articles_more">
+                                            <span><?php _e('更多'); ?></span>
+                                        </a>
+                                        <!-- end 加载更多内容 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="fans">
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                         <h3><?php _e($this->user['user_name']); ?>被xx人关注</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                         <ul id="contents_user_follows" class="clearfix"></ul>
+                                    </div>
+                                    <div class="mod-footer">
+                                        <!-- 加载更多内容 -->
+                                        <a class="aw-load-more-content" id="bp_user_actions_articles_more">
+                                            <span><?php _e('更多'); ?></span>
+                                        </a>
+                                        <!-- end 加载更多内容 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="admires">
+                                <div class="aw-mod">
+                                    <div class="mod-head">
+                                         <h3><?php _e($this->user['user_name']); ?>关注xx人</h3>
+                                    </div>
+                                    <div class="mod-body">
+                                          <ul class="clearfix" id="contents_user_fans"></ul>
                                     </div>
                                     <div class="mod-footer">
                                         <!-- 加载更多内容 -->
