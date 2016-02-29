@@ -3,15 +3,29 @@
 <li>
 	<div class="mod-head topics">
 		<a class="aw-topic-img pull-left aw-border-radius-5" data-id="<?php echo $val['topic_id']; ?>" href="topic/<?php echo $val['url_token']; ?>">
-			<img src="<?php echo get_topic_pic_url('mid', $val['topic_pic']); ?>" alt="<?php echo $val['topic_title']; ?>" />
+			<img src="<?php echo get_topic_pic_url('mid', $val['topic_pic']); ?>" class="custom-circle-img" alt="<?php echo $val['topic_title']; ?>" />
 		</a>
-		<p><a class="aw-topic-name" data-id="<?php echo $val['topic_id']; ?>" href="topic/<?php echo $val['url_token']; ?>"><span><?php echo $val['topic_title']; ?></span></a></p>
+		<p class="float-left"><a class="aw-topic-name" data-id="<?php echo $val['topic_id']; ?>" href="topic/<?php echo $val['url_token']; ?>"><span><?php echo $val['topic_title']; ?></span></a></p>
 	</div>
 	<div class="mod-footer">
-		<p class="aw-user-center-follow-meta">
-			<?php _e('%s 个讨论', $val['discuss_count']); ?>
-			 • 
-			<?php _e('%s 个关注', $val['focus_count']); ?>
+		<p class="aw-user-center-follow-meta float-left">
+			<?php //_e('%s 个讨论', $val['discuss_count']); ?>
+			
+			<?php //_e('%s 个关注', $val['focus_count']); ?>
+
+			<i class="icon icon-plus"></i>
+			关注
+			&nbsp;
+			<i class="icon icon-agree"></i>
+			赞
+			<?php echo $val['answer_info']['agree_count']; ?>
+			&nbsp;
+			<i class="icon icon-comment"></i>
+			<?php echo $val['answer_info']['comment_count']; ?>评论
+			&nbsp;
+			<i class="icon icon-favor"></i>收藏
+			&nbsp;
+			<i class="icon icon-favor"></i>举报
 		</p>
 	</div>
 </li>

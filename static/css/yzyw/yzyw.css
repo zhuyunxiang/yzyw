@@ -295,3 +295,23 @@
 .self-info #admires .mod-body .float-left {
   margin-left: 65px;
 }
+.self-info #star .mod-body li {
+  margin: 15px 0 0 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.self-info #star .float-left {
+  margin-left: 65px;
+}
+.profile-container .custom-side-bar {
+  position: static !important;
+}
+.profile-container .setting-img {
+  margin-left: 10px;
+}
+.profile-container .setting-img-info {
+  margin-left: 45px;
+}
+.privacy-container .mod-body dd {
+  margin-bottom: 20px;
+}

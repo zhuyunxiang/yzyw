@@ -2,7 +2,7 @@
 <?php TPL::output('account/setting/setting_header.tpl.htm'); ?>
 
 <!-- 基本信息 -->
-<div class="aw-mod">
+<div class="aw-mod profile-container">
 	<div class="mod-body">
 		<div class="aw-mod mod-base">
 			<div class="mod-head">
@@ -10,6 +10,28 @@
 			</div>
 			<form id="setting_form" method="post" action="account/ajax/profile_setting/">
 			<div class="mod-body">
+			<!-- 上传头像 -->
+				<!-- <div class="side-bar custom-side-bar">
+					<dl>
+						<dt class="pull-left"><img class="aw-border-radius-5" src="<?php echo get_avatar_url($this->user_id, 'max'); ?>?rand=<?php echo rand(1, 999); ?>" alt="" id="avatar_src" /></dt>
+						<dd class="pull-left">
+							<h5><?php _e('头像设置'); ?></h5>
+							<p><?php _e('支持 jpg、gif、png 等格式的图片'); ?></p>
+							<a class="btn btn-mini btn-success" id="avatar_uploader" href="javascript:;"><?php _e('上传头像'); ?></a> <span id="avatar_uploading_status" class="hide"><i class="aw-loading"></i> <?php _e('文件上传中...'); ?></span>
+						</dd>
+					</dl>
+				</div> -->
+				<dl>
+					<dt><?php _e('头像设置:'); ?></dt>
+					<dt><img class="aw-border-radius-5 setting-img" src="<?php echo get_avatar_url($this->user_id, 'max'); ?>?rand=<?php echo rand(1, 999); ?>" alt="" id="avatar_src" /></dt>
+					<dd class="pull-left setting-img-info">
+							<p><?php _e('支持 jpg、gif、png 等格式的图片'); ?></p>
+							<br>
+							<a class="btn btn-mini btn-success commen-btn" id="avatar_uploader" href="javascript:;"><?php _e('上传头像'); ?></a> <span id="avatar_uploading_status" class="hide"><i class="aw-loading"></i> <?php _e('文件上传中...'); ?></span>
+						</dd>
+				</dl>
+
+				<!-- end 上传头像 -->
 				<dl>
 					<dt><?php _e('账号'); ?>:</dt>
 					<dd><?php echo $this->user_info['email']; ?><?php if ($this->user_info['valid_email'] == 0) { ?> &nbsp; (<a onclick="AWS.ajax_request(G_BASE_URL + '/account/ajax/send_valid_mail/');"><?php _e('重发验证邮件'); ?></a>)<?php } ?></dd>
@@ -130,18 +152,7 @@
 						</select>
 					</dd>
 				</dl>
-				<!-- 上传头像 -->
-				<div class="side-bar">
-					<dl>
-						<dt class="pull-left"><img class="aw-border-radius-5" src="<?php echo get_avatar_url($this->user_id, 'max'); ?>?rand=<?php echo rand(1, 999); ?>" alt="" id="avatar_src" /></dt>
-						<dd class="pull-left">
-							<h5><?php _e('头像设置'); ?></h5>
-							<p><?php _e('支持 jpg、gif、png 等格式的图片'); ?></p>
-							<a class="btn btn-mini btn-success" id="avatar_uploader" href="javascript:;"><?php _e('上传头像'); ?></a> <span id="avatar_uploading_status" class="hide"><i class="aw-loading"></i> <?php _e('文件上传中...'); ?></span>
-						</dd>
-					</dl>
-				</div>
-				<!-- end 上传头像 -->
+				
 			</div>
 		</div>
 		<!-- end 基本信息 -->
@@ -260,7 +271,7 @@
 		<!-- end 工作经历 -->
 	</div>
 	<div class="mod-footer clearfix">
-		<a href="javascript:;" class="btn btn-large btn-success pull-right" onclick="AWS.ajax_post($('#setting_form'));"><?php _e('保存'); ?></a>
+		<a href="javascript:;" class="btn btn-large btn-success pull-right commen-btn" onclick="AWS.ajax_post($('#setting_form'));"><?php _e('保存'); ?></a>
 	</div>
 </div>
 
