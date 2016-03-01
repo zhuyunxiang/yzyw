@@ -21,7 +21,7 @@
 				<nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
 				  <ul class="nav navbar-nav">
 					<li><a href="<?php echo base_url(); ?>" <?php if ($_GET['app'] == 'explore') { ?>class="active"<?php } ?>>首页</a></li>
-					<li><a href="topic/" <?php if ($_GET['app'] == 'topic') { ?>class="active"<?php } ?>><?php _e('话题'); ?></a></li>
+					<li><a href="home/#focus_topic__focus" <?php if ($_GET['app'] == 'home') { ?>class="active"<?php } ?>><?php _e('话题'); ?></a></li>
 					<?php if ($this->user_info['permission']['publish_article']) { ?>
 						<li>
 							<!-- <form method="post" action="publish/article/"> -->
@@ -36,7 +36,7 @@
 				</nav>
 			</div>
 			<!-- end 导航 -->
-			
+
 			<!-- 用户栏 -->
 			<div class="aw-user-nav">
 				<!-- 登陆&注册栏 -->
@@ -100,4 +100,3 @@
 		</div>
 	</div>
 	<?php } ?>
-
