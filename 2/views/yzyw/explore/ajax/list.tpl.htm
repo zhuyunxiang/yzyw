@@ -4,12 +4,12 @@
     class="aw-item <?php if ($val['question_id']) { ?><?php if ($val['answer_count'] == 0) { ?>active<?php } ?><?php } else {?>article<?php } ?>"
     data-topic-id="<?php foreach ($val['topics'] AS $k => $v) { ?><?php echo $v['topic_id']; ?>,<?php } ?>">
     <?php if ($val['anonymous'] == 0) { ?>
-    <a class="aw-user-name hidden-xs" data-id="<?php echo $val['user_info']['uid']; ?>" href="people/<?php echo $val['user_info']['url_token']; ?>" rel="nofollow"><img src="<?php echo get_avatar_url($val['user_info']['uid'], 'max'); ?>" alt=""/><?php if ($val['user_info']['verified']) { ?><?php if ($val['user_info']['verified'] == 'personal') { ?>
+    <a class="aw-user-name hidden-xs" data-id="<?php echo $val['user_info']['uid']; ?>" href="people/<?php echo $val['user_info']['url_token']; ?>" rel="nofollow"><img src="<?php echo get_avatar_url($val['user_info']['uid'], 'max'); ?>" class="custom-circle-img" alt=""/><?php if ($val['user_info']['verified']) { ?><?php if ($val['user_info']['verified'] == 'personal') { ?>
         <i class="icon icon-v"></i>
     <?php } else { ?>
         <i class="icon icon-v i-ve"></i><?php } ?><?php } ?></a>
 <?php } else { ?>
-    <a class="aw-user-name hidden-xs" href="javascript:;"><img src="<?php echo G_STATIC_URL; ?>/common/avatar-max-img.png" alt="<?php _e('匿名用户'); ?>" title="<?php _e('匿名用户'); ?>"/></a><?php } ?>
+    <a class="aw-user-name hidden-xs" href="javascript:;"><img src="<?php echo G_STATIC_URL; ?>/common/avatar-max-img.png" class="custom-circle-img" alt="<?php _e('匿名用户'); ?>" title="<?php _e('匿名用户'); ?>"/></a><?php } ?>
     <div class="aw-question-content">
         <h4>
             <?php if ($val['question_id']) { ?>
@@ -22,7 +22,7 @@
         <div class="pull-right hidden-xs contribute">
             <span class="pull-right text-color-999"><?php _e('贡献'); ?></span>
             <?php foreach ($val['answer_users'] AS $answer_user) { ?>
-            <a class="aw-user-name" data-id="<?php echo $answer_user['uid']; ?>" href="people/<?php echo $answer_user['url_token']; ?>" rel="nofollow"><img src="<?php echo get_avatar_url($answer_user['uid'], 'mid'); ?>" alt=""/></a>
+            <a class="aw-user-name" data-id="<?php echo $answer_user['uid']; ?>" href="people/<?php echo $answer_user['url_token']; ?>" rel="nofollow"><img src="<?php echo get_avatar_url($answer_user['uid'], 'mid'); ?>" class="custom-circle-img" alt=""/></a>
             <?php } ?>
         </div>
     <?php } else if ($val['question_id']) { ?>
