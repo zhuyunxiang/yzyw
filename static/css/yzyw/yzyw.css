@@ -317,20 +317,18 @@
 }
 .tourist-index .aw-question-content {
   position: relative;
-  min-height: 70px;
   overflow: hidden;
 }
 .tourist-index .aw-question-content h4 {
   position: absolute;
-  top: 20px;
+  top: 25px;
 }
 .tourist-index .aw-question-content p {
   position: absolute;
   top: 0px;
 }
 .tourist-index .aw-question-content div.markitup-box {
-  position: absolute;
-  bottom: 0px;
+  margin-top: 55px;
 }
 .tourist-index .aw-question-content a.aw-user-name {
   font-size: 16px;
