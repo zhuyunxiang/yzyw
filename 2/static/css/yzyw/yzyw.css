@@ -1,13 +1,17 @@
-.commen-btn {
+.commen-btn,
+.btn-success {
   color: white;
   background-color: #303045;
 }
-.commen-btn:hover {
+.commen-btn:hover,
+.btn-success:hover {
   color: white;
   background-color: #4a4f54 !important;
 }
 .commen-btn:visited,
-.commen-btn:focus {
+.btn-success:visited,
+.commen-btn:focus,
+.btn-success:focus {
   color: white;
 }
 .commen-white-btn {
