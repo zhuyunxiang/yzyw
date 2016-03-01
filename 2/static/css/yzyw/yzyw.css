@@ -317,6 +317,7 @@
 }
 .tourist-index .aw-question-content {
   position: relative;
+  min-height: 50px;
   overflow: hidden;
 }
 .tourist-index .aw-question-content h4 {
