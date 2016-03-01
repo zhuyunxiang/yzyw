@@ -1,411 +1,496 @@
 @gray-color: #303045;
-
-.commen-btn{
-	background-color: @gray-color;
-	color: white;
-
-	&:hover{
-		background-color: #4A4F54 !important;
-		color: white;
-	}
-
-	&:visited, &:focus{
-		color: white;
-	}
+.commen-btn
+{
+    color: white;
+    background-color: @gray-color;
+    &:hover
+    {
+        color: white;
+        background-color: #4a4f54 !important;
+    }
+    &:visited,
+    &:focus
+    {
+        color: white;
+    }
 }
-
-.commen-white-btn{
-	// background-color: @gray-color;
-	color: @gray-color;
-	border: solid 1px;
-
-	&:hover{
-		background-color: white !important;
-	}
+.commen-white-btn
+{
+    // background-color: @gray-color;
+    color: @gray-color;
+    border: solid 1px;
+    &:hover
+    {
+        background-color: white !important;
+    }
 }
-
-.aw-top-menu-wrap{
-	background-color: #FFFFFF;
+.aw-top-menu-wrap
+{
+    background-color: #fff;
 }
-
-.navbar-collapse {
-	background-color: #FFFFFF;
-	
+.navbar-collapse
+{
+    background-color: #fff;
 }
-
-.aw-search-box input {
-	border: solid 2px @gray-color;
+.aw-search-box input
+{
+    border: solid 2px @gray-color;
 }
-
-.aw-top-nav > nav > ul > li > a {
-	color: @gray-color;
-	&.active {
-		border: none;
-  		border-bottom: 2px solid #155faa;
-  		background-color: #FFFFFF;
-	}
-	&:hover {
-	  	background: #FFFFFF;
-	  	border-bottom: 2px solid #155faa;
-  		background-color: #FFFFFF;
-	}
-
-	&:focus{
-		background-color: white;
-	}
+.aw-top-nav > nav > ul > li > a
+{
+    color: @gray-color;
+    &.active
+    {
+        border: none;
+        border-bottom: 2px solid #155faa;
+        background-color: #fff;
+    }
+    &:hover
+    {
+        border-bottom: 2px solid #155faa;
+        background: #fff;
+        background-color: #fff;
+    }
+    &:focus
+    {
+        background-color: white;
+    }
 }
-
-.bolder{
-	font-weight: bolder;
+.bolder
+{
+    font-weight: bolder;
 }
-
 // 页头
 // 头像
-.custom-circle-img{
-	border-radius: 50% !important;
-	width: 60px;
-}
-
-.msg-ico{
-	background: url('img/msg.png') no-repeat;
-	background-size: 32px 32px;
-	width: 32px;
-	height: 32px;
-	border-radius: 0px !important;
-}
-
-.aw-user-nav{
-	height: 42px;
-	.aw-user-nav-dropdown{
-		display: inline-block;
-		overflow: hidden;
-		margin: 0 0px 0 15px;
-	}
-}
-
-// 搜索框
-.custom-search-box{
-	float: right;
-}
-
-@login-regist-width: 500px;
-
-// 登录页面
-.aw-register-box .mod-body{
-	padding: 0;
-}
-.aw-login-box ,.aw-register-box
+.custom-circle-img
 {
-	width: @login-regist-width;
-	.logo{
-		background: url('img/login/yan.png') no-repeat;
-		margin: 0 auto;
-		height: 125px;
-	}
+    width: 60px;
 
-	#login_submit, #register_submit{
-		width: 100%;
-		height: 50px;
-		line-height: 50px;
-		background-color: @gray-color;
-		&:hover{
-			background-color: #4A4F54;
-		}
-	}
-
-	.login-guide, .register-guide{
-		margin: 13px 0 13px 0 !important;
-		z-index: 1px;
-		overflow: hidden;
-	}
-	.mod-body {
-		input.form-control{
-			border-color: #DDDDDD;
-			border-width: 2px;
-			height: 50px;
-			line-height: 50px;
-		}
-		.content{
-			width: 100%;
-			.social-login{
-				.wechat-href{
-					width: 35px;
-  					height: 30px;
-					background: url('img/login/weichat.png') no-repeat;
-					margin-left: 30px;
-				}
-				.weibo-href{
-					width: 35px;
-  					height: 30px;
-					background: url('img/login/weibo.png') no-repeat;
-					margin-left: 30px;
-				}
-				.qq-href{
-				  	width: 35px;
-  					height: 30px;
-					background: url('img/login/qq.png') no-repeat;
-					margin-left: 30px;
-				}
-			}
-		}
-	}
+    border-radius: 50% !important;
 }
+.msg-ico
+{
+    width: 32px;
+    height: 32px;
 
+    border-radius: 0 !important;
+    background: url('img/msg.png') no-repeat;
+    background-size: 32px 32px;
+}
+.aw-user-nav
+{
+    height: 42px;
+    .aw-user-nav-dropdown
+    {
+        display: inline-block;
+        overflow: hidden;
 
+        margin: 0 0 0 15px;
+    }
+}
+// 搜索框
+.custom-search-box
+{
+    float: right;
+}
+@login-regist-width: 500px;
+// 登录页面
+.aw-register-box .mod-body
+{
+    padding: 0;
+}
+.aw-login-box,
+.aw-register-box
+{
+    width: @login-regist-width;
+    .logo
+    {
+        height: 125px;
+        margin: 0 auto;
+
+        background: url('img/login/yan.png') no-repeat;
+    }
+    #login_submit,
+    #register_submit
+    {
+        line-height: 50px;
+
+        width: 100%;
+        height: 50px;
+
+        background-color: @gray-color;
+        &:hover
+        {
+            background-color: #4a4f54;
+        }
+    }
+    .login-guide,
+    .register-guide
+    {
+        z-index: 1px;
+
+        overflow: hidden;
+
+        margin: 13px 0 !important;
+    }
+    .mod-body
+    {
+        input.form-control
+        {
+            line-height: 50px;
+
+            height: 50px;
+
+            border-width: 2px;
+            border-color: #ddd;
+        }
+        .content
+        {
+            width: 100%;
+            .social-login
+            {
+                .wechat-href
+                {
+                    width: 35px;
+                    height: 30px;
+                    margin-left: 30px;
+
+                    background: url('img/login/weichat.png') no-repeat;
+                }
+                .weibo-href
+                {
+                    width: 35px;
+                    height: 30px;
+                    margin-left: 30px;
+
+                    background: url('img/login/weibo.png') no-repeat;
+                }
+                .qq-href
+                {
+                    width: 35px;
+                    height: 30px;
+                    margin-left: 30px;
+
+                    background: url('img/login/qq.png') no-repeat;
+                }
+            }
+        }
+    }
+}
 // 注册页面
-.aw-register-box{
-	width: @login-regist-width;
+.aw-register-box
+{
+    width: @login-regist-width;
 }
-
-.aw-top-menu-wrap{
-	.aw-logo {
-		// height: 58px;
-	}
+.aw-top-menu-wrap
+{
+    .aw-logo
+    {
+        // height: 58px;
+    }
 }
+.publish-help
+{
+    .aw-topic-bar
+    {
+        margin: 5px 0;
+        padding: 0;
+    }
+    .form-control
+    {
+        width: 205px !important;
+    }
+    .text,
+    .close
+    {
+        line-height: 32px;
 
-.publish-help{
-	.aw-topic-bar{
-		padding: 0px;
-		margin: 5px 0;
-	}
+        height: 32px;
+        padding: 0 5px;
 
-	.form-control{
-		width: 205px !important;
-	}
-
-	.text, .close{
-		background-color: @gray-color;
-		height: 32px;
-		line-height: 32px;
-		padding: 0px 5px;
-		&:hover{
-			background-color: #4A4F54;
-		}
-	}
-
-	.add{
-		background-color: @gray-color;
-		&:hover{
-			background-color: #4A4F54 !important;
-
-		}
-	}
+        background-color: @gray-color;
+        &:hover
+        {
+            background-color: #4a4f54;
+        }
+    }
+    .add
+    {
+        background-color: @gray-color;
+        &:hover
+        {
+            background-color: #4a4f54 !important;
+        }
+    }
 }
-
-.aw-publish-title input{
-	width: 100%;
+.aw-publish-title input
+{
+    width: 100%;
 }
-
-
 // 个人中心
-.aw-user-detail-box .mod-head img{
-	top: 55px;
+.aw-user-detail-box .mod-head img
+{
+    top: 55px;
+
     width: 75px;
 }
+.self-info
+{
+    .self-info-name
+    {
+        font-size: 15px;
 
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .self-info-panel
+    {
+        padding-bottom: 0;
 
+        border-radius: 4px;
+    }
+    .signature
+    {
+        margin-top: 20px;
+    }
+    .self-signature
+    {
+        min-height: 35px;
+        padding: 0 20px;
 
+        border: solid 1px;
+        border-width: 0 0 1px 0;
+        border-color: #e6e6e6;
+        .text-color-999
+        {
+            margin-top: 10px;
+        }
+    }
+    .aw-user-detail-box .mod-head
+    {
+        padding-top: 60px;
+    }
+    .aw-content-wrap
+    {
+        border: none;
+        background-color: transparent;
+        .aw-main-content,
+        .aw-side-bar
+        {
+            border: none;
+            border-radius: 4px;
+            background-color: white;
+        }
+        .fans-panel
+        {
+            margin-left: 80px;
+        }
+    }
+    .clearfix
+    {
+        overflow: hidden;
+    }
+    .fans-info
+    {
+        margin-right: 50px;
+        span
+        {
+            font-weight: bolder;
 
-.self-info{
-	.self-info-name{
-	    position: absolute;
-	    left: 20px;
-	    top: 20px;
-	    font-size: 15px;
-	}
+            display: block;
 
-	.self-info-panel{
-		padding-bottom: 0px;
-		border-radius: 4px;
-	}
-	.signature{
-		margin-top: 20px;
-	}	
+            margin-top: 10px;
+        }
+    }
+    .visit-count-panel
+    {
+        width: 250px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 80px;
+    }
+    .fans-panel
+    {
+        width: 250px;
+        .aw-mod
+        {
+            padding: 0;
+        }
+    }
+    .aw-nav-tabs
+    {
+        min-height: 0;
+    }
+    .user-tab-panel
+    {
+        margin-top: 30px;
+        padding: 0;
 
-	.self-signature{
-		min-height: 35px;
-		border: solid 1px;
-		border-color: #e6e6e6;
-		border-width: 0px 0px 1px 0px;
-		padding: 0px 20px;
-		.text-color-999{
-			margin-top: 10px;
-		}
-	}
+        border-radius: 4px;
+        background-color: white;
+        .mod-body
+        {
+            border: solid 1px;
+            border-width: 1px 0 0 0;
+            border-color: #e6e6e6;
+            #contents_user_actions
+            {
+                margin: 15px 0;
+                .aw-item
+                {
+                    position: relative;
 
-	.aw-user-detail-box .mod-head{
-		padding-top: 60px;
-	}
+                    min-height: 100px;
+                    p
+                    {
+                        margin-left: 80px;
+                    }
+                    .dynamic-header-img
+                    {
+                        position: absolute;
+                        left: 15px;
+                    }
+                    .handle-box
+                    {
+                        position: absolute;
+                        bottom: 15px;
+                        left: 80px;
+                        span
+                        {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            #questions
+            {
+                .aw-item
+                {
+                    position: relative;
 
-	.aw-content-wrap{
-		background-color:transparent;
-		border: none;
-		.aw-main-content, .aw-side-bar{
-			background-color: white;
-		    border-radius: 4px;
-		    border: none;
-		}
+                    min-height: 100px;
+                }
+            }
+        }
+    }
+    .aw-topic-bar
+    {
+        .topic-head-img
+        {
+            width: 30px;
 
-		.fans-panel{
-			margin-left: 80px;
-		}
-	}
+            border-radius: 50%;
+        }
+    }
+    .valign-center
+    {
+        margin: 8px 10px;
+    }
+    #questions
+    {
+        #contents_user_actions_questions
+        {
+            padding-top: 10px;
+        }
+    }
+    #answers
+    {
+        #contents_user_actions_answers
+        {
+            padding-top: 10px;
+        }
+    }
+    #articles
+    {
+        .user-actions
+        {
+            padding-top: 10px;
+        }
+    }
+    #fans,
+    #admires
+    {
+        .mod-body
+        {
+            padding-top: 20px;
+            .float-left
+            {
+                margin-left: 65px;
+            }
+        }
+    }
+    #star
+    {
+        .mod-body
+        {
+            li
+            {
+                margin: 15px 0 0;
+                padding-bottom: 14px;
 
-	.clearfix{
-		overflow: hidden;
-	}
-
-	.fans-info{
-		margin-right: 50px;
-
-		span{
-			font-weight: bolder;
-			margin-top: 10px;
-			display: block;
-		}
-	}
-
-	.visit-count-panel{
-		margin-left: 80px;
-		width: 250px;
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-
-	.fans-panel{
-		width: 250px;
-		.aw-mod{
-			padding: 0px;
-		}
-	}
-
-	.aw-nav-tabs{
-		min-height: 0px;
-	}
-
-	.user-tab-panel{
-		margin-top: 30px;
-		background-color: white;
-		border-radius: 4px;
-		padding: 0px;
-
-		.mod-body{
-			border: solid 1px;
-			border-width: 1px 0 0 0;
-			border-color: #e6e6e6;
-
-			#contents_user_actions{
-				margin: 15px 0px;
-
-				.aw-item{
-					min-height: 100px;
-					position: relative;
-					p{
-						margin-left: 80px;
-					}
-
-					.dynamic-header-img{
-						position: absolute;
-  						left: 15px;
-					}
-
-					.handle-box{
-						position: absolute;
-						left: 80px;
-  						bottom: 15px;
-  						span{
-  							margin-right: 10px;
-  						}
-					}
-				}
-			}
-
-			#questions{
-				.aw-item{
-					min-height: 100px;
-					position: relative;
-				}
-			}
-		}
-	}
-
-	.aw-topic-bar{
-		.topic-head-img{
-			border-radius: 50%;
-			width: 30px;
-		}
-	}
-
-	.valign-center{
-		margin: 8px 10px;
-	}
-
-	#questions{
-		#contents_user_actions_questions{
-			padding-top: 10px;
-		}
-	}
-
-	#answers{
-		#contents_user_actions_answers{
-			padding-top: 10px;
-		}
-	}
-
-	#articles{
-		.user-actions{
-			padding-top: 10px;
-		}
-	}
-
-	#fans, #admires{
-		.mod-body{
-			padding-top: 20px;
-
-			.float-left{
-				margin-left: 65px;
-			}
-		}
-	}
-
-	#star{
-		.mod-body{
-			li{
-				margin: 15px 0 0 0;
-				padding-bottom: 14px;
-				border-bottom: 1px solid #f5f5f5;
-			}
-		}
-		.float-left{
-			margin-left: 65px;
-		}
-	}
+                border-bottom: 1px solid #f5f5f5;
+            }
+        }
+        .float-left
+        {
+            margin-left: 65px;
+        }
+    }
 }
-
-
 // 个人设置
-.profile-container{
-	.custom-side-bar{
-		position: static !important;
-	}
-
-	.setting-img{
-		margin-left: 10px;
-	}
-
-	.setting-img-info{
-		margin-left: 45px;
-	}
+.profile-container
+{
+    .custom-side-bar
+    {
+        position: static !important;
+    }
+    .setting-img
+    {
+        margin-left: 10px;
+    }
+    .setting-img-info
+    {
+        margin-left: 45px;
+    }
 }
-
 // 隐私设置
-.privacy-container{
-	.mod-body{
-		dd{
-			margin-bottom: 20px;
-		}
-	}
+.privacy-container
+{
+    .mod-body
+    {
+        dd
+        {
+            margin-bottom: 20px;
+        }
+    }
 }
 
+// 主页 - 游客身份
+.tourist-index{
+    .aw-question-content{
+        position: relative;
+        min-height: 70px;
+        h4{
+            position: absolute;
+            top: 20px;
+            a{
 
+            }
+        }
 
+        p{
+            position: absolute;
+            top: 0px;
+        }
+
+        div.markitup-box{
+            position: absolute;
+            bottom: 0px;
+        }
+
+        a.aw-user-name{
+            font-size: 16px;
+        }
+    }
+}
