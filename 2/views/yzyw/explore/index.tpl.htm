@@ -44,8 +44,11 @@
                             class="active"<?php } ?>><a href="<?php if ($this->feature_info) { ?>feature_id-<?php echo $this->feature_info['id']; ?>__<?php } ?><?php if ($this->category_info['id']) { ?>category-<?php echo $this->category_info['id']; ?><?php } ?>"><?php _e('最新'); ?></a>
                         </li>
 
-                        <h2 class="hidden-xs"><?php if ($this->category_info) { ?><?php echo $this->category_info['title']; ?>
-                        <?php } else if ($this->feature_info) { ?><?php echo $this->feature_info['title']; ?>
+                        <h2 class="hidden-xs">
+                          <?php if ($this->category_info) { ?>
+                            <?php echo $this->category_info['title']; ?>
+                        <?php } else if ($this->feature_info) { ?>
+                          <?php echo $this->feature_info['title']; ?>
                         <?php } else { ?>
                             <i class="icon icon-list"></i>
                             <?php _e('发现'); ?><?php } ?></h2>
@@ -85,8 +88,8 @@
                 <!-- 侧边栏 -->
                 <div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm">
                     <?php TPL::output('block/sidebar_feature.tpl.htm'); ?>
-                    <?php TPL::output('block/sidebar_hot_topics.tpl.htm'); ?>
                     <?php TPL::output('block/sidebar_hot_users.tpl.htm'); ?>
+                    <?php TPL::output('block/sidebar_hot_topics.tpl.htm'); ?>
                 </div>
                 <!-- end 侧边栏 -->
             </div>

@@ -113,12 +113,12 @@
     #login_submit,
     #register_submit
     {
-        line-height: 50px;
-
         width: 100%;
         height: 50px;
 
         background-color: @gray-color;
+
+        line-height: 50px;
         &:hover
         {
             background-color: #4a4f54;
@@ -137,12 +137,12 @@
     {
         input.form-control
         {
-            line-height: 50px;
-
             height: 50px;
 
             border-width: 2px;
             border-color: #ddd;
+
+            line-height: 50px;
         }
         .content
         {
@@ -203,12 +203,12 @@
     .text,
     .close
     {
-        line-height: 32px;
-
         height: 32px;
         padding: 0 5px;
 
         background-color: @gray-color;
+
+        line-height: 32px;
         &:hover
         {
             background-color: #4a4f54;
@@ -238,11 +238,11 @@
 {
     .self-info-name
     {
-        font-size: 15px;
-
         position: absolute;
         top: 20px;
         left: 20px;
+
+        font-size: 15px;
     }
     .self-info-panel
     {
@@ -296,11 +296,11 @@
         margin-right: 50px;
         span
         {
-            font-weight: bolder;
-
             display: block;
 
             margin-top: 10px;
+
+            font-weight: bolder;
         }
     }
     .visit-count-panel
@@ -470,8 +470,10 @@
 .tourist-index{
     .aw-question-content{
         position: relative;
-        min-height: 50px;
+
         overflow: hidden;
+
+        min-height: 50px;
         h4{
             position: absolute;
             top: 25px;
@@ -486,6 +488,7 @@
         }
 
         div.markitup-box{
+            max-height: none !important;
             // position: absolute;
             // bottom: 0px;
             margin-top: 55px;
@@ -493,6 +496,60 @@
 
         a.aw-user-name{
             font-size: 16px;
+        }
+    }
+}
+
+
+// 右侧热门用户
+.sidebar-hot-user-container{
+    .col-md-4{
+        padding-left: 0px !important;
+
+        text-align: center;
+
+        font-size: 12px;
+    }
+
+    .user-item{
+        margin-top: 10px;
+        padding: 2px 10px 2px 10px;
+
+        border-radius: 5px;
+        background-color: #EEEEEE;
+
+        dd{
+            width: 120px;
+        }
+
+        .user-action-info{
+            margin-bottom: 5px;
+
+            border: solid 1px;
+            border-width: 1px 0 0 0;
+            border-color: #e6e6e6;
+        }
+    }
+}
+// 右侧热门话题
+.sidebar-hot-topic-container{
+    .mod-body{
+        padding: 5px;
+
+        border-radius: 5px;
+        background-color: #2A314B;
+        dl{
+            margin-top: 12px;
+            .text{
+                color: white;
+
+                font-size: 15px;
+            }
+            a{
+                color: white;
+
+                font-size: 12px;
+            }
         }
     }
 }
