@@ -319,25 +319,27 @@
 .privacy-container .mod-body dd {
   margin-bottom: 20px;
 }
+.tourist-index .aw-item {
+  padding-top: 40px;
+}
 .tourist-index .aw-question-content {
   position: relative;
-  overflow: hidden;
   min-height: 50px;
-}
-.tourist-index .aw-question-content h4 {
-  position: absolute;
-  top: 25px;
 }
 .tourist-index .aw-question-content p {
   position: absolute;
-  top: 0px;
+  top: -25px;
 }
 .tourist-index .aw-question-content div.markitup-box {
   max-height: none !important;
-  margin-top: 55px;
+  padding-bottom: 30px;
 }
 .tourist-index .aw-question-content a.aw-user-name {
   font-size: 16px;
+}
+.tourist-index .aw-question-content .custom-comment {
+  position: absolute;
+  bottom: 0px;
 }
 .sidebar-hot-user-container .col-md-4 {
   padding-left: 0px !important;
