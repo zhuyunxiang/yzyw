@@ -362,6 +362,7 @@
   border-color: #e6e6e6;
 }
 .sidebar-hot-topic-container .mod-body {
+  min-height: 100px;
   padding: 5px;
   border-radius: 5px;
   background-color: #2A314B;
