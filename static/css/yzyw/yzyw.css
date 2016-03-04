@@ -53,6 +53,9 @@
   width: 60px;
   border-radius: 50% !important;
 }
+.commen-circle-img {
+  border-radius: 50% !important;
+}
 .msg-ico {
   width: 32px;
   height: 32px;
