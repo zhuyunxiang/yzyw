@@ -87,6 +87,10 @@
 
                 <!-- 侧边栏 -->
                 <div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm">
+                    <?php if ($this->user_info['group_name'] != "游客") {
+                        TPL::output('block/sidebar_menu.tpl.htm');
+                    } ?>
+
                     <?php TPL::output('block/sidebar_feature.tpl.htm'); ?>
                     <?php TPL::output('block/sidebar_hot_users.tpl.htm'); ?>
                     <?php TPL::output('block/sidebar_hot_topics.tpl.htm'); ?>

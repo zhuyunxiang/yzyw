@@ -14,6 +14,10 @@
 .btn-success:focus {
   color: white;
 }
+.aw-mod.side-nav ul li a.active {
+  color: white !important;
+  background-color: #303045 !important;
+}
 .commen-white-btn {
   color: #303045;
   border: solid 1px;
