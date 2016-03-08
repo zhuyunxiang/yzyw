@@ -356,6 +356,17 @@
 .sidebar-hot-user-container .user-action-info .row {
   margin-left: -10px;
 }
+.sidebar-hot-user-container .user-action-info .row .col-md-3 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  text-align: center;
+  font-size: 12px;
+}
+.sidebar-hot-user-container .user-action-info .row .col-md-3 .custom-empty-btn {
+  position: absolute;
+  top: 9px;
+  left: -2px;
+}
 .sidebar-hot-user-container .user-item {
   margin-top: 10px;
   padding: 2px 10px;
