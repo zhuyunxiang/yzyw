@@ -356,17 +356,6 @@
 .sidebar-hot-user-container .user-action-info .row {
   margin-left: -10px;
 }
-.sidebar-hot-user-container .user-action-info .row .col-md-3 {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-  text-align: center;
-  font-size: 12px;
-}
-.sidebar-hot-user-container .user-action-info .row .col-md-3 .custom-empty-btn {
-  position: absolute;
-  top: 9px;
-  left: -2px;
-}
 .sidebar-hot-user-container .user-item {
   margin-top: 10px;
   padding: 2px 10px;
@@ -392,7 +381,7 @@
   margin-top: 12px;
 }
 .sidebar-hot-topic-container .mod-body dl .text {
-  color: white;
+  color: #7D8395;
   font-size: 15px;
 }
 .sidebar-hot-topic-container .mod-body dl a {
@@ -401,4 +390,11 @@
 }
 .aw-container-wrap .container .row .aw-item img {
   border-radius: 50%;
+}
+.focus-topics-list img {
+  width: 50px;
+}
+.focus-topics-list .text-color-999 {
+  height: 40px;
+  overflow: hidden;
 }
