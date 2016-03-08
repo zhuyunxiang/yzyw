@@ -6,6 +6,7 @@
             <?php _e('%s 个话题', $this->feature_info['topic_count']); ?>
         <?php } else { ?><?php _e('热门话题'); ?><?php } ?></h3>
     </div>
+    <?php if (count($this->sidebar_hot_topics)>0) { ?>
     <div class="mod-body">
         <?php if (is_array($this->sidebar_hot_topics)) { ?>
         <?php foreach($this->sidebar_hot_topics AS $key => $val) {?>
@@ -31,4 +32,5 @@
         <?php } ?>
         <?php } ?>
     </div>
+    <?php } ?>
 </div>
