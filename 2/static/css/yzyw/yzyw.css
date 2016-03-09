@@ -362,6 +362,9 @@
 .tourist-index .aw-question-content .custom-comment {
   position: absolute;
   bottom: 0;
+  z-index: initial;
+}
+.tourist-index .aw-question-content .hot-article-custom-comment {
   z-index: 1;
 }
 .sidebar-hot-user-container .col-md-4 {
