@@ -62,8 +62,21 @@
 
                 <i class="icon icon-agree"></i> 赞<?php echo $val['agree_count']; ?>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <i class="icon icon-share"></i> 分享
+                <span class="share-to-others"><i class="icon icon-share"></i> 分享
+                    <div class="share-panel">
+                        <div class="share-item">
+                            <a href="#"><div class="weixin"><span class="pull-right">微信好友</span></div></a>
 
+                        </div>
+                        <div class="share-item">
+                            <a href="#"><div class="weibo"><span class="pull-right">新浪微博</span></div></a>
+
+                        </div>
+                        <div class="share-item">
+                            <a href="#"><div class="qq"><span class="pull-right">QQ</span></div></a>
+                        </div>
+                    </div>
+                </span>
                 <?php if($this->user_info['group_name'] != "游客"){?>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <i class="icon icon-comment"></i> <?php echo($val['comment_count']); ?>评论
@@ -84,7 +97,7 @@
             <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name"><?php echo $val['user_info']['user_name']; ?></a>
         <?php } else { ?>
             <a href="javascript:;" class="aw-user-name" data-id="<?php echo $val['uid']; ?>"><?php _e('匿名用户'); ?></a><?php } ?>
-            <span class="text-color-999">&nbsp;<?php _e('热门问题'); ?>
+            <span class="text-color-999">&nbsp;<?php _e('热门问题11'); ?>
                 &nbsp;
                 &nbsp;
                 来自科技
@@ -105,7 +118,21 @@
 
                 <i class="icon icon-agree"></i> 赞<?php echo $val['agree_count']; ?>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <i class="icon icon-share"></i> 分享
+                <span class="share-to-others"><i class="icon icon-share"></i> 分享
+                    <div class="share-panel">
+                        <div class="share-item">
+                            <a href="#"><div class="weixin"><span class="pull-right">微信好友</span></div></a>
+
+                        </div>
+                        <div class="share-item">
+                            <a href="#"><div class="weibo"><span class="pull-right">新浪微博</span></div></a>
+
+                        </div>
+                        <div class="share-item">
+                            <a href="#"><div class="qq"><span class="pull-right">QQ</span></div></a>
+                        </div>
+                    </div>
+                </span>
 
                 <?php if($this->user_info['group_name'] != "游客"){?>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -120,6 +147,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     禁止转载
                 <?php } ?>
+
             </div>
             <?php } ?>
         <?php } else { ?>
@@ -138,7 +166,21 @@
             <div class="custom-comment">
                 <i class="icon icon-agree"></i> 赞<?php echo $val['votes']; ?>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <i class="icon icon-share"></i> 分享
+                <span class="share-to-others"><i class="icon icon-share"></i> 分享
+                    <div class="share-panel">
+                        <div class="share-item">
+                            <a href="#"><div class="weixin"><span class="pull-right">微信好友</span></div></a>
+
+                        </div>
+                        <div class="share-item">
+                            <a href="#"><div class="weibo"><span class="pull-right">新浪微博</span></div></a>
+
+                        </div>
+                        <div class="share-item">
+                            <a href="#"><div class="qq"><span class="pull-right">QQ</span></div></a>
+                        </div>
+                    </div>
+                </span>
                 <?php if($this->user_info['group_name'] != "游客"){?>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <i class="icon icon-comment"></i> <?php echo($val['comments']); ?>评论

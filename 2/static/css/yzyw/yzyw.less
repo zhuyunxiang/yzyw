@@ -526,6 +526,7 @@
             // position: absolute;
             // bottom: 0px;
             // margin-top: 55px;
+            z-index: auto;
             padding-bottom: 30px;
         }
         a.aw-user-name
@@ -536,6 +537,7 @@
         {
             position: absolute;
             bottom: 0;
+            z-index: 1;
         }
     }
 }
@@ -680,5 +682,81 @@
         border-right: 8px solid transparent;
         border-bottom: 8px solid white;
         border-left: 8px solid transparent;
+    }
+}
+
+.aw-common-list .aw-item
+{
+    z-index: auto;
+}
+
+.share-panel
+{
+    position: absolute;
+    z-index: 4;
+    bottom: -150px;
+    left: 68px;
+
+    width: 180px;
+    height: 150px;
+
+    border: solid 1px #e6e6e6;
+    border-radius: 5px;
+    background-color: #ffffff;
+    display: none;
+    .share-item
+    {
+        &:hover{
+            background-color: #F5F5F5;
+        }
+        .weixin{
+            background: url('img/weixin.png') no-repeat;
+            background-size: 30px;
+            height: 30px;
+        }
+
+        .weibo{
+            background: url('img/weibo.png') no-repeat;
+            background-size: 30px;
+            height: 30px;
+        }
+
+        .qq{
+            background: url('img/qq.png') no-repeat;
+            background-size: 30px;
+            height: 30px;
+        }
+
+        .weixin, .weibo, .qq{
+            display: inline-block;
+            width: 130px;
+            cursor: pointer;
+            span{
+                width: 75px;
+                font-size: 16px;
+                line-height: 28px;
+                color: #8F92A3;
+            }
+        }
+
+        height: 33%;
+        padding: 10px 20px;
+        &:nth-last-child(2)
+        {
+            border: solid 1px #e6e6e6;
+            border-width: 1px 0 1px 0;
+        }
+    }
+}
+
+.share-to-others
+{
+    cursor: pointer;
+    &:hover
+    {
+        .share-panel
+        {
+            display: block;
+        }
     }
 }
