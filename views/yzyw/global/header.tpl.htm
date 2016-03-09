@@ -44,30 +44,13 @@
 			</div>
 			<!-- end 导航 -->
 
+
+
 			<!-- 用户栏 -->
 			<div class="aw-user-nav">
 				<!-- 登陆&注册栏 -->
 				<?php if ($this->user_id) { ?>
-					<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
-						<div class="private-msg-ico custom-circle-img" ></div>
-						<?php if ($this->user_info['inbox_unread'] != 0) {?>
-							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
-						<?php } ?>
-					</a>
 
-					<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
-						<div class="msg-ico custom-circle-img" ></div>
-						<?php if ($this->user_info['inbox_unread'] != 0) {?>
-							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
-						<?php } ?>
-					</a>
-
-					<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
-						<div class="comments-ico custom-circle-img" ></div>
-						<?php if ($this->user_info['inbox_unread'] != 0) {?>
-							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
-						<?php } ?>
-					</a>
 
 
 					<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
@@ -92,6 +75,29 @@
 					<?php if (get_setting('register_type') == 'open') { ?><a class="register btn btn-normal commen-white-btn" href="account/register/"><?php _e('注册'); ?></a><?php } ?>
 				<?php } ?>
 				<!-- end 登陆&注册栏 -->
+			</div>
+
+			<div class="aw-user-nav">
+				<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
+					<div class="private-msg-ico custom-circle-img" ></div>
+					<?php if ($this->user_info['inbox_unread'] != 0) {?>
+						<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
+					<?php } ?>
+				</a>
+
+				<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
+					<div class="msg-ico custom-circle-img" ></div>
+					<?php if ($this->user_info['inbox_unread'] != 0) {?>
+						<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
+					<?php } ?>
+				</a>
+
+				<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
+					<div class="comments-ico custom-circle-img" ></div>
+					<?php if ($this->user_info['inbox_unread'] != 0) {?>
+						<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
+					<?php } ?>
+				</a>
 			</div>
 			<!-- end 用户栏 -->
 
