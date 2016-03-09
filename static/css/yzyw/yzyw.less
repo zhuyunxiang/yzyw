@@ -1,68 +1,85 @@
 @gray-color: #303045;
 .commen-btn,
-.btn-success {
+.btn-success
+{
     color: white;
     background-color: @gray-color;
-    &:hover {
+    &:hover
+    {
         color: white;
         background-color: #4a4f54 !important;
     }
     &:visited,
-    &:focus {
+    &:focus
+    {
         color: white;
     }
 }
-.aw-mod.side-nav ul li a.active {
+.aw-mod.side-nav ul li a.active
+{
     color: white !important;
     background-color: @gray-color !important;
 }
-.commen-white-btn {
+.commen-white-btn
+{
     // background-color: @gray-color;
     color: @gray-color;
     border: solid 1px;
-    &:hover {
+    &:hover
+    {
         background-color: white !important;
     }
 }
-.aw-top-menu-wrap {
+.aw-top-menu-wrap
+{
     background-color: #fff;
 }
-.navbar-collapse {
+.navbar-collapse
+{
     background-color: #fff;
 }
-.aw-search-box input {
+.aw-search-box input
+{
     border: solid 2px @gray-color;
 }
-.aw-top-nav > nav > ul > li > a {
+.aw-top-nav > nav > ul > li > a
+{
     color: @gray-color;
-    &.active {
+    &.active
+    {
         border: none;
         border-bottom: 2px solid #155faa;
         background-color: #fff;
     }
-    &:hover {
+    &:hover
+    {
         border-bottom: 2px solid #155faa;
         background: #fff;
         background-color: #fff;
     }
-    &:focus {
+    &:focus
+    {
         background-color: white;
     }
 }
-.bolder {
+.bolder
+{
     font-weight: bolder;
 }
 // 页头
 // 头像
-.custom-circle-img {
+.custom-circle-img
+{
     width: 60px;
 
     border-radius: 50% !important;
 }
-.commen-circle-img {
+.commen-circle-img
+{
     border-radius: 50% !important;
 }
-.msg-ico {
+.msg-ico
+{
     width: 32px;
     height: 32px;
 
@@ -70,9 +87,32 @@
     background: url('img/msg.png') no-repeat;
     background-size: 32px 32px;
 }
-.aw-user-nav {
+
+.private-msg-ico
+{
+    width: 32px;
+    height: 32px;
+
+    border-radius: 0 !important;
+    background: url('img/private-msg-ico.png') no-repeat;
+    background-size: 32px 32px;
+}
+
+.comments-ico
+{
+    width: 32px;
+    height: 32px;
+
+    border-radius: 0 !important;
+    background: url('img/comments-ico.png') no-repeat;
+    background-size: 32px 32px;
+}
+
+.aw-user-nav
+{
     height: 42px;
-    .aw-user-nav-dropdown {
+    .aw-user-nav-dropdown
+    {
         display: inline-block;
         overflow: hidden;
 
@@ -80,69 +120,83 @@
     }
 }
 // 搜索框
-.custom-search-box {
+.custom-search-box
+{
     float: right;
 }
 @login-regist-width: 500px; // 登录页面
-.aw-register-box .mod-body {
+.aw-register-box .mod-body
+{
     padding: 0;
 }
 .aw-login-box,
-.aw-register-box {
+.aw-register-box
+{
     width: @login-regist-width;
-    .logo {
+    .logo
+    {
         height: 125px;
         margin: 0 auto;
 
         background: url('img/login/yan.png') no-repeat;
     }
     #login_submit,
-    #register_submit {
+    #register_submit
+    {
+        line-height: 50px;
+
         width: 100%;
         height: 50px;
 
         background-color: @gray-color;
-
-        line-height: 50px;
-        &:hover {
+        &:hover
+        {
             background-color: #4a4f54;
         }
     }
     .login-guide,
-    .register-guide {
+    .register-guide
+    {
         z-index: 1px;
 
         overflow: hidden;
 
         margin: 13px 0 !important;
     }
-    .mod-body {
-        input.form-control {
+    .mod-body
+    {
+        input.form-control
+        {
+            line-height: 50px;
+
             height: 50px;
 
             border-width: 2px;
             border-color: #ddd;
-
-            line-height: 50px;
         }
-        .content {
+        .content
+        {
             width: 100%;
-            .social-login {
-                .wechat-href {
+            .social-login
+            {
+                .wechat-href
+                {
                     width: 35px;
                     height: 30px;
                     margin-left: 30px;
 
                     background: url('img/login/weichat.png') no-repeat;
                 }
-                .weibo-href {
+                .weibo-href
+                {
                     width: 35px;
                     height: 30px;
                     margin-left: 30px;
 
                     background: url('img/login/weibo.png') no-repeat;
                 }
-                .qq-href {
+                .qq-href
+                {
                     width: 35px;
                     height: 30px;
                     margin-left: 30px;
@@ -154,156 +208,195 @@
     }
 }
 // 注册页面
-.aw-register-box {
+.aw-register-box
+{
     width: @login-regist-width;
 }
-.aw-top-menu-wrap {
-    .aw-logo {
+.aw-top-menu-wrap
+{
+    .aw-logo
+    {
         // height: 58px;
     }
 }
-.publish-help {
-    .aw-topic-bar {
+.publish-help
+{
+    .aw-topic-bar
+    {
         margin: 5px 0;
         padding: 0;
     }
-    .form-control {
+    .form-control
+    {
         width: 205px !important;
     }
     .text,
-    .close {
+    .close
+    {
+        line-height: 32px;
+
         height: 32px;
         padding: 0 5px;
 
         background-color: @gray-color;
-
-        line-height: 32px;
-        &:hover {
+        &:hover
+        {
             background-color: #4a4f54;
         }
     }
-    .add {
+    .add
+    {
         background-color: @gray-color;
-        &:hover {
+        &:hover
+        {
             background-color: #4a4f54 !important;
         }
     }
 }
-.aw-publish-title input {
+.aw-publish-title input
+{
     width: 100%;
 }
 // 个人中心
-.aw-user-detail-box .mod-head img {
+.aw-user-detail-box .mod-head img
+{
     top: 55px;
 
     width: 75px;
 }
-.self-info {
-    .self-info-name {
+.self-info
+{
+    .self-info-name
+    {
+        font-size: 15px;
+
         position: absolute;
         top: 20px;
         left: 20px;
-
-        font-size: 15px;
     }
-    .self-info-panel {
+    .self-info-panel
+    {
         padding-bottom: 0;
 
         border-radius: 4px;
     }
-    .signature {
+    .signature
+    {
         margin-top: 20px;
     }
-    .self-signature {
+    .self-signature
+    {
         min-height: 35px;
         padding: 0 20px;
 
         border: solid 1px;
         border-width: 0 0 1px 0;
         border-color: #e6e6e6;
-        .text-color-999 {
+        .text-color-999
+        {
             margin-top: 10px;
         }
     }
-    .aw-user-detail-box .mod-head {
+    .aw-user-detail-box .mod-head
+    {
         padding-top: 60px;
     }
-    .aw-content-wrap {
+    .aw-content-wrap
+    {
         border: none;
         background-color: transparent;
         .aw-main-content,
-        .aw-side-bar {
+        .aw-side-bar
+        {
             border: none;
             border-radius: 4px;
             background-color: white;
         }
-        .fans-panel {
+        .fans-panel
+        {
             margin-left: 80px;
         }
     }
-    .clearfix {
+    .clearfix
+    {
         overflow: hidden;
     }
-    .fans-info {
+    .fans-info
+    {
         margin-right: 50px;
-        span {
+        span
+        {
+            font-weight: bolder;
+
             display: block;
 
             margin-top: 10px;
-
-            font-weight: bolder;
         }
     }
-    .visit-count-panel {
+    .visit-count-panel
+    {
         width: 250px;
         margin-top: 10px;
         margin-bottom: 10px;
         margin-left: 80px;
     }
-    .fans-panel {
+    .fans-panel
+    {
         width: 250px;
-        .aw-mod {
+        .aw-mod
+        {
             padding: 0;
         }
     }
-    .aw-nav-tabs {
+    .aw-nav-tabs
+    {
         min-height: 0;
     }
-    .user-tab-panel {
+    .user-tab-panel
+    {
         margin-top: 30px;
         padding: 0;
 
         border-radius: 4px;
         background-color: white;
-        .mod-body {
+        .mod-body
+        {
             border: solid 1px;
             border-width: 1px 0 0 0;
             border-color: #e6e6e6;
-            #contents_user_actions {
+            #contents_user_actions
+            {
                 margin: 15px 0;
-                .aw-item {
+                .aw-item
+                {
                     position: relative;
 
                     min-height: 100px;
-                    p {
+                    p
+                    {
                         margin-left: 80px;
                     }
-                    .dynamic-header-img {
+                    .dynamic-header-img
+                    {
                         position: absolute;
                         left: 15px;
                     }
-                    .handle-box {
+                    .handle-box
+                    {
                         position: absolute;
                         bottom: 15px;
                         left: 80px;
-                        span {
+                        span
+                        {
                             margin-right: 10px;
                         }
                     }
                 }
             }
-            #questions {
-                .aw-item {
+            #questions
+            {
+                .aw-item
+                {
                     position: relative;
 
                     min-height: 100px;
@@ -311,80 +404,106 @@
             }
         }
     }
-    .aw-topic-bar {
-        .topic-head-img {
+    .aw-topic-bar
+    {
+        .topic-head-img
+        {
             width: 30px;
 
             border-radius: 50%;
         }
     }
-    .valign-center {
+    .valign-center
+    {
         margin: 8px 10px;
     }
-    #questions {
-        #contents_user_actions_questions {
+    #questions
+    {
+        #contents_user_actions_questions
+        {
             padding-top: 10px;
         }
     }
-    #answers {
-        #contents_user_actions_answers {
+    #answers
+    {
+        #contents_user_actions_answers
+        {
             padding-top: 10px;
         }
     }
-    #articles {
-        .user-actions {
+    #articles
+    {
+        .user-actions
+        {
             padding-top: 10px;
         }
     }
     #fans,
-    #admires {
-        .mod-body {
+    #admires
+    {
+        .mod-body
+        {
             padding-top: 20px;
-            .float-left {
+            .float-left
+            {
                 margin-left: 65px;
             }
         }
     }
-    #star {
-        .mod-body {
-            li {
+    #star
+    {
+        .mod-body
+        {
+            li
+            {
                 margin: 15px 0 0;
                 padding-bottom: 14px;
 
                 border-bottom: 1px solid #f5f5f5;
             }
         }
-        .float-left {
+        .float-left
+        {
             margin-left: 65px;
         }
     }
 }
 // 个人设置
-.profile-container {
-    .custom-side-bar {
+.profile-container
+{
+    .custom-side-bar
+    {
         position: static !important;
     }
-    .setting-img {
+    .setting-img
+    {
         margin-left: 10px;
     }
-    .setting-img-info {
+    .setting-img-info
+    {
         margin-left: 45px;
     }
 }
 // 隐私设置
-.privacy-container {
-    .mod-body {
-        dd {
+.privacy-container
+{
+    .mod-body
+    {
+        dd
+        {
             margin-bottom: 20px;
         }
     }
 }
 // 主页 - 游客身份
-.tourist-index {
-    .aw-item {
+.tourist-index
+{
+    .aw-item
+    {
         padding-top: 40px;
     }
-    .aw-question-content {
+    .aw-question-content
+    {
         position: relative;
         // overflow: hidden;
 
@@ -396,46 +515,56 @@
         //
         //     }
         // }
-        p {
+        p
+        {
             position: absolute;
             top: -25px;
         }
-        div.markitup-box {
+        div.markitup-box
+        {
             max-height: none !important;
             // position: absolute;
             // bottom: 0px;
             // margin-top: 55px;
             padding-bottom: 30px;
         }
-        a.aw-user-name {
+        a.aw-user-name
+        {
             font-size: 16px;
         }
-        .custom-comment {
+        .custom-comment
+        {
             position: absolute;
             bottom: 0;
         }
     }
 }
 // 右侧热门用户
-.sidebar-hot-user-container {
-    .col-md-4 {
+.sidebar-hot-user-container
+{
+    .col-md-4
+    {
+        font-size: 12px;
+
         padding-left: 0 !important;
 
         text-align: center;
-
-        font-size: 12px;
     }
-    .user-action-info {
-        .row {
+    .user-action-info
+    {
+        .row
+        {
             margin-left: -10px;
-            .col-md-3 {
+            .col-md-3
+            {
+                font-size: 12px;
+
                 padding-right: 0 !important;
                 padding-left: 0 !important;
 
                 text-align: center;
-
-                font-size: 12px;
-                .custom-empty-btn {
+                .custom-empty-btn
+                {
                     position: absolute;
                     top: 9px;
                     left: -2px;
@@ -443,16 +572,20 @@
             }
         }
     }
-    .user-item {
+    .user-item
+    {
         margin-top: 10px;
         padding: 2px 10px;
+        padding-right: 0;
 
         border-radius: 5px;
-        background-color: #EEEEEE;
-        dd {
+        background-color: #eee;
+        dd
+        {
             width: 120px;
         }
-        .user-action-info {
+        .user-action-info
+        {
             margin-bottom: 5px;
 
             border: solid 1px;
@@ -462,33 +595,43 @@
     }
 }
 // 右侧热门话题
-.sidebar-hot-topic-container {
-    .mod-body {
+.sidebar-hot-topic-container
+{
+    .mod-body
+    {
         min-height: 100px;
         padding: 5px;
 
         border-radius: 5px;
-        background-color: #2A314B;
-        dl {
+        background-color: #2a314b;
+        dl
+        {
             margin-top: 12px;
-            .text {
-                color: #7D8395;
-
+            .text
+            {
                 font-size: 15px;
-            }
-            a {
-                color: white;
 
+                color: #7d8395;
+            }
+            a
+            {
                 font-size: 12px;
+
+                color: white;
             }
         }
     }
 }
-.aw-container-wrap {
-    .container {
-        .row {
-            .aw-item {
-                img {
+.aw-container-wrap
+{
+    .container
+    {
+        .row
+        {
+            .aw-item
+            {
+                img
+                {
                     border-radius: 50%;
                 }
             }
@@ -496,12 +639,46 @@
     }
 }
 
-.focus-topics-list{
-    img{
+.focus-topics-list
+{
+    img
+    {
         width: 50px;
     }
-    .text-color-999{
-        height: 40px;
+    .text-color-999
+    {
         overflow: hidden;
+
+        height: 40px;
+    }
+}
+
+.aw-topic-list .aw-item
+{
+    padding-right: 20px;
+}
+
+.aw-dropdown.dropdown-list.pull-right
+{
+    top: 51px !important;
+    right: -45px;
+
+    border-top: 1px solid #ccc;
+    border-radius: 4px;
+    &:before
+    {
+        position: absolute;
+        top: -8px;
+        left: 50%;
+
+        width: 0;
+        height: 0;
+        margin-left: -8px;
+
+        content: '';
+
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid white;
+        border-left: 8px solid transparent;
     }
 }
