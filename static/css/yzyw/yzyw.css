@@ -358,8 +358,8 @@
   top: -25px;
 }
 .tourist-index .aw-question-content div.markitup-box {
-  max-height: none !important;
   z-index: auto;
+  max-height: none !important;
   padding-bottom: 30px;
 }
 .tourist-index .aw-question-content a.aw-user-name {
@@ -367,8 +367,8 @@
 }
 .tourist-index .aw-question-content .custom-comment {
   position: absolute;
-  bottom: 0;
   z-index: initial;
+  bottom: 0;
 }
 .tourist-index .aw-question-content .hot-article-custom-comment {
   z-index: 1;
@@ -464,34 +464,34 @@
   z-index: 4;
   bottom: -150px;
   left: 68px;
+  display: none;
   width: 180px;
   height: 150px;
   border: solid 1px #e6e6e6;
   border-radius: 5px;
-  background-color: #ffffff;
-  display: none;
+  background-color: #fff;
 }
 .share-panel .share-item {
   height: 33%;
   padding: 10px 20px;
 }
 .share-panel .share-item:hover {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 .share-panel .share-item .weixin {
+  height: 30px;
   background: url('img/weixin.png') no-repeat;
   background-size: 30px;
-  height: 30px;
 }
 .share-panel .share-item .weibo {
+  height: 30px;
   background: url('img/weibo.png') no-repeat;
   background-size: 30px;
-  height: 30px;
 }
 .share-panel .share-item .qq {
+  height: 30px;
   background: url('img/qq.png') no-repeat;
   background-size: 27px;
-  height: 30px;
 }
 .share-panel .share-item .weixin,
 .share-panel .share-item .weibo,
@@ -503,10 +503,10 @@
 .share-panel .share-item .weixin span,
 .share-panel .share-item .weibo span,
 .share-panel .share-item .qq span {
-  width: 75px;
   font-size: 16px;
   line-height: 28px;
-  color: #8F92A3;
+  width: 75px;
+  color: #8f92a3;
 }
 .share-panel .share-item:nth-last-child(2) {
   border: solid 1px #e6e6e6;
