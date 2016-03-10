@@ -44,8 +44,6 @@
 			</div>
 			<!-- end 导航 -->
 
-
-
 			<!-- 用户栏 -->
 			<div class="aw-user-nav">
 				<!-- 登陆&注册栏 -->
@@ -74,12 +72,23 @@
 				<!-- end 登陆&注册栏 -->
 			</div>
 			<?php if ($this->user_id) { ?>
-			<div class="aw-user-nav">
-				<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
+			<div class="aw-user-nav custom-aw-user-nav">
+				<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown private-msg-a">
 					<div class="private-msg-ico custom-circle-img" ></div>
 					<?php if ($this->user_info['inbox_unread'] != 0) {?>
 						<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
 					<?php } ?>
+
+					<div class="aw-dropdown dropdown-list pull-right">
+						<ul class="aw-dropdown-list">
+							<li><a href="inbox/"><i class="icon icon-inbox"></i> <?php _e('私信'); ?><span class="badge badge-important hide" id="inbox_unread">0</span></a></li>
+							<li class="hidden-xs"><a href="account/setting/profile/"><i class="icon icon-setting"></i> <?php _e('设置'); ?></a></li>
+							<?php if ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator']) { ?>
+							<li class="hidden-xs"><a href="admin/"><i class="icon icon-job"></i> <?php _e('管理'); ?></a></li>
+							<?php } ?>
+							<li><a href="account/logout/"><i class="icon icon-logout"></i> <?php _e('退出'); ?></a></li>
+						</ul>
+					</div>
 				</a>
 
 				<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">

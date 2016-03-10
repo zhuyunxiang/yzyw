@@ -89,6 +89,12 @@
   overflow: hidden;
   margin: 0 0 0 15px;
 }
+.custom-aw-user-nav:hover .aw-dropdown {
+  display: none;
+}
+.custom-aw-user-nav .private-msg-a:hover .aw-dropdown {
+  display: block;
+}
 .custom-search-box {
   float: right;
 }
