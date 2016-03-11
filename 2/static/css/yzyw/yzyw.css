@@ -14,6 +14,13 @@
 .btn-success:focus {
   color: white;
 }
+.aw-load-more-content:hover {
+  background: #4a4f54 !important;
+  background-color: #4a4f54 !important;
+}
+.aw-load-more-content:hover span {
+  background-color: #4a4f54 !important;
+}
 .aw-mod.side-nav ul li a.active {
   color: white !important;
   background-color: #303045 !important;
@@ -93,6 +100,7 @@
   display: none;
 }
 .custom-aw-user-nav .private-msg-a:hover .aw-dropdown {
+  left: -30px;
   display: block;
 }
 .custom-search-box {
@@ -115,10 +123,10 @@
 .aw-register-box #login_submit,
 .aw-login-box #register_submit,
 .aw-register-box #register_submit {
-  line-height: 50px;
   width: 100%;
   height: 50px;
   background-color: #303045;
+  line-height: 50px;
 }
 .aw-login-box #login_submit:hover,
 .aw-register-box #login_submit:hover,
@@ -136,10 +144,10 @@
 }
 .aw-login-box .mod-body input.form-control,
 .aw-register-box .mod-body input.form-control {
-  line-height: 50px;
   height: 50px;
   border-width: 2px;
   border-color: #ddd;
+  line-height: 50px;
 }
 .aw-login-box .mod-body .content,
 .aw-register-box .mod-body .content {
@@ -178,10 +186,10 @@
 }
 .publish-help .text,
 .publish-help .close {
-  line-height: 32px;
   height: 32px;
   padding: 0 5px;
   background-color: #303045;
+  line-height: 32px;
 }
 .publish-help .text:hover,
 .publish-help .close:hover {
@@ -201,10 +209,10 @@
   width: 75px;
 }
 .self-info .self-info-name {
-  font-size: 15px;
   position: absolute;
   top: 20px;
   left: 20px;
+  font-size: 15px;
 }
 .self-info .self-info-panel {
   padding-bottom: 0;
@@ -246,9 +254,9 @@
   margin-right: 50px;
 }
 .self-info .fans-info span {
-  font-weight: bolder;
   display: block;
   margin-top: 10px;
+  font-weight: bolder;
 }
 .self-info .visit-count-panel {
   width: 250px;
@@ -374,18 +382,18 @@
   z-index: 1;
 }
 .sidebar-hot-user-container .col-md-4 {
-  font-size: 12px;
   padding-left: 0 !important;
   text-align: center;
+  font-size: 12px;
 }
 .sidebar-hot-user-container .user-action-info .row {
   margin-left: -10px;
 }
 .sidebar-hot-user-container .user-action-info .row .col-md-3 {
-  font-size: 12px;
   padding-right: 0 !important;
   padding-left: 0 !important;
   text-align: center;
+  font-size: 12px;
 }
 .sidebar-hot-user-container .user-action-info .row .col-md-3 .custom-empty-btn {
   position: absolute;
@@ -418,12 +426,12 @@
   margin-top: 12px;
 }
 .sidebar-hot-topic-container .mod-body dl .text {
-  font-size: 15px;
   color: #7d8395;
+  font-size: 15px;
 }
 .sidebar-hot-topic-container .mod-body dl a {
-  font-size: 12px;
   color: white;
+  font-size: 12px;
 }
 .aw-container-wrap .container .row .aw-item img {
   border-radius: 50%;
@@ -503,10 +511,10 @@
 .share-panel .share-item .weixin span,
 .share-panel .share-item .weibo span,
 .share-panel .share-item .qq span {
-  font-size: 16px;
-  line-height: 28px;
   width: 75px;
   color: #8f92a3;
+  font-size: 16px;
+  line-height: 28px;
 }
 .share-panel .share-item:nth-last-child(2) {
   border: solid 1px #e6e6e6;
@@ -517,4 +525,16 @@
 }
 .share-to-others:hover .share-panel {
   display: block;
+}
+.custom-invite-item .img-container {
+  display: inline-block;
+  width: 10%;
+}
+.custom-invite-item .img-container .custom-circle-img {
+  width: 40px;
+  margin-top: -26px;
+}
+.custom-invite-item .text-container {
+  display: inline-block;
+  width: 80%;
 }

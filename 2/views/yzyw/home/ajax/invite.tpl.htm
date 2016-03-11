@@ -1,16 +1,24 @@
 <?php if ($this->list) { ?>
 <?php foreach($this->list as $key => $val) { ?>
-<div class="aw-item">
-	<h4>
-		<a href="question/<?php echo $val['question_info']['question_id']; ?>"><?php echo $val['question_info']['question_content']; ?></a>
-	</h4>
-	<p class="text-color-999">
-		<span class="pull-right">
-			<a class="text-color-999" onclick="AWS.User.question_invite_delete($(this).parents('div.aw-item'), <?php echo $val['question_invite_id']; ?>)">忽略</a>
-		</span>
-		<a class="aw-user-name" href="people/<?php echo $val['user_info']['url_token']; ?>" data-id="<?php echo $val['user_info']['uid']; ?>"><?php echo $val['user_info']['user_name']; ?></a> <?php _e('邀请你回复这个问题'); ?>
-	</p>
+<div class="aw-item custom-invite-item">
+	<!-- <?php var_dump($val);?> -->
+	<div class="img-container">
+		<img alt="<?php echo $val['user_info']['user_name']; ?>" class="custom-circle-img" src="<?php echo get_avatar_url($val['user_info']['uid'], 'mid'); ?>" />
+	</div>
+	<div class="text-container">
+		<?php if ($this->user_info['inbox_unread'] != 0) {?>
+			<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
+		<?php } ?>
+		<h4>
+			<a href="question/<?php echo $val['question_info']['question_id']; ?>"><?php echo $val['question_info']['question_content']; ?></a>
+			<span class="pull-right">
+				<a class="text-color-999" onclick="AWS.User.question_invite_delete($(this).parents('div.aw-item'), <?php echo $val['question_invite_id']; ?>)">忽略</a>
+			</span>
+		</h4>
+		<p class="text-color-999">
+			<a class="aw-user-name" href="people/<?php echo $val['user_info']['url_token']; ?>" data-id="<?php echo $val['user_info']['uid']; ?>"><?php echo $val['user_info']['user_name']; ?></a> <?php _e('邀请你回答  '.$val['question_info']['answer_count'].'个回答  '.$val['question_info']['focus_count'].'个人关注'); ?>
+		</p>
+	</div>
 </div>
 <?php } ?>
 <?php } ?>
-
