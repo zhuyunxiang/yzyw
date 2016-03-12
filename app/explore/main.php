@@ -31,7 +31,7 @@ class main extends AWS_CONTROLLER
 
 		return $rule_action;
 	}
-	
+
 	public function setup()
 	{
 		if (is_mobile() AND !$_GET['ignore_ua_check'])
@@ -54,7 +54,7 @@ class main extends AWS_CONTROLLER
 
 		if ($this->user_id)
 		{
-			$this->crumb(AWS_APP::lang()->_t('发现'), '/explore');
+			$this->crumb(AWS_APP::lang()->_t('热门内容'), '/explore');
 
 			if (! $this->user_info['email'])
 			{
