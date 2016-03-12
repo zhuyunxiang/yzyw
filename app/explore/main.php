@@ -54,7 +54,7 @@ class main extends AWS_CONTROLLER
 
 		if ($this->user_id)
 		{
-			$this->crumb(AWS_APP::lang()->_t('热门内容'), '/explore');
+			$this->crumb(AWS_APP::lang()->_t('发现'), '/explore');
 
 			if (! $this->user_info['email'])
 			{
