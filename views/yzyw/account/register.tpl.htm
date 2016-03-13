@@ -2,8 +2,8 @@
 
 <div class="aw-register-box">
   <!--   <div class="mod-head">
-        
-        
+
+
     </div> -->
     <div class="mod-body clearfix">
         <a href=""><img src="<?php echo G_STATIC_URL; ?>/css/<?php echo $this->template_name; ?>/img/login/yan.png" alt="" /></a>
@@ -73,9 +73,22 @@
                 <li class="last">
                     <label><input type="checkbox" checked="checked" value="agree" name="agreement_chk" /> <?php _e('我同意'); ?></label> <a href="javascript:;" class="aw-agreement-btn"><?php _e('用户协议'); ?></a>
                     <a href="account/login/" class="pull-right">已有账号?</a>
-                    <div class="aw-register-agreement hide">
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">用户协议</h4>
+                      </div>
+                      <div class="modal-body">
                         <div class="aw-register-agreement-txt" id="register_agreement"></div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default commen-btn" data-dismiss="modal">关闭</button>
+                      </div>
                     </div>
+                  </div>
+                </div>
 
                 </li>
                 <li class="clearfix">
@@ -94,14 +107,16 @@ $(document).ready(function ()
 
     $('.aw-agreement-btn').click(function()
     {
-        if ($('.aw-register-agreement').is(':visible'))
-        {
-            $('.aw-register-agreement').hide();
-        }
-        else
-        {
-            $('.aw-register-agreement').show();
-        }
+        $("#myModal").modal("show");
+
+        // if ($('.aw-register-agreement').is(':visible'))
+        // {
+        //     $('.aw-register-agreement').hide();
+        // }
+        // else
+        // {
+        //     $('.aw-register-agreement').show();
+        // }
     });
 
     $('.more-information-btn').click(function()
@@ -146,7 +161,7 @@ $(document).ready(function ()
                             }
                             else
                             {
-                                $.post(G_BASE_URL + '/account/ajax/check_username/', 
+                                $.post(G_BASE_URL + '/account/ajax/check_username/',
                                     {
                                         username: $(this).val()
                                     }, function (result)
