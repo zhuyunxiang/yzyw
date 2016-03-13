@@ -18,6 +18,10 @@
 .btn-blue:focus {
   color: white;
 }
+.custom-border-btn {
+  border: solid 1px #303045;
+  border-radius: 4px;
+}
 .aw-load-more-content:hover {
   background: #4a4f54 !important;
   background-color: #4a4f54 !important;
@@ -385,6 +389,9 @@
 .tourist-index .aw-question-content .hot-article-custom-comment {
   z-index: 1;
 }
+.aw-side-bar {
+  padding: 20px 10px;
+}
 .sidebar-hot-user-container .col-md-4 {
   padding-left: 0 !important;
   text-align: center;
@@ -394,10 +401,14 @@
   margin-left: -10px;
 }
 .sidebar-hot-user-container .user-action-info .row .col-md-3 {
+  width: 22%;
   padding-right: 0 !important;
   padding-left: 0 !important;
   text-align: center;
   font-size: 12px;
+}
+.sidebar-hot-user-container .user-action-info .row .col-md-3:last-child {
+  width: 34%;
 }
 .sidebar-hot-user-container .user-action-info .row .col-md-3 .custom-empty-btn {
   position: absolute;
@@ -406,8 +417,7 @@
 }
 .sidebar-hot-user-container .user-item {
   margin-top: 10px;
-  padding: 2px 10px;
-  padding-right: 0;
+  padding: 2px 0 2px 10px;
   border-radius: 5px;
   background-color: #eee;
 }
@@ -541,4 +551,17 @@
 .custom-invite-item .text-container {
   display: inline-block;
   width: 80%;
+}
+.my-icon {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: url("img/ico/icon-emp.png") no-repeat;
+  line-height: 18px;
+}
+.share {
+  background-position: -453px -493px;
+}
+.favor {
+  background-position: -357px -541px;
 }
