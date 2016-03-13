@@ -558,9 +558,10 @@
   height: 19px;
   background: url("img/ico/icon-emp.png") no-repeat;
   line-height: 18px;
+  margin-bottom: -4px;
 }
 .share {
-  background-position: -453px -493px;
+  background-position: -177px -448px;
 }
 .guanzhu {
   background-position: -357px -541px;
