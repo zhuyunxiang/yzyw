@@ -109,7 +109,6 @@
 }
 .custom-aw-user-nav .private-msg-a:hover .aw-dropdown {
   left: -30px;
-  display: block;
 }
 .custom-search-box {
   float: right;
@@ -536,9 +535,6 @@
 }
 .share-to-others {
   cursor: pointer;
-}
-.share-to-others:hover .share-panel {
-  display: block;
 }
 .custom-invite-item .img-container {
   display: inline-block;

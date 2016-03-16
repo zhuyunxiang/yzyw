@@ -219,3 +219,14 @@
 </div>
 <?php } ?>
 <?php } ?>
+
+<script type="text/javascript">
+    function showSharePanel() {
+        alert('a');
+    }
+
+    $(".share-to-others").on('click', function  () {
+        $(".share-panel").hide();
+        $(this).children(".share-panel").toggle();
+    });
+</script>
