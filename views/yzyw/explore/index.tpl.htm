@@ -45,10 +45,10 @@
                         </li> -->
 
                         <h2 class="hidden-xs">
-                          <?php if ($this->category_info) { ?>
+                            <?php if ($this->category_info) { ?>
                             <?php echo $this->category_info['title']; ?>
                         <?php } else if ($this->feature_info) { ?>
-                          <?php echo $this->feature_info['title']; ?>
+                            <?php echo $this->feature_info['title']; ?>
                         <?php } else { ?>
                             <i class="icon icon-list"></i>
                             <?php _e('热门内容'); ?><?php } ?></h2>
@@ -83,6 +83,7 @@
                             <?php echo $this->pagination; ?>
                         </div>
                     </div>
+
                 </div>
 
                 <!-- 侧边栏 -->
@@ -100,5 +101,58 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="login_help" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">
+                您还没有登录，不能分享哦~
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default commen-btn" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var checkIsLogin = function () {
+        <?php if($this->user_id) {?>
+        return true;
+        <?php } else { ?>
+        $("#login_help").modal('show');
+        return false;
+        <?php } ?>
+    }
+
+    $(".share-to-others").on('click', function () {
+        if (!checkIsLogin()) {
+            return false;
+        };
+        $(".share-panel").hide();
+        $(this).children(".share-panel").toggle();
+    });
+
+    $(".agree-span").on('click', function () {
+        if (!checkIsLogin()) {
+            return false;
+        };
+        alert("赞");
+    });
+
+    $(".custom-empty-btn").on('click', function () {
+        if (!checkIsLogin()) {
+            return false;
+        };
+        alert("赞");
+    });
+</script>
 
 <?php TPL::output('global/footer.tpl.htm'); ?>
