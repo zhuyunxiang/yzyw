@@ -60,7 +60,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <?php } ?>
 
-                <i class="icon icon-agree"></i> 赞<?php echo $val['agree_count']; ?>
+                <span class="agree-span"><i class="icon icon-agree"></i> 赞<?php echo $val['agree_count']; ?></span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="share-to-others"><i class="my-icon share"></i> 分享
                     <div class="share-panel">
@@ -116,7 +116,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <?php } ?>
 
-                <i class="icon icon-agree"></i> 赞<?php echo $val['agree_count']; ?>
+                <span class="agree-span"><i class="icon icon-agree"></i> 赞<?php echo $val['agree_count']; ?></span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="share-to-others"><i class="my-icon share"></i> 分享
                     <div class="share-panel">
@@ -164,7 +164,7 @@
                 <?php echo date_friendly($val['add_time']); ?> -->
             </span>
             <div class="custom-comment hot-article-custom-comment">
-                <i class="icon icon-agree"></i> 赞<?php echo $val['votes']; ?>
+                <span class="agree-span"><i class="icon icon-agree"></i> 赞<?php echo $val['votes']; ?></span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="share-to-others"><i class="my-icon share"></i> 分享
                     <div class="share-panel">
@@ -219,14 +219,3 @@
 </div>
 <?php } ?>
 <?php } ?>
-
-<script type="text/javascript">
-    function showSharePanel() {
-        alert('a');
-    }
-
-    $(".share-to-others").on('click', function  () {
-        $(".share-panel").hide();
-        $(this).children(".share-panel").toggle();
-    });
-</script>

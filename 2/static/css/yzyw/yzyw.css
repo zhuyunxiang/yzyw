@@ -109,6 +109,7 @@
 }
 .custom-aw-user-nav .private-msg-a:hover .aw-dropdown {
   left: -30px;
+  display: block;
 }
 .custom-search-box {
   float: right;
@@ -533,7 +534,8 @@
   border: solid 1px #e6e6e6;
   border-width: 1px 0 1px 0;
 }
-.share-to-others {
+.share-to-others,
+.agree-span {
   cursor: pointer;
 }
 .custom-invite-item .img-container {
