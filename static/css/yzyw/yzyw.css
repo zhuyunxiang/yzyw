@@ -554,9 +554,9 @@
   display: inline-block;
   width: 19px;
   height: 19px;
+  margin-bottom: -4px;
   background: url("img/ico/icon-emp.png") no-repeat;
   line-height: 18px;
-  margin-bottom: -4px;
 }
 .share {
   background-position: -177px -448px;
@@ -578,4 +578,21 @@
 }
 .zan {
   background-position: -132px -448px;
+}
+.topic-detail-panel {
+  overflow: hidden;
+  width: 1010px;
+  margin: 30px auto;
+}
+.topic-detail-panel .aw-user-name img,
+.topic-detail-panel .aw-topic-name img {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: none !important;
+}
+.topic-detail-panel a.a-aw-user-name {
+  margin-left: 50px;
+}
+.topic-detail-panel h4.h4-question-title a {
+  font-size: 18px;
 }
