@@ -115,7 +115,8 @@
                 您还没有登录，不能分享哦~
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default commen-btn" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default commen-btn go-login">去登录</button>
+                <!-- <button type="button" class="btn btn-default commen-btn" data-dismiss="modal">去登录</button> -->
             </div>
         </div>
     </div>
@@ -131,6 +132,10 @@
         return false;
         <?php } ?>
     }
+
+    $(".go-login").on('click', function () {
+        location.href = "?/account/login/";
+    });
 
     $(".share-to-others").on('click', function () {
         if (!checkIsLogin()) {
