@@ -590,7 +590,8 @@
   height: 40px !important;
   max-width: none !important;
 }
-.topic-detail-panel a.a-aw-user-name {
+.topic-detail-panel a.a-aw-user-name,
+.topic-detail-panel .content-panel {
   margin-left: 50px;
 }
 .topic-detail-panel h4.h4-question-title a {
