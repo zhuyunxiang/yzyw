@@ -236,7 +236,7 @@
 
         <?php if (!$val['question_id']) { ?>
 
-        <div class="modal fade" id="login_help_<?php echo $val['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade custom-article-modal" id="login_help_<?php echo $val['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="topic-detail-panel">
                 <div class=" col-xs-8" role="document">
                     <div class="modal-content">
@@ -276,7 +276,7 @@
                             <div class="content-panel">
                                 <?php echo nl2br(trim(strip_tags(FORMAT::parse_attachs(FORMAT::parse_bbcode($val['message']))))); ?>
                             </div>
-                            <div class="">
+                            <div class="custom-options-panel">
                                 <div class="custom-comment hot-article-custom-comment">
                                     <span class="agree-span">
                                         <i class="icon icon-agree"></i>
@@ -322,12 +322,38 @@
                                     <?php } ?>
                                 </div>
                             </div>
+
+                            <!-- 回复编辑器 -->
+                            <div class="aw-mod aw-article-replay-box custom-reply-panel">
+                                <a name="answer_form"></a>
+                                <?php if ($this->article_info['lock']) { ?>
+                                <p align="center"><?php _e('该文章目前已经被锁定, 无法添加新评论'); ?></p>
+                            <?php } else if (!$this->user_id) { ?>
+                                <p align="center"><?php _e('要回复文章请先<a href="account/login/">登录</a>或<a href="account/register/">注册</a>'); ?></p>
+                            <?php } else { ?>
+                                <form action="article/ajax/save_comment/" onsubmit="return false;" method="post" id="answer_form_<?php echo $val['id']?>">
+                                    <input type="hidden" name="post_hash" value="<?php echo new_post_hash(); ?>"/>
+                                    <input type="hidden" name="article_id" value="<?php echo $val['id']; ?>"/>
+                                    <div class="mod-head">
+                                        <a href="people/" class="aw-user-name"><img alt="<?php echo $this->user_info['user_name']; ?>" src="<?php echo get_avatar_url($this->user_info['uid'], 'mid'); ?>"/></a>
+                                    </div>
+                                    <div class="mod-body">
+                                        <textarea rows="3" name="message" id="comment_editor" class="form-control autosize" placeholder="写下你的评论..."/></textarea>
+                                </div>
+                                <div class="mod-footer clearfix">
+                                    <a href="javascript:;" onclick="AWS.ajax_post($('#answer_form_<?php echo $val['id']?>'), AWS.ajax_processer, 'reply');" class="btn btn-normal btn-success pull-right btn-submit btn-reply"><?php _e('发布评论'); ?></a>
+                                    <?php if ($this->human_valid) { ?>
+                                    <em class="auth-img pull-right"><img src="" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" id="captcha"/></em>
+                                    <input class="pull-right form-control" type="text" name="seccode_verify" placeholder="<?php _e('验证码'); ?>"/>
+                                    <?php } ?>
+                                </div>
+                            </form>
+                            <?php } ?>
+                        </div>
+                        <!-- end 回复编辑器 -->
+
                             <!-- 文章评论 -->
                             <div class="aw-mod">
-                                <div class="mod-head common-head">
-                                    <h2><?php _e('%s 个评论', $val['comments']); ?></h2>
-                                </div>
-
                                 <div class="mod-body aw-feed-list">
                                     <?php if ($val['comments']) { ?>
                                     <?php foreach ($val['comments_info'] AS $ckey => $cval) { ?>
@@ -338,7 +364,7 @@
                                             </a>
                                             <p>
                                                 <a href="people/<?php echo $cval['user_info']['url_token']; ?>"><?php echo $cval['user_info']['user_name']; ?></a><?php if ($cval['at_user_info']) { ?>
-                                                <?php _e('回复'); ?>
+                                                <?php _e('发布评论'); ?>
                                                 <a href="people/<?php echo $cval['at_user_info']['url_token']; ?>"><?php echo $cval['at_user_info']['user_name']; ?></a><?php } ?>
                                             </p>
                                         </div>
@@ -386,41 +412,78 @@
                             </div>
                             <!-- end 文章评论 -->
 
-                            <!-- 回复编辑器 -->
-                            <div class="aw-mod aw-article-replay-box custom-reply-panel">
-                                <a name="answer_form"></a>
-                                <?php if ($this->article_info['lock']) { ?>
-                                <p align="center"><?php _e('该文章目前已经被锁定, 无法添加新评论'); ?></p>
-                            <?php } else if (!$this->user_id) { ?>
-                                <p align="center"><?php _e('要回复文章请先<a href="account/login/">登录</a>或<a href="account/register/">注册</a>'); ?></p>
-                            <?php } else { ?>
-                                <form action="article/ajax/save_comment/" onsubmit="return false;" method="post" id="answer_form_<?php echo $val['id']?>">
-                                    <input type="hidden" name="post_hash" value="<?php echo new_post_hash(); ?>"/>
-                                    <input type="hidden" name="article_id" value="<?php echo $val['id']; ?>"/>
-                                    <div class="mod-head">
-                                        <a href="people/" class="aw-user-name"><img alt="<?php echo $this->user_info['user_name']; ?>" src="<?php echo get_avatar_url($this->user_info['uid'], 'mid'); ?>"/></a>
-                                    </div>
-                                    <div class="mod-body">
-                                        <textarea rows="3" name="message" id="comment_editor" class="form-control autosize" placeholder="写下你的评论..."/></textarea>
-                                </div>
-                                <div class="mod-footer clearfix">
-                                    <a href="javascript:;" onclick="AWS.ajax_post($('#answer_form_<?php echo $val['id']?>'), AWS.ajax_processer, 'reply');" class="btn btn-normal btn-success pull-right btn-submit btn-reply"><?php _e('回复'); ?></a>
-                                    <?php if ($this->human_valid) { ?>
-                                    <em class="auth-img pull-right"><img src="" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" id="captcha"/></em>
-                                    <input class="pull-right form-control" type="text" name="seccode_verify" placeholder="<?php _e('验证码'); ?>"/>
-                                    <?php } ?>
-                                </div>
-                            </form>
-                            <?php } ?>
-                        </div>
-                        <!-- end 回复编辑器 -->
+
                     </div>
                 </div>
             </div>
-            <div class=" col-xs-4" role="document">
+            <div class="col-xs-4 article-author-panel" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        这里是发布人的个人信息
+                        <div class="aw-item">
+                            <?php if ($val['anonymous'] == 0) { ?>
+                            <a class="aw-user-name hidden-xs" data-id="<?php echo $val['user_info']['uid']; ?>" href="people/<?php echo $val['user_info']['url_token']; ?>" rel="nofollow"><img src="<?php echo get_avatar_url($val['user_info']['uid'], 'max'); ?>" class="custom-circle-img" alt=""/>
+                                <?php if ($val['user_info']['verified']) { ?>
+                                <?php if ($val['user_info']['verified'] == 'personal') { ?>
+                                <i class="icon icon-v"></i>
+                            <?php } else { ?>
+                                <i class="icon icon-v i-ve"></i>
+                                <?php } ?>
+                                <?php } ?>
+                            </a>
+                        <?php } else { ?>
+                            <a class="aw-user-name hidden-xs" href="javascript:;"><img src="<?php echo G_STATIC_URL; ?>/common/avatar-max-img.png" alt="<?php _e('匿名用户'); ?>" class="custom-circle-img" title="<?php _e('匿名用户'); ?>"/></a>
+                            <?php } ?>
+
+                            <?php if ($val['anonymous'] == 0) { ?>
+                            <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name a-aw-user-name">
+                                <?php echo $val['user_info']['user_name']; ?>
+                            </a>
+                        <?php } else { ?>
+                            <a href="javascript:;" class="aw-user-name a-aw-user-name" data-id="<?php echo $val['uid']; ?>"><?php _e('匿名用户'); ?></a>
+                            <?php } ?>
+
+                            <div class="user-desc-panel">
+                                这个是这个用户的详细介绍，我就不详细的介绍了。
+                            </div>
+
+                            <div class="favor-btn-panel">
+                                <button type="button" name="button" class="btn btn-success">
+                                    <i class="my-icon guanzhu-white"></i>&nbsp;&nbsp;关注
+                                </button>
+                            </div>
+                            <div class="message-btn-panel">
+                                <button type="button" name="button" class="btn btn-success">
+                                    <i class="my-icon sixin-white"></i>&nbsp;&nbsp;私信
+                                </button>
+                            </div>
+
+                            <div class="row count-info-panel">
+                                <div class="col-xs-4">
+                                    <div class="custom-panel">
+                                        文章
+                                        <div class="">
+                                            111
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="custom-panel">
+                                        回答
+                                        <div class="">
+                                            222
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="custom-panel">
+                                        关注者
+                                        <div class="">
+                                            333
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

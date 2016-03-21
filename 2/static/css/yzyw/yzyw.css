@@ -17,6 +17,7 @@
 .btn-success:focus,
 .btn-blue:focus {
   color: white;
+  background-color: #4a4f54 !important;
 }
 .custom-border-btn {
   border: solid 1px #303045;
@@ -564,6 +565,15 @@
 .guanzhu {
   background-position: -357px -541px;
 }
+.guanzhu-white {
+  background-position: -357px -169px;
+}
+.zan {
+  background-position: -132px -448px;
+}
+.sixin-white {
+  background-position: -267px -169px;
+}
 .msg-ico-panel {
   left: 22px !important;
 }
@@ -576,9 +586,6 @@
 .comments-ico-panel .mod-footer {
   text-align: center;
 }
-.zan {
-  background-position: -132px -448px;
-}
 .topic-detail-panel {
   overflow: hidden;
   width: 1010px;
@@ -587,8 +594,8 @@
 .topic-detail-panel .aw-user-name img,
 .topic-detail-panel .aw-topic-name img {
   width: 40px !important;
-  height: 40px !important;
   max-width: none !important;
+  height: 40px !important;
 }
 .topic-detail-panel a.a-aw-user-name,
 .topic-detail-panel .content-panel {
@@ -596,4 +603,64 @@
 }
 .topic-detail-panel h4.h4-question-title a {
   font-size: 18px;
+}
+.custom-article-modal .custom-options-panel .hot-article-custom-comment {
+  position: static !important;
+  margin: 10px 50px !important;
+}
+.custom-article-modal .markitup-box {
+  padding-bottom: 0 !important;
+}
+.custom-article-modal .aw-user-img {
+  top: -20px !important;
+}
+.custom-article-modal form .mod-body {
+  margin-left: 10px;
+}
+.custom-article-modal .aw-mod .aw-item {
+  padding-left: 25px;
+}
+.custom-article-modal .article-author-panel .modal-body .aw-item {
+  padding-left: 0;
+}
+.custom-article-modal .article-author-panel .favor-btn-panel,
+.custom-article-modal .article-author-panel .message-btn-panel {
+  margin-top: 20px;
+}
+.custom-article-modal .article-author-panel .favor-btn-panel button,
+.custom-article-modal .article-author-panel .message-btn-panel button {
+  width: 100%;
+}
+.custom-article-modal .article-author-panel .user-desc-panel {
+  margin: 10px 0 0 50px;
+}
+.custom-article-modal .article-author-panel .count-info-panel {
+  overflow: hidden;
+  background-color: #F3F3F3;
+  margin-top: 20px;
+  height: 65px;
+  border-radius: 0 0 9px 9px;
+}
+.custom-article-modal .article-author-panel .count-info-panel .col-xs-4 {
+  text-align: center;
+  padding: 0;
+  height: 100%;
+  cursor: pointer;
+}
+.custom-article-modal .article-author-panel .count-info-panel .col-xs-4 .custom-panel {
+  margin-top: 10px;
+}
+.custom-article-modal .article-author-panel .count-info-panel .col-xs-4:nth-child(2) {
+  border: solid 1px;
+  border-width: 0 1px 0 1px;
+  border-color: #CCCCCC;
+}
+.custom-article-modal .article-author-panel .count-info-panel .col-xs-4:hover {
+  background-color: #CCCCCC;
+}
+.custom-article-modal .article-author-panel .modal-body {
+  padding-bottom: 0;
+}
+.custom-article-modal .article-author-panel .modal-body .aw-item {
+  padding-bottom: 0;
 }
