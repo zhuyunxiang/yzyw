@@ -11,6 +11,7 @@
     &:visited,
     &:focus {
         color: white;
+        background-color: #4a4f54 !important;
     }
 }
 .custom-border-btn {
@@ -629,6 +630,15 @@
 .guanzhu {
     background-position: -357px -541px;
 }
+.guanzhu-white {
+    background-position: -357px -169px;
+}
+.zan {
+    background-position: -132px -448px;
+}
+.sixin-white {
+    background-position: -267px -169px;
+}
 .msg-ico-panel {
     left: 22px !important;
     .mod-footer {
@@ -641,9 +651,6 @@
         text-align: center;
     }
 }
-.zan {
-    background-position: -132px -448px;
-}
 .topic-detail-panel {
     overflow: hidden;
     width: 1010px;
@@ -652,16 +659,85 @@
     .aw-user-name img,
     .aw-topic-name img {
         width: 40px !important;
-        height: 40px !important;
         max-width: none !important;
+        height: 40px !important;
     }
-    a.a-aw-user-name ,.content-panel{
+    a.a-aw-user-name,
+    .content-panel {
         margin-left: 50px;
     }
-
-    h4.h4-question-title{
-        a{
+    h4.h4-question-title {
+        a {
             font-size: 18px;
+        }
+    }
+}
+// 自定义查看全部弹出框
+.custom-article-modal {
+    .custom-options-panel {
+        .hot-article-custom-comment {
+            position: static !important;
+            margin: 10px 50px !important;
+        }
+    }
+    .markitup-box {
+        padding-bottom: 0 !important;
+    }
+    .aw-user-img {
+        top: -20px !important;
+    }
+    form .mod-body {
+        margin-left: 10px;
+    }
+    .aw-mod .aw-item {
+        padding-left: 25px;
+    }
+    .article-author-panel {
+        .modal-body {
+            .aw-item {
+                padding-left: 0;
+            }
+        }
+        .favor-btn-panel,
+        .message-btn-panel {
+            margin-top: 20px;
+            button {
+                width: 100%;
+            }
+        }
+        .user-desc-panel {
+            margin: 10px 0 0 50px;
+        }
+        .count-info-panel {
+            overflow: hidden;
+            background-color: #F3F3F3;
+            margin-top: 20px;
+            height: 65px;
+            border-radius: 0 0 9px 9px;
+            .col-xs-4 {
+                text-align: center;
+                padding: 0;
+                height: 100%;
+                .custom-panel {
+                    margin-top: 10px;
+                }
+                &:nth-child(2) {
+                    border: solid 1px;
+                    border-width: 0 1px 0 1px;
+                    border-color: #CCCCCC;
+                }
+                cursor: pointer;
+
+                &:hover{
+                    background-color: #CCCCCC;
+                }
+            }
+        }
+        .modal-body {
+            padding-bottom: 0;
+            .aw-item {
+                padding-bottom: 0;
+            }
         }
     }
 }
