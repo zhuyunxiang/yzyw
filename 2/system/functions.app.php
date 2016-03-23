@@ -297,3 +297,12 @@ function remove_assoc($from, $type, $id)
 
 	return $this->query('UPDATE ' . $this->get_table($from) . ' SET `' . $type . '_id` = NULL WHERE `' . $type . '_id` = ' . $id);
 }
+
+function subString_UTF8($string, $start, $length) {
+        if(mb_strlen($string,'utf-8')>$length){
+            $str = mb_substr($string, $start, $length,'utf-8');
+            return $str.'...';
+        }else{
+                return $string;
+        }
+}
