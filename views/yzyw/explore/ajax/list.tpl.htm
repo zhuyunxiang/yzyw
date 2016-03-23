@@ -14,7 +14,7 @@
     <div class="aw-question-content">
         <h4>
             <?php if ($val['question_id']) { ?>
-            <a href="question/<?php echo $val['question_id']; ?>"><?php echo $val['question_content']; ?></a>
+            <a href="question/<?php echo $val['question_id']; ?>"><?php echo subString_UTF8($val['question_content'], 0, 5); ?></a>
         <?php } else { ?>
             <a href="article/<?php echo $val['id']; ?>"><?php echo $val['title']; ?></a>
             <?php } ?>
@@ -71,7 +71,7 @@
                     分享
                     <div class="share-panel">
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="AWS.User.share_out({webid: 'weixin', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
                                 <div class="weixin">
                                     <span class="pull-right">微信好友</span>
                                 </div>
@@ -79,7 +79,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="AWS.User.share_out({webid: 'tsina', title: $(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
                                 <div class="weibo">
                                     <span class="pull-right">新浪微博</span>
                                 </div>
@@ -87,7 +87,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="AWS.User.share_out({webid: 'qzone', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
                                 <div class="qq">
                                     <span class="pull-right">QQ</span>
                                 </div>
@@ -137,7 +137,7 @@
                     分享
                     <div class="share-panel">
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="AWS.User.share_out({webid: 'weixin', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
                                 <div class="weixin">
                                     <span class="pull-right">微信好友</span>
                                 </div>
@@ -145,7 +145,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="AWS.User.share_out({webid: 'tsina', title: $(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
                                 <div class="weibo">
                                     <span class="pull-right">新浪微博</span>
                                 </div>
@@ -153,7 +153,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="AWS.User.share_out({webid: 'qzone', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
                                 <div class="qq">
                                     <span class="pull-right">QQ</span>
                                 </div>
@@ -195,7 +195,7 @@
                     分享
                     <div class="share-panel">
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="console.log($(this).parents('.aw-item').find('.markitup-box:last').eq(0));AWS.User.share_out({webid: 'weixin', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
                                 <div class="weixin">
                                     <span class="pull-right">微信好友</span>
                                 </div>
@@ -203,7 +203,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="AWS.User.share_out({webid: 'tsina', title: $(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
                                 <div class="weibo">
                                     <span class="pull-right">新浪微博</span>
                                 </div>
@@ -211,7 +211,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a href="#">
+                            <a onclick="AWS.User.share_out({webid: 'qzone', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
                                 <div class="qq">
                                     <span class="pull-right">QQ</span>
                                 </div>
@@ -287,7 +287,7 @@
                                         分享
                                         <div class="share-panel">
                                             <div class="share-item">
-                                                <a href="#">
+                                                <a onclick="AWS.User.share_out({webid: 'weixin', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
                                                     <div class="weixin">
                                                         <span class="pull-right">微信好友</span>
                                                     </div>
@@ -295,7 +295,7 @@
 
                                             </div>
                                             <div class="share-item">
-                                                <a href="#">
+                                                <a onclick="AWS.User.share_out({webid: 'tsina', title: $(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
                                                     <div class="weibo">
                                                         <span class="pull-right">新浪微博</span>
                                                     </div>
@@ -303,7 +303,7 @@
 
                                             </div>
                                             <div class="share-item">
-                                                <a href="#">
+                                                <a onclick="AWS.User.share_out({webid: 'qzone', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
                                                     <div class="qq">
                                                         <span class="pull-right">QQ</span>
                                                     </div>
@@ -327,9 +327,9 @@
                             <div class="aw-mod aw-article-replay-box custom-reply-panel">
                                 <a name="answer_form"></a>
                                 <?php if ($this->article_info['lock']) { ?>
-                                <p align="center"><?php _e('该文章目前已经被锁定, 无法添加新评论'); ?></p>
+                                <!-- <p align="center"><?php _e('该文章目前已经被锁定, 无法添加新评论'); ?></p> -->
                             <?php } else if (!$this->user_id) { ?>
-                                <p align="center"><?php _e('要回复文章请先<a href="account/login/">登录</a>或<a href="account/register/">注册</a>'); ?></p>
+                                <!-- <p align="center"><?php _e('要回复文章请先<a href="account/login/">登录</a>或<a href="account/register/">注册</a>'); ?></p> -->
                             <?php } else { ?>
                                 <form action="article/ajax/save_comment/" onsubmit="return false;" method="post" id="answer_form_<?php echo $val['id']?>">
                                     <input type="hidden" name="post_hash" value="<?php echo new_post_hash(); ?>"/>
@@ -443,7 +443,7 @@
                             <?php } ?>
 
                             <div class="user-desc-panel">
-                                这个是这个用户的详细介绍，我就不详细的介绍了。
+                                <?php echo($val['custom_user_info']['signature']); ?>
                             </div>
 
                             <div class="favor-btn-panel">
@@ -462,7 +462,7 @@
                                     <div class="custom-panel">
                                         文章
                                         <div class="">
-                                            111
+                                            <?php echo $val['user_info']['article_count']; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -470,7 +470,7 @@
                                     <div class="custom-panel">
                                         回答
                                         <div class="">
-                                            222
+                                            <?php echo $val['user_info']['answer_count']; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -478,7 +478,7 @@
                                     <div class="custom-panel">
                                         关注者
                                         <div class="">
-                                            333
+                                            <?php echo $val['user_info']['fans_count']; ?>
                                         </div>
                                     </div>
                                 </div>
