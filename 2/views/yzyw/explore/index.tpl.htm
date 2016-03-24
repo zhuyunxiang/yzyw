@@ -8,7 +8,7 @@
             <div class="aw-content-wrap clearfix">
                 <div class="col-sm-12 col-md-9 aw-main-content">
                     <!-- 新消息通知 -->
-                    <div class="aw-mod aw-notification-box hide" id="index_notification">
+                    <!-- <div class="aw-mod aw-notification-box hide" id="index_notification">
                         <div class="mod-head common-head">
                             <h2>
                                 <span class="pull-right">
@@ -27,7 +27,7 @@
                             <a href="javascript:;" onclick="AWS.Message.read_notification(false, 0, false);" class="pull-left btn btn-mini btn-gray"><?php _e('我知道了'); ?></a>
                             <a href="notifications/" class="pull-right btn btn-mini btn-success"><?php _e('查看所有'); ?></a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end 新消息通知 -->
                     <!-- tab切换 -->
                     <ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
@@ -141,6 +141,15 @@
         return false;
         <?php } ?>
     }
+
+    // 点击其他的地方关闭share框
+    $(document).click(function (e) {
+        var target = e.target;
+        if ($(target).attr('class') != 'share-to-others') {
+            $(".share-panel").hide();
+        }
+
+    });
 
     var SubstringDemo = function (s, startPos, endPos) {
         var ss; // 声明变量。

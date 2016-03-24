@@ -15,7 +15,16 @@
 .btn-blue:visited,
 .commen-btn:focus,
 .btn-success:focus,
-.btn-blue:focus {
+.btn-blue:focus,
+.commen-btn.active,
+.btn-success.active,
+.btn-blue.active,
+.commen-btn.active:hover,
+.btn-success.active:hover,
+.btn-blue.active:hover,
+.commen-btn.active:focus,
+.btn-success.active:focus,
+.btn-blue.active:focus {
   color: white;
   background-color: #4a4f54 !important;
 }
@@ -632,7 +641,7 @@
   width: 100%;
 }
 .custom-article-modal .article-author-panel .user-desc-panel {
-  margin: 10px 0 0 50px;
+  margin: 10px 0 35px 50px;
 }
 .custom-article-modal .article-author-panel .count-info-panel {
   overflow: hidden;

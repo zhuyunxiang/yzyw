@@ -11,9 +11,9 @@
                             <h1 class="self-info-name"><?php echo $this->user['user_name']; ?> <?php if ($this->user['verified']) { ?><i class="icon-v <?php if ($this->user['verified'] == 'enterprise') { ?> i-ve<?php } ?>" title="<?php if ($this->user['verified'] == 'enterprise') { ?>企业认证<?php } else { ?>个人认证<?php } ?>"></i><?php } ?></h1>
                             <img src="<?php echo get_avatar_url($this->user['uid'], 'max'); ?>" alt="<?php echo $this->user['user_name']; ?>" />
                             <span class="pull-right operate">
-                                
+
                             </span>
-                            
+
                             <p class="aw-user-flag">
                                 <?php if ($this->user['province']) { ?>
                                 <span>
@@ -62,10 +62,16 @@
                                 </a> -->
                                 <a href="javascript:;" class="pull-right follow btn btn-sm commen-btn valign-center<?php if ($this->user_follow_check) { ?> active<?php } ?>" onclick="AWS.User.follow($(this), 'user', <?php echo $this->user['uid']; ?>);">
                                     <span>
-                                    <i class="icon icon-plus"></i><?php if ($this->user_follow_check) { ?><?php _e('取消关注'); ?><?php } else { ?><?php _e('关注'); ?><?php } ?></span> 
+                                    <i class="icon icon-plus"></i>
+                                    <?php if ($this->user_follow_check) { ?>
+                                        <?php _e('取消关注'); ?>
+                                    <?php } else { ?>
+                                        <?php _e('关注'); ?>
+                                    <?php } ?>
+                                    </span>
                                 </a>
                                 <?php } else if ($this->user_id == $this->user['uid']) { ?>
-                                
+
                                 <?php } ?>
                             </div>
                             <?php if ($this->reputation_topics) { ?>
@@ -104,13 +110,13 @@
                                 <li><a href="#integral" id="page_integral" data-toggle="tab"><?php _e('我的积分'); ?></a></li>
                                 <?php } ?>
 
-                                
+
                             </ul>
                         </div>
                     </div>
                     <!-- end 用户数据内容 -->
 
-                    
+
                 </div>
 
                 <!-- 侧边栏 -->
