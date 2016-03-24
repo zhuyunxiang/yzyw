@@ -147,6 +147,7 @@ class main extends AWS_CONTROLLER
 				{
 					$posts_list[$key]['comments_info'] = $this->model('article')->get_comments($val['id'], 1, 10);
 					$posts_list[$key]['custom_user_info'] = $this->model('account')->get_user_info_by_uid($val['uid']);
+					$posts_list[$key]['custom_user_info']['is_followed'] = $this->model('follow')->user_follow_check($this->user_id, $val['uid']);
 					// var_dump($posts_list[$key]);
 				}
 			}

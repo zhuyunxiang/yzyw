@@ -106,7 +106,7 @@
                 <a href="question/<?php echo $val['question_id']; ?>#!answer_form">
                 <i class="icon icon-comment"></i>
                 <?php echo($val['comment_count']); ?>
-                评论12 &nbsp;&nbsp;&nbsp;&nbsp;
+                评论 &nbsp;&nbsp;&nbsp;&nbsp;
                 </a>
                 <i class="icon icon-favor"></i>
                 收藏 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -456,16 +456,24 @@
                                 <?php echo($val['custom_user_info']['signature']); ?>
                             </div>
 
+                            <?php if($val['custom_user_info']['uid'] != $this->user_id) { ?>
                             <div class="favor-btn-panel">
-                                <button type="button" name="button" class="btn btn-success">
-                                    <i class="my-icon guanzhu-white"></i>&nbsp;&nbsp;关注
+                                <button type="button" name="button" class="btn btn-success <?php if ($val['custom_user_info']['is_followed']) { ?> active<?php } ?>" onclick="AWS.User.follow($(this), 'user', <?php echo $val['custom_user_info']['uid']; ?>);">
+                                    <?php if($val['custom_user_info']['is_followed']) { ?>
+                                        <i class="my-icon guanzhu-white"></i>&nbsp;&nbsp;
+                                        <span>取消关注</span>
+                                    <?php } else{ ?>
+                                        <i class="my-icon guanzhu-white"></i>&nbsp;&nbsp;
+                                        <span>关注</span>
+                                    <?php } ?>
                                 </button>
                             </div>
                             <div class="message-btn-panel">
-                                <button type="button" name="button" class="btn btn-success">
+                                <button type="button" name="button" class="btn btn-success" onclick="AWS.dialog('inbox', '<?php echo $val['custom_user_info']['user_name']; ?>');">
                                     <i class="my-icon sixin-white"></i>&nbsp;&nbsp;私信
                                 </button>
                             </div>
+                            <?php } ?>
 
                             <div class="row count-info-panel">
                                 <div class="col-xs-4">
