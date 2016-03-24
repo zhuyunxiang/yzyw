@@ -138,6 +138,9 @@ class main extends AWS_CONTROLLER
 		{
 			foreach ($posts_list AS $key => $val)
 			{
+				$posts_list[$key]['custom_user_info'] = $this->model('account')->get_user_info_by_uid($val['uid']);
+				$posts_list[$key]['custom_user_info']['is_followed'] = $this->model('follow')->user_follow_check($this->user_id, $val['uid']);
+
 				if ($val['answer_count'])
 				{
 					$posts_list[$key]['answer_users'] = $this->model('question')->get_answer_users_by_question_id($val['question_id'], 2, $val['published_uid']);
@@ -146,8 +149,6 @@ class main extends AWS_CONTROLLER
 				if ($val['comments'])
 				{
 					$posts_list[$key]['comments_info'] = $this->model('article')->get_comments($val['id'], 1, 10);
-					$posts_list[$key]['custom_user_info'] = $this->model('account')->get_user_info_by_uid($val['uid']);
-					$posts_list[$key]['custom_user_info']['is_followed'] = $this->model('follow')->user_follow_check($this->user_id, $val['uid']);
 					// var_dump($posts_list[$key]);
 				}
 			}
