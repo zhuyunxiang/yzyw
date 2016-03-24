@@ -7,18 +7,24 @@
     <a class="aw-user-name hidden-xs" data-id="<?php echo $val['user_info']['uid']; ?>" href="people/<?php echo $val['user_info']['url_token']; ?>" rel="nofollow"><img src="<?php echo get_avatar_url($val['user_info']['uid'], 'max'); ?>" class="custom-circle-img" alt=""/><?php if ($val['user_info']['verified']) { ?><?php if ($val['user_info']['verified'] == 'personal') { ?>
         <i class="icon icon-v"></i>
     <?php } else { ?>
-        <i class="icon icon-v i-ve"></i><?php } ?><?php } ?></a>
+        <i class="icon icon-v i-ve"></i>
+        <?php } ?>
+        <?php } ?></a>
 <?php } else { ?>
     <a class="aw-user-name hidden-xs" href="javascript:;"><img src="<?php echo G_STATIC_URL; ?>/common/avatar-max-img.png" alt="<?php _e('匿名用户'); ?>" class="custom-circle-img" title="<?php _e('匿名用户'); ?>"/></a>
     <?php } ?>
     <div class="aw-question-content">
         <h4>
             <?php if ($val['question_id']) { ?>
-            <a href="question/<?php echo $val['question_id']; ?>"><?php echo subString_UTF8($val['question_content'], 0, 5); ?></a>
+            <a href="question/<?php echo $val['question_id']; ?>"><?php echo ($val['question_content']); ?></a>
+            <div class="markitup-box">
+                <?php echo(subString_UTF8($val['question_detail'], 0, 120)); ?>
+            </div>
         <?php } else { ?>
             <a href="article/<?php echo $val['id']; ?>"><?php echo $val['title']; ?></a>
             <?php } ?>
         </h4>
+
         <?php if (is_array($val['answer_users'])) { ?>
         <!-- <div class="pull-right hidden-xs contribute">
             <span class="pull-right text-color-999"><?php _e('贡献'); ?></span>
@@ -71,7 +77,7 @@
                     分享
                     <div class="share-panel">
                         <div class="share-item">
-                            <a onclick="AWS.User.share_out({webid: 'weixin', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
+                            <a onclick="AWS.User.share_out({webid: 'weixin', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
                                 <div class="weixin">
                                     <span class="pull-right">微信好友</span>
                                 </div>
@@ -79,7 +85,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a onclick="AWS.User.share_out({webid: 'tsina', title: $(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
+                            <a onclick="AWS.User.share_out({webid: 'tsina', title: SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
                                 <div class="weibo">
                                     <span class="pull-right">新浪微博</span>
                                 </div>
@@ -87,7 +93,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a onclick="AWS.User.share_out({webid: 'qzone', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
+                            <a onclick="AWS.User.share_out({webid: 'qzone', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
                                 <div class="qq">
                                     <span class="pull-right">QQ</span>
                                 </div>
@@ -137,7 +143,7 @@
                     分享
                     <div class="share-panel">
                         <div class="share-item">
-                            <a onclick="AWS.User.share_out({webid: 'weixin', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
+                            <a onclick="AWS.User.share_out({webid: 'weixin', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
                                 <div class="weixin">
                                     <span class="pull-right">微信好友</span>
                                 </div>
@@ -145,7 +151,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a onclick="AWS.User.share_out({webid: 'tsina', title: $(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
+                            <a onclick="AWS.User.share_out({webid: 'tsina', title: SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
                                 <div class="weibo">
                                     <span class="pull-right">新浪微博</span>
                                 </div>
@@ -153,7 +159,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a onclick="AWS.User.share_out({webid: 'qzone', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
+                            <a onclick="AWS.User.share_out({webid: 'qzone', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
                                 <div class="qq">
                                     <span class="pull-right">QQ</span>
                                 </div>
@@ -195,7 +201,7 @@
                     分享
                     <div class="share-panel">
                         <div class="share-item">
-                            <a onclick="console.log($(this).parents('.aw-item').find('.markitup-box:last').eq(0));AWS.User.share_out({webid: 'weixin', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
+                            <a onclick="AWS.User.share_out({webid: 'weixin', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
                                 <div class="weixin">
                                     <span class="pull-right">微信好友</span>
                                 </div>
@@ -203,7 +209,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a onclick="AWS.User.share_out({webid: 'tsina', title: $(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
+                            <a onclick="AWS.User.share_out({webid: 'tsina', title: SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
                                 <div class="weibo">
                                     <span class="pull-right">新浪微博</span>
                                 </div>
@@ -211,7 +217,7 @@
 
                         </div>
                         <div class="share-item">
-                            <a onclick="AWS.User.share_out({webid: 'qzone', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
+                            <a onclick="AWS.User.share_out({webid: 'qzone', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
                                 <div class="qq">
                                     <span class="pull-right">QQ</span>
                                 </div>
@@ -287,7 +293,7 @@
                                         分享
                                         <div class="share-panel">
                                             <div class="share-item">
-                                                <a onclick="AWS.User.share_out({webid: 'weixin', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
+                                                <a onclick="AWS.User.share_out({webid: 'weixin', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
                                                     <div class="weixin">
                                                         <span class="pull-right">微信好友</span>
                                                     </div>
@@ -295,7 +301,7 @@
 
                                             </div>
                                             <div class="share-item">
-                                                <a onclick="AWS.User.share_out({webid: 'tsina', title: $(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
+                                                <a onclick="AWS.User.share_out({webid: 'tsina', title: SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
                                                     <div class="weibo">
                                                         <span class="pull-right">新浪微博</span>
                                                     </div>
@@ -303,7 +309,7 @@
 
                                             </div>
                                             <div class="share-item">
-                                                <a onclick="AWS.User.share_out({webid: 'qzone', title:$(this).parents('.aw-item').find('.markitup-box:last').eq(0).text(), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
+                                                <a onclick="AWS.User.share_out({webid: 'qzone', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
                                                     <div class="qq">
                                                         <span class="pull-right">QQ</span>
                                                     </div>
@@ -411,8 +417,6 @@
                                 <?php } ?>
                             </div>
                             <!-- end 文章评论 -->
-
-
                     </div>
                 </div>
             </div>
@@ -492,7 +496,7 @@
     <!-- 文章内容调用 -->
     <div class="markitup-box">
         <div class="img pull-right"></div>
-        <?php echo nl2br(trim(strip_tags(FORMAT::parse_attachs(FORMAT::parse_bbcode($val['message']))))); ?>
+        <?php echo subString_UTF8(nl2br(trim(strip_tags(FORMAT::parse_attachs(FORMAT::parse_bbcode($val['message']))))), 0, 130); ?>
         <?php if (cjk_strlen($val['message']) > 130) { ?>
         <!-- <a class="more" href="article/<?php echo $val['id']; ?>">查看全部</a> -->
         <a data-toggle="modal" data-target="#login_help_<?php echo $val['id']; ?>">查看全部</a>
