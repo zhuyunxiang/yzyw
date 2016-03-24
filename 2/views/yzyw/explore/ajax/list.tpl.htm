@@ -33,7 +33,7 @@
             <?php } ?>
         </div> -->
     <?php } else if ($val['question_id']) { ?>
-        <a href="question/<?php echo $val['question_id']; ?>#!answer_form" class="pull-right text-color-999"><?php _e('回复'); ?></a>
+        <!-- <a href="question/<?php echo $val['question_id']; ?>#!answer_form" class="pull-right text-color-999"><?php _e('回复'); ?></a> -->
         <?php } ?>
 
         <p>
@@ -103,8 +103,11 @@
                 </span>
                 <?php if($this->user_info['group_name'] != "游客"){?>
                 &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="question/<?php echo $val['question_id']; ?>#!answer_form">
                 <i class="icon icon-comment"></i>
-                <?php echo($val['comment_count']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
+                <?php echo($val['comment_count']); ?>
+                评论12 &nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
                 <i class="icon icon-favor"></i>
                 收藏 &nbsp;&nbsp;&nbsp;&nbsp;
                 <i class="icon icon-report"></i>
@@ -170,8 +173,11 @@
 
                 <?php if($this->user_info['group_name'] != "游客"){?>
                 &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="question/<?php echo $val['question_id']; ?>#!answer_form">
                 <i class="icon icon-comment"></i>
-                <?php echo($val['comment_count']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
+                <?php echo($val['comment_count']); ?>
+                评论 &nbsp;&nbsp;&nbsp;&nbsp;
+                </a>
                 <i class="icon icon-favor"></i>
                 收藏 &nbsp;&nbsp;&nbsp;&nbsp;
                 <i class="icon icon-report"></i>
