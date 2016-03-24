@@ -51,7 +51,16 @@
                             <?php echo $this->feature_info['title']; ?>
                         <?php } else { ?>
                             <i class="icon icon-list"></i>
-                            <?php _e('热门内容'); ?><?php } ?></h2>
+                        <?php
+                            if($this->user_id>0){
+                                _e('最新动态');
+                            } else {
+                                _e('热门内容');
+                            }
+                             ?>
+                            <?php } ?>
+
+                        </h2>
                     </ul>
                     <!-- end tab切换 -->
 
@@ -131,6 +140,16 @@
         $("#login_help").modal('show');
         return false;
         <?php } ?>
+    }
+
+    var SubstringDemo = function (s, startPos, endPos) {
+        var ss; // 声明变量。
+        if (s.length < endPos) {
+            return s;
+        }
+
+        ss = s.substring(startPos, endPos); // 取子字符串。
+        return (ss + "..."); // 返回子字符串。
     }
 
     $(".go-login").on('click', function () {
