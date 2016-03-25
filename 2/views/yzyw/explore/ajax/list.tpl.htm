@@ -456,7 +456,7 @@
                                 <?php echo($val['custom_user_info']['signature']); ?>
                             </div>
 
-                            <?php if($val['custom_user_info']['uid'] != $this->user_id) { ?>
+                            <?php if($this->user_id > 0 && $val['custom_user_info']['uid'] != $this->user_id) { ?>
                             <div class="favor-btn-panel">
                                 <button type="button" name="button" class="btn btn-success <?php if ($val['custom_user_info']['is_followed']) { ?> active<?php } ?>" onclick="AWS.User.follow($(this), 'user', <?php echo $val['custom_user_info']['uid']; ?>);">
                                     <?php if($val['custom_user_info']['is_followed']) { ?>
