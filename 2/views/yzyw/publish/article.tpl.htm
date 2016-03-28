@@ -52,7 +52,8 @@
 									</div>
 								</div>
 
-								<?php if ($this->recent_topics) { ?>
+								<!-- 去除最近话题功能 -->
+								<!-- <?php if ($this->recent_topics) { ?>
 								<h3><?php _e('最近话题'); ?>:</h3>
 								<div class="aw-topic-bar">
 									<div class="topic-bar clearfix">
@@ -65,7 +66,7 @@
 										<?php } ?>
 									</div>
 								</div>
-								<?php } ?>
+								<?php } ?> -->
 
 								<?php if ($this->human_valid) { ?>
 								<div class="aw-auth-img clearfix">
@@ -199,6 +200,33 @@
 					<!-- end 文章发起指南 -->
 				</div>
 				<!-- end 侧边栏 -->
+				<?php if($this->user_info['article_count'] == 0) { ?>
+					<div class="modal fade show" id="publish_help_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					    <div class="modal-dialog modal-sm" role="document">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					                    <span aria-hidden="true">&times;</span>
+					                </button>
+					                <h4 class="modal-title" id="myModalLabel">言之有物</h4>
+					            </div>
+					            <div class="modal-body">
+					                言之有物致力于工程问题领域的问题探讨与分享。<br/>
+									在您提问之前，请遵守以下规则：<br/>
+									1. 搜索相关问题<br/>
+									2. 尽可能怎么样的<br/>
+									3. 不要发布与科技无关的东西<br/>
+					            </div>
+					            <div class="modal-footer">
+					                <button type="button" class="btn btn-default commen-btn" data-dismiss="modal">知道啦</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+					<script type="text/javascript">
+						$("#publish_help_modal").modal("show");
+					</script>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

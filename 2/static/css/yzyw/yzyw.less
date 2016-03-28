@@ -652,7 +652,7 @@
     }
 }
 .topic-detail-panel {
-    overflow: hidden;
+    // overflow: hidden;
     width: 1010px;
     // height: 30px;
     margin: 30px auto;
@@ -742,8 +742,7 @@
     }
 }
 
-// 登录提示模态框
-#login_help{
+#login_help, #publish_help_modal{
     .modal-header{
         background-color: #2B314B;
         border-radius: 5px 5px 0px 0px;
@@ -752,6 +751,12 @@
     .modal-footer{
         border-width: 0 0 0 0;
         padding-top: 0px;
+    }
+}
+
+#publish_help_modal{
+    .modal-sm{
+            width: 355px !important;
     }
 }
 
