@@ -596,7 +596,6 @@
   text-align: center;
 }
 .topic-detail-panel {
-  overflow: hidden;
   width: 1010px;
   margin: 30px auto;
 }
@@ -673,24 +672,17 @@
 .custom-article-modal .article-author-panel .modal-body .aw-item {
   padding-bottom: 0;
 }
-#login_help .modal-header {
+#login_help .modal-header,
+#publish_help_modal .modal-header {
   background-color: #2B314B;
   border-radius: 5px 5px 0px 0px;
   color: white;
 }
-#login_help .modal-footer {
+#login_help .modal-footer,
+#publish_help_modal .modal-footer {
   border-width: 0 0 0 0;
   padding-top: 0px;
 }
-.sidebar-contact-container .panel-heading {
-  color: #1C2C61;
-  border-width: 0px;
-  font-weight: bolder;
-  padding-bottom: 5px;
-}
-.sidebar-contact-container .panel-body {
-  color: #1C2C61;
-  background-color: #f5f5f5;
-  border-color: #ddd;
-  padding: 0 15px 15px 15px;
+#publish_help_modal .modal-sm {
+  width: 355px !important;
 }
