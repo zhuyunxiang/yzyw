@@ -58,7 +58,7 @@
 										<span class="pull-right text-color-999" id="question_detail_message">&nbsp;</span>
 									</div>
 								</div>
-								
+
 							</div>
 							<div class="mod-footer clearfix">
 								<?php if (get_setting('integral_system_enabled') == 'Y') { ?><a href="integral/rule/" target="_blank">[<?php _e('积分规则'); ?>]</a><?php } ?>
@@ -83,7 +83,7 @@
 				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs">
 					<!-- 问题发起指南 -->
 					<div class="aw-mod publish-help">
-						
+
 						<div class="mod-body">
 							<?php if (!$this->question_info['question_id']) { ?>
 								<h3><?php _e('添加话题'); ?>:</h3>
@@ -112,7 +112,7 @@
 										</span>
 									</div>
 								</div>
-								<?php if ($this->recent_topics) { ?>
+								<!-- <?php if ($this->recent_topics) { ?>
 								<h3><?php _e('最近话题'); ?>:</h3>
 								<div class="aw-topic-bar">
 									<div class="topic-bar clearfix">
@@ -125,7 +125,7 @@
 										<?php } ?>
 									</div>
 								</div>
-								<?php } ?>
+								<?php } ?> -->
 								<?php } ?>
 								<?php if ($this->human_valid) { ?>
 								<div class="aw-auth-img clearfix">
@@ -133,72 +133,6 @@
 									<em class="auth-img pull-right"><img src="" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" id="captcha"  /></em>
 								</div>
 								<?php } ?>
-
-								<h3><?php _e('关键字'); ?></h3>
-							<div class="aw-topic-bar" data-type="publish">
-								<div class="tag-bar clearfix">
-									<?php if ($_GET['keyword']) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo urldecode($_GET['keyword']); ?></a>
-										<a class="close" onclick="$(this).parents('.topic-tag').remove();">
-											<i class="icon icon-delete"></i>
-										</a>
-										<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['keyword']); ?>" name="keywords[]" />
-									</span>
-									<?php } ?>
-
-									<?php if ($_POST['keywords']) { ?>
-									<?php foreach ($_POST['keywords'] AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val; ?></a>
-										<input type="hidden" value="<?php echo $val; ?>" name="keywords[]" />
-									</span>
-									<?php } ?>
-									<?php } else if ($this->article_keywords) { ?>
-									<?php foreach ($this->article_keywords AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val['keyword']; ?></a>
-										<input type="hidden" value="<?php echo $val['keyword']; ?>" name="keywords[]" />
-									</span>
-									<?php } ?>
-									<?php } ?>
-
-									<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
-								</div>
-							</div>
-
-							<h3><?php _e('文章标签'); ?></h3>
-							<div class="aw-topic-bar" data-type="publish">
-								<div class="tag-bar clearfix">
-									<?php if ($_GET['tag']) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo urldecode($_GET['tag']); ?></a>
-										<a class="close" onclick="$(this).parents('.topic-tag').remove();">
-											<i class="icon icon-delete"></i>
-										</a>
-										<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['tag']); ?>" name="tags[]" />
-									</span>
-									<?php } ?>
-
-									<?php if ($_POST['tags']) { ?>
-									<?php foreach ($_POST['tags'] AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val; ?></a>
-										<input type="hidden" value="<?php echo $val; ?>" name="tags[]" />
-									</span>
-									<?php } ?>
-									<?php } else if ($this->article_tags) { ?>
-									<?php foreach ($this->article_tags AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val['tag']; ?></a>
-										<input type="hidden" value="<?php echo $val['tag']; ?>" name="tags[]" />
-									</span>
-									<?php } ?>
-									<?php } ?>
-
-									<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
-								</div>
-							</div>
 						</div>
 					</div>
 					<!-- end 问题发起指南 -->
