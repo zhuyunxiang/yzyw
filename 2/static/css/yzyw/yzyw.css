@@ -686,3 +686,15 @@
 #publish_help_modal .modal-sm {
   width: 355px !important;
 }
+.sidebar-contact-container .panel-heading {
+  color: #1C2C61;
+  border-width: 0px;
+  font-weight: bolder;
+  padding-bottom: 5px;
+}
+.sidebar-contact-container .panel-body {
+  color: #1C2C61;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  padding: 0 15px 15px 15px;
+}
