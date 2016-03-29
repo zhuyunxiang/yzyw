@@ -114,6 +114,9 @@
   overflow: hidden;
   margin: 0 0 0 15px;
 }
+.aw-user-nav .aw-user-nav-dropdown .badge {
+  right: auto;
+}
 .custom-aw-user-nav:hover .aw-dropdown {
   display: none;
 }
@@ -501,7 +504,6 @@
 .share-panel {
   position: absolute;
   z-index: 4;
-  bottom: -150px;
   left: 68px;
   display: none;
   width: 180px;
