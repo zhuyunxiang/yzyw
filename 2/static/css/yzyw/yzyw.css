@@ -372,31 +372,38 @@
 .privacy-container .mod-body dd {
   margin-bottom: 20px;
 }
-.tourist-index .aw-item {
+.tourist-index .aw-item,
+.custom-topic-container .aw-item {
   padding-top: 40px;
 }
-.tourist-index .aw-question-content {
+.tourist-index .aw-question-content,
+.custom-topic-container .aw-question-content {
   position: relative;
   min-height: 50px;
 }
-.tourist-index .aw-question-content p {
+.tourist-index .aw-question-content p,
+.custom-topic-container .aw-question-content p {
   position: absolute;
   top: -25px;
 }
-.tourist-index .aw-question-content div.markitup-box {
+.tourist-index .aw-question-content div.markitup-box,
+.custom-topic-container .aw-question-content div.markitup-box {
   z-index: auto;
   max-height: none !important;
   padding-bottom: 30px;
 }
-.tourist-index .aw-question-content a.aw-user-name {
+.tourist-index .aw-question-content a.aw-user-name,
+.custom-topic-container .aw-question-content a.aw-user-name {
   font-size: 16px;
 }
-.tourist-index .aw-question-content .custom-comment {
+.tourist-index .aw-question-content .custom-comment,
+.custom-topic-container .aw-question-content .custom-comment {
   position: absolute;
   z-index: initial;
   bottom: 0;
 }
-.tourist-index .aw-question-content .hot-article-custom-comment {
+.tourist-index .aw-question-content .hot-article-custom-comment,
+.custom-topic-container .aw-question-content .hot-article-custom-comment {
   z-index: 1;
 }
 .aw-side-bar {
@@ -686,6 +693,17 @@
 #publish_help_modal .modal-sm {
   width: 355px !important;
 }
+.custom-focus-topics-container .aw-item {
+  width: 100% !important;
+}
+.custom-topic-sidebar-container .create-topic-panel .btn-success {
+  width: 100%;
+}
+.custom-topic-sidebar-container .other-topics-panel {
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+}
 .sidebar-contact-container .panel-heading {
   color: #1C2C61;
   border-width: 0px;
@@ -697,4 +715,8 @@
   background-color: #f5f5f5;
   border-color: #ddd;
   padding: 0 15px 15px 15px;
+}
+.custon-topic-panel .hot-article-custom-comment {
+  position: absolute;
+  bottom: -10px;
 }
