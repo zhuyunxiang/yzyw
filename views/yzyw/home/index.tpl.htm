@@ -26,10 +26,10 @@
 					<a name="c_contents"></a>
 					<div class="aw-mod clearfix">
 						<div class="mod-head common-head">
-							<h2 id="main_title"><?php _e('最新动态'); ?></h2>
+							<h2 id="main_title"><?php _e('关注的话题'); ?></h2>
 						</div>
 
-						<div class="mod-body aw-feed-list clearfix" id="main_contents"></div>
+						<div class="mod-body aw-feed-list clearfix custom-focus-topics-container" id="main_contents"></div>
 
 						<div class="mod-footer">
 							<!-- 加载更多内容 -->
@@ -41,16 +41,17 @@
 					</div>
 				</div>
 				<!-- 侧边栏 -->
-				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm">
-					<?php TPL::output('block/sidebar_announce.tpl.htm'); ?>
+				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm custom-topic-sidebar-container">
+					<div class="create-topic-panel">
+						<button type="button" class="btn btn-success">申请创建话题</button>
+					</div>
 
-					<?php TPL::output('block/sidebar_menu.tpl.htm'); ?>
-
-					<!-- 可能感兴趣的人/或话题 -->
-					<!-- <?php TPL::output('block/sidebar_recommend_users_topics.tpl.htm'); ?> -->
-
-					<?php TPL::output('block/sidebar_hot_users.tpl.htm'); ?>
-                    <?php TPL::output('block/sidebar_hot_topics.tpl.htm'); ?>
+					<div class="other-topics-panel">
+						<div class="header-panel">
+							<span>其他话题</span>
+							<span class="pull-right">更多</span>
+						</div>
+					</div>
 				</div>
 				<!-- end 侧边栏 -->
 			</div>
