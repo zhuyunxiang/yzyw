@@ -1,241 +1,251 @@
 <?php TPL::output('global/header.tpl.htm'); ?>
 
 <div class="aw-container-wrap">
-	<div class="container aw-publish aw-publish-article">
-		<div class="row">
-			<div class="aw-content-wrap clearfix">
-				<div class="col-sm-12 col-md-9 aw-main-content">
-					<!-- tab 切换 -->
-					<ul class="nav nav-tabs aw-nav-tabs active">
-						<li class="active"><a href="publish/article/"><?php _e('文章'); ?></a></li>
-						<?php if ($this->user_info['permission']['publish_question']) { ?>
-						<li><a href="publish/"><?php _e('问题'); ?></a></li>
-						<?php } ?>
-						<h2 class="hidden-xs"><i class="icon icon-ask"></i> <?php _e('发起'); ?></h2>
-					</ul>
-					<!-- end tab 切换 -->
-					<form action="publish/ajax/<?php if ($this->article_info['id']) { ?>modify<?php } else { ?>publish<?php } ?>_article/" method="post" id="question_form" onsubmit="return false;">
-						<input type="hidden" name="post_hash" value="<?php echo new_post_hash(); ?>" />
-						<input type="hidden" name="attach_access_key" value="<?php echo $this->attach_access_key; ?>" />
-						<input type="hidden" name="article_id" id="article_id" value="<?php echo $this->article_info['id']; ?>" />
-						<?php if ($this->article_category_list) { ?>
-							<select name="category_id" class="hide" id="category_id">
-								<option value="0">- <?php _e('请选择分类'); ?> -</option>
-								<?php echo $this->article_category_list; ?>
-							</select>
-						<?php } ?>
-						<div class="aw-mod aw-mod-publish">
-							<div class="mod-body">
-								<h3><?php _e('文章标题'); ?>:</h3>
-								<!-- 文章标题 -->
-								<div class="aw-publish-title<?php if (!$this->article_category_list) { ?> active<?php } ?>">
-									<input type="text" name="title" value="<?php echo $this->article_info['title']; ?>" class="form-control" />
-									<?php if ($this->article_category_list) { ?>
-									<div class="aw-dropdown aw-question-dropdown">
-										<i class="aw-icon i-dropdown-triangle active"></i>
-										<p class="title"><?php _e('没有找到相关结果'); ?></p>
-										<ul class="aw-question-dropdown-list"></ul>
-									</div>
-									<?php } ?>
-								</div>
-								<!-- end 文章标题 -->
+    <div class="container aw-publish aw-publish-article">
+        <div class="row">
+            <form action="publish/ajax/<?php if ($this->article_info['id']) { ?>modify<?php } else { ?>publish<?php } ?>_article/" method="post" id="question_form" onsubmit="return false;">
+                <div class="aw-content-wrap clearfix">
+                    <div class="col-sm-12 col-md-9 aw-main-content">
+                        <!-- tab 切换 -->
+                        <ul class="nav nav-tabs aw-nav-tabs active">
+                            <li class="active">
+                                <a href="publish/article/"><?php _e('文章'); ?></a>
+                            </li>
+                            <?php if ($this->user_info['permission']['publish_question']) { ?>
+                            <li>
+                                <a href="publish/"><?php _e('问题'); ?></a>
+                            </li>
+                            <?php } ?>
+                            <h2 class="hidden-xs">
+                                <i class="icon icon-ask"></i>
+                                <?php _e('发起'); ?></h2>
+                        </ul>
+                        <!-- end tab 切换 -->
 
-								<h3><?php _e('文章内容'); ?>:</h3>
-								<div class="aw-mod aw-editor-box">
-									<div class="mod-head">
-										<div class="wmd-panel">
-											<textarea class="wmd-input form-control autosize editor" id="wmd-input" rows="15" name="message"><?php echo $this->article_info['message']; ?></textarea>
-								        </div>
-									</div>
-									<div class="mod-body">
-										<p class="text-color-999"><span class="pull-right" id="question_detail_message">&nbsp;</span></p>
-									</div>
-								</div>
+                        <input type="hidden" name="post_hash" value="<?php echo new_post_hash(); ?>"/>
+                        <input type="hidden" name="attach_access_key" value="<?php echo $this->attach_access_key; ?>"/>
+                        <input type="hidden" name="article_id" id="article_id" value="<?php echo $this->article_info['id']; ?>"/>
+                        <?php if ($this->article_category_list) { ?>
+                        <select name="category_id" class="hide" id="category_id">
+                            <option value="0">-
+                                <?php _e('请选择分类'); ?>
+                                -</option>
+                            <?php echo $this->article_category_list; ?>
+                        </select>
+                        <?php } ?>
+                        <div class="aw-mod aw-mod-publish">
+                            <div class="mod-body">
+                                <h3><?php _e('文章标题'); ?>:</h3>
+                                <!-- 文章标题 -->
+                                <div class="aw-publish-title<?php if (!$this->article_category_list) { ?> active<?php } ?>">
+                                    <input type="text" name="title" value="<?php echo $this->article_info['title']; ?>" class="form-control"/>
+                                    <?php if ($this->article_category_list) { ?>
+                                    <div class="aw-dropdown aw-question-dropdown">
+                                        <i class="aw-icon i-dropdown-triangle active"></i>
+                                        <p class="title"><?php _e('没有找到相关结果'); ?></p>
+                                        <ul class="aw-question-dropdown-list"></ul>
+                                    </div>
+                                    <?php } ?>
+                                </div>
+                                <!-- end 文章标题 -->
 
-								<!-- 去除最近话题功能 -->
-								<!-- <?php if ($this->recent_topics) { ?>
-								<h3><?php _e('最近话题'); ?>:</h3>
-								<div class="aw-topic-bar">
-									<div class="topic-bar clearfix">
-										<?php foreach($this->recent_topics as $key => $val) { ?>
-										<span class="topic-tag" onclick="$('#aw_edit_topic_title').val('<?php echo $val; ?>');$('.add').click();$(this).hide();">
-											<a class="text">
-												<?php echo $val; ?>
-											</a>
-										</span>
-										<?php } ?>
-									</div>
-								</div>
-								<?php } ?> -->
+                                <h3><?php _e('文章内容'); ?>:</h3>
+                                <div class="aw-mod aw-editor-box">
+                                    <div class="mod-head">
+                                        <div class="wmd-panel">
+                                            <textarea class="wmd-input form-control autosize editor" id="wmd-input" rows="15" name="message"><?php echo $this->article_info['message']; ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="mod-body">
+                                        <p class="text-color-999">
+                                            <span class="pull-right" id="question_detail_message">&nbsp;</span>
+                                        </p>
+                                    </div>
+                                </div>
 
-								<?php if ($this->human_valid) { ?>
-								<div class="aw-auth-img clearfix">
-									<em class="auth-img pull-right"><img src="" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" id="captcha"  /></em>
-									<input class="pull-right form-control" type="text" name="seccode_verify" placeholder="验证码" />
-								</div>
-								<?php } ?>
-							</div>
-							<div class="mod-footer clearfix">
-								<?php if (get_setting('integral_system_enabled') == 'Y') { ?><a href="integral/rule/" target="_blank">[<?php _e('积分规则'); ?>]</a><?php } ?>
-								<span class="aw-anonymity">
-									<label class="pull-left"><input type="checkbox" class="pull-left" value="1" name="notcopy" />
-										<?php _e('禁止转载'); ?></label>
-									<label><a href="">存草稿</a></label>&nbsp;&nbsp;
-									<label><a href="">取消</a></label>
-									<?php if ($this->article_info['id'] AND ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator'])) { ?>
-									<label><input type="checkbox" class="pull-left" value="1" name="do_delete" />
-										<?php _e('删除文章'); ?></label>
-									<?php } ?>
-								</span>
-								<a class="btn btn-large btn-success commen-btn btn-publish-submit" id="publish_submit" onclick="AWS.ajax_post($('#question_form')); return false;"><?php _e('发布'); ?></a>
-							</div>
-						</div>
-					</form>
-				</div>
-				<!-- 侧边栏 -->
-				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs">
-					<!-- 文章发起指南 -->
-					<div class="aw-mod publish-help">
-						<div class="mod-body">
-							<h3><?php _e('所属话题'); ?></h3>
-							<div class="aw-topic-bar" data-type="publish">
-								<div class="tag-bar clearfix">
-									<?php if ($_GET['topic_title']) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo urldecode($_GET['topic_title']); ?></a>
-										<a class="close" onclick="$(this).parents('.topic-tag').remove();">
-											<i class="icon icon-delete"></i>
-										</a>
-										<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['topic_title']); ?>" name="topics[]" />
-									</span>
-									<?php } ?>
+                                <?php if ($_POST['topics']) { ?>
+                                <?php foreach ($_POST['topics'] AS $key => $val) { ?>
+                                <span class="topic-tag">
+                                    <a class="text"><?php echo $val; ?></a>
+                                    <input type="hidden" value="<?php echo $val; ?>" name="topics[]"/>
+                                </span>
+                                <?php } ?>
+                            <?php } else if ($this->article_topics) { ?>
+                                <?php foreach ($this->article_topics AS $key => $val) { ?>
+                                <span class="topic-tag">
+                                    <a class="text"><?php echo $val['topic_title']; ?></a>
+                                    <input type="hidden" value="<?php echo $val['topic_title']; ?>" name="topics[]"/>
+                                </span>
+                                <?php } ?>
+                                <?php } ?>
 
-									<?php if ($_POST['topics']) { ?>
-									<?php foreach ($_POST['topics'] AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val; ?></a>
-										<input type="hidden" value="<?php echo $val; ?>" name="topics[]" />
-									</span>
-									<?php } ?>
-									<?php } else if ($this->article_topics) { ?>
-									<?php foreach ($this->article_topics AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val['topic_title']; ?></a>
-										<input type="hidden" value="<?php echo $val['topic_title']; ?>" name="topics[]" />
-									</span>
-									<?php } ?>
-									<?php } ?>
+                                <?php if ($this->human_valid) { ?>
+                                <div class="aw-auth-img clearfix">
+                                    <em class="auth-img pull-right"><img src="" onclick="this.src = G_BASE_URL + '/account/captcha/' + Math.floor(Math.random() * 10000);" id="captcha"/></em>
+                                    <input class="pull-right form-control" type="text" name="seccode_verify" placeholder="验证码"/>
+                                </div>
+                                <?php } ?>
+                            </div>
+                            <div class="mod-footer clearfix">
+                                <?php if (get_setting('integral_system_enabled') == 'Y') { ?>
+                                <a href="integral/rule/" target="_blank">[<?php _e('积分规则'); ?>]</a><?php } ?>
+                                <span class="aw-anonymity">
+                                    <label class="pull-left"><input type="checkbox" class="pull-left" value="1" name="notcopy"/>
+                                        <?php _e('禁止转载'); ?></label>
+                                    <label>
+                                        <a href="">存草稿</a>
+                                    </label>&nbsp;&nbsp;
+                                    <label>
+                                        <a href="">取消</a>
+                                    </label>
+                                    <?php if ($this->article_info['id'] AND ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator'])) { ?>
+                                    <label><input type="checkbox" class="pull-left" value="1" name="do_delete"/>
+                                        <?php _e('删除文章'); ?></label>
+                                    <?php } ?>
+                                </span>
+                                <a class="btn btn-large btn-success commen-btn btn-publish-submit" id="publish_submit" onclick="AWS.ajax_post($('#question_form')); return false;"><?php _e('发布'); ?></a>
+                            </div>
+                        </div>
 
-									<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
-								</div>
-							</div>
+                    </div>
+                    <!-- 侧边栏 -->
+                    <div class="col-sm-12 col-md-3 aw-side-bar hidden-xs">
+                        <!-- 文章发起指南 -->
+                        <div class="aw-mod publish-help">
+                            <div class="mod-body">
+                                <h3><?php _e('所属话题'); ?></h3>
+                                <div class="aw-topic-bar" data-type="publish">
+                                    <div class="tag-bar clearfix">
+                                        <?php if ($_GET['topic_title']) { ?>
+                                        <span class="topic-tag">
+                                            <a class="text"><?php echo urldecode($_GET['topic_title']); ?></a>
+                                            <a class="close" onclick="$(this).parents('.topic-tag').remove();">
+                                                <i class="icon icon-delete"></i>
+                                            </a>
+                                            <button class="close aw-close" onclick="">×</button>
+                                        </span>
+                                        <input type="hidden" value="<?php echo urldecode($_GET['topic_title']); ?>" name="topics[]"/>
+                                        <?php } ?>
 
-							<h3><?php _e('关键字'); ?></h3>
-							<div class="aw-topic-bar" data-type="publish">
-								<div class="tag-bar clearfix">
-									<?php if ($_GET['keyword']) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo urldecode($_GET['keyword']); ?></a>
-										<a class="close" onclick="$(this).parents('.topic-tag').remove();">
-											<i class="icon icon-delete"></i>
-										</a>
-										<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['keyword']); ?>" name="keywords[]" />
-									</span>
-									<?php } ?>
+                                        <span class="aw-edit-topic icon-inverse">
+                                            <i class="icon icon-edit"></i>
+                                            <?php _e('编辑话题'); ?></span>
+                                    </div>
+                                </div>
 
-									<?php if ($_POST['keywords']) { ?>
-									<?php foreach ($_POST['keywords'] AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val; ?></a>
-										<input type="hidden" value="<?php echo $val; ?>" name="keywords[]" />
-									</span>
-									<?php } ?>
-									<?php } else if ($this->article_keywords) { ?>
-									<?php foreach ($this->article_keywords AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val['keyword']; ?></a>
-										<input type="hidden" value="<?php echo $val['keyword']; ?>" name="keywords[]" />
-									</span>
-									<?php } ?>
-									<?php } ?>
+                                <h3><?php _e('关键字'); ?></h3>
+                                <div class="aw-topic-bar" data-type="publish">
+                                    <div class="tag-bar clearfix">
+                                        <?php if ($_GET['keyword']) { ?>
+                                        <span class="topic-tag">
+                                            <a class="text"><?php echo urldecode($_GET['keyword']); ?></a>
+                                            <a class="close" onclick="$(this).parents('.topic-tag').remove();">
+                                                <i class="icon icon-delete"></i>
+                                            </a>
+                                            <button class="close aw-close" onclick="">×</button>
+                                        </span>
+                                        <input type="hidden" value="<?php echo urldecode($_GET['keyword']); ?>" name="keywords[]"/>
+                                        <?php } ?>
 
-									<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
-								</div>
-							</div>
+                                        <?php if ($_POST['keywords']) { ?>
+                                        <?php foreach ($_POST['keywords'] AS $key => $val) { ?>
+                                        <span class="topic-tag">
+                                            <a class="text"><?php echo $val; ?></a>
+                                            <input type="hidden" value="<?php echo $val; ?>" name="keywords[]"/>
+                                        </span>
+                                        <?php } ?>
+                                    <?php } else if ($this->article_keywords) { ?>
+                                        <?php foreach ($this->article_keywords AS $key => $val) { ?>
+                                        <span class="topic-tag">
+                                            <a class="text"><?php echo $val['keyword']; ?></a>
+                                            <input type="hidden" value="<?php echo $val['keyword']; ?>" name="keywords[]"/>
+                                        </span>
+                                        <?php } ?>
+                                        <?php } ?>
 
-							<h3><?php _e('文章标签'); ?></h3>
-							<div class="aw-topic-bar" data-type="publish">
-								<div class="tag-bar clearfix">
-									<?php if ($_GET['tag']) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo urldecode($_GET['tag']); ?></a>
-										<a class="close" onclick="$(this).parents('.topic-tag').remove();">
-											<i class="icon icon-delete"></i>
-										</a>
-										<button class="close aw-close" onclick="">×</button></span><input type="hidden" value="<?php echo urldecode($_GET['tag']); ?>" name="tags[]" />
-									</span>
-									<?php } ?>
+                                        <span class="aw-edit-topic icon-inverse">
+                                            <i class="icon icon-edit"></i>
+                                            <?php _e('编辑话题'); ?></span>
+                                    </div>
+                                </div>
 
-									<?php if ($_POST['tags']) { ?>
-									<?php foreach ($_POST['tags'] AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val; ?></a>
-										<input type="hidden" value="<?php echo $val; ?>" name="tags[]" />
-									</span>
-									<?php } ?>
-									<?php } else if ($this->article_tags) { ?>
-									<?php foreach ($this->article_tags AS $key => $val) { ?>
-									<span class="topic-tag">
-										<a class="text"><?php echo $val['tag']; ?></a>
-										<input type="hidden" value="<?php echo $val['tag']; ?>" name="tags[]" />
-									</span>
-									<?php } ?>
-									<?php } ?>
+                                <h3><?php _e('文章标签'); ?></h3>
+                                <div class="aw-topic-bar" data-type="publish">
+                                    <div class="tag-bar clearfix">
+                                        <?php if ($_GET['tag']) { ?>
+                                        <span class="topic-tag">
+                                            <a class="text"><?php echo urldecode($_GET['tag']); ?></a>
+                                            <a class="close" onclick="$(this).parents('.topic-tag').remove();">
+                                                <i class="icon icon-delete"></i>
+                                            </a>
+                                            <button class="close aw-close" onclick="">×</button>
+                                        </span>
+                                        <input type="hidden" value="<?php echo urldecode($_GET['tag']); ?>" name="tags[]"/>
+                                        <?php } ?>
 
-									<span class="aw-edit-topic icon-inverse"><i class="icon icon-edit"></i> <?php _e('编辑话题'); ?></span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end 文章发起指南 -->
-				</div>
-				<!-- end 侧边栏 -->
-				<?php if($this->user_info['article_count'] == 0) { ?>
-					<div class="modal fade show" id="publish_help_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-					    <div class="modal-dialog modal-sm" role="document">
-					        <div class="modal-content">
-					            <div class="modal-header">
-					                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					                    <span aria-hidden="true">&times;</span>
-					                </button>
-					                <h4 class="modal-title" id="myModalLabel">言之有物</h4>
-					            </div>
-					            <div class="modal-body">
-					                言之有物致力于工程问题领域的问题探讨与分享。<br/>
-									在您提问之前，请遵守以下规则：<br/>
-									1. 搜索相关问题<br/>
-									2. 尽可能怎么样的<br/>
-									3. 不要发布与科技无关的东西<br/>
-					            </div>
-					            <div class="modal-footer">
-					                <button type="button" class="btn btn-default commen-btn" data-dismiss="modal">知道啦</button>
-					            </div>
-					        </div>
-					    </div>
-					</div>
-					<script type="text/javascript">
-						$("#publish_help_modal").modal("show");
-					</script>
-				<?php } ?>
-			</div>
-		</div>
-	</div>
+                                        <?php if ($_POST['tags']) { ?>
+                                        <?php foreach ($_POST['tags'] AS $key => $val) { ?>
+                                        <span class="topic-tag">
+                                            <a class="text"><?php echo $val; ?></a>
+                                            <input type="hidden" value="<?php echo $val; ?>" name="tags[]"/>
+                                        </span>
+                                        <?php } ?>
+                                    <?php } else if ($this->article_tags) { ?>
+                                        <?php foreach ($this->article_tags AS $key => $val) { ?>
+                                        <span class="topic-tag">
+                                            <a class="text"><?php echo $val['tag']; ?></a>
+                                            <input type="hidden" value="<?php echo $val['tag']; ?>" name="tags[]"/>
+                                        </span>
+                                        <?php } ?>
+                                        <?php } ?>
+
+                                        <span class="aw-edit-topic icon-inverse">
+                                            <i class="icon icon-edit"></i>
+                                            <?php _e('编辑话题'); ?></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end 文章发起指南 -->
+                    </div>
+                    <!-- end 侧边栏 -->
+                    <?php if($this->user_info['article_count'] == 0) { ?>
+                    <div class="modal fade show" id="publish_help_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="myModalLabel">言之有物</h4>
+                                </div>
+                                <div class="modal-body">
+                                    言之有物致力于工程问题领域的问题探讨与分享。<br/>
+                                    在您提问之前，请遵守以下规则：<br/>
+                                    1. 搜索相关问题<br/>
+                                    2. 尽可能怎么样的<br/>
+                                    3. 不要发布与科技无关的东西<br/>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default commen-btn" data-dismiss="modal">知道啦</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $("#publish_help_modal").modal("show");
+                    </script>
+                    <?php } ?>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 <script type="text/javascript">
-	var ATTACH_ACCESS_KEY = '<?php echo $this->attach_access_key; ?>';
-	var CATEGORY_ID = <?php echo $this->article_info['category_id']; ?>;
-	var PUBLISH_TYPE = 'article';
+    var ATTACH_ACCESS_KEY = '<?php echo $this->attach_access_key; ?>';
+    var CATEGORY_ID = <?php echo $this->article_info['category_id']; ?>;
+    var PUBLISH_TYPE = 'article';
 </script>
 
 <?php TPL::output('global/footer.tpl.htm'); ?>
