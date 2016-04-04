@@ -10,34 +10,22 @@
         <!-- 话题内容 -->
         <span>
             <a class="text" href="topic/<?php echo $val['url_token']; ?>" data-id="<?php echo $val['topic_id']; ?>"><?php echo $val['topic_title']; ?></a>
-            <!-- <span class="pull-right"><i class="icon icon-plus"></i>关注</span> -->
-            <div class="aw-topic-operate text-color-999">
-                <?php if ($this->user_id) { ?>
-                <a href="javascript:;" onclick="AWS.User.follow($(this), 'topic', <?php echo $val['topic_id']; ?>);" class="follow btn btn-normal btn-success<?php if ($val['has_focus']) { ?> active<?php } ?>">
-                    <span>
-                        <?php if ($val['has_focus']) { ?>
-                        <?php _e('取消关注'); ?>
-                    <?php } else { ?>
-                        <?php _e('关注'); ?>
-                        <?php } ?>
-                    </span>
-                    <em>|</em>
-                    <b><?php echo $val['focus_count']; ?></b>
+            <span class="pull-right">
+                <a href="javascript:;" onclick="AWS.User.follow($(this), 'topic', <?php echo $val['topic_id']; ?>);location.reload();">
+                    <i class="icon icon-plus"></i>取消关注
                 </a>
-                <?php } ?>
-            </div>
+            </span>
         </span>
-
+        <div>
+            <?php foreach($val['action_list'] AS $akey=>$aval) { ?>
+                <a>
+                <?php echo $aval['question_content'];?>
+                <?php echo date_friendly($aval['add_time']); ?>
+                </a>
+            <?php } ?>
+        </div>
         <!-- end 话题内容 -->
     </p>
-    <p class="text-color-999">
-        <?php echo($val['topic_description']); ?>
-        <!-- <span><?php _e('%s 个讨论', $val['discuss_count']); ?></span>
-        <span><?php _e('%s 个关注', $val['focus_count']); ?></span> -->
-    </p>
-    <!-- <p class="text-color-999">
-        <?php _e('7 123天新增2 %s 个讨论', $val['discuss_count_last_week']); ?>, <?php _e('30 天新增 %s 个讨论', $val['discuss_count_last_month']); ?>
-    </p> -->
 </div>
 <?php } ?>
 <?php } ?>
