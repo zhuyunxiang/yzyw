@@ -113,7 +113,7 @@ class main extends AWS_CONTROLLER
 		{
 			default:
 				$related_topics_ids = array();
-				
+
 				$page_keywords[] = $topic_info['topic_title'];
 
 				if ($related_topics = $this->model('topic')->related_topics($topic_info['topic_id']))
@@ -121,11 +121,11 @@ class main extends AWS_CONTROLLER
 					foreach ($related_topics AS $key => $val)
 					{
 						$related_topics_ids[$val['topic_id']] = $val['topic_id'];
-						
+
 						$page_keywords[] = $val['topic_title'];
 					}
 				}
-				
+
 				TPL::set_meta('keywords', implode(',', $page_keywords));
 				TPL::set_meta('description', cjk_substr(str_replace("\r\n", ' ', strip_tags($topic_info['topic_description'])), 0, 128, 'UTF-8', '...'));
 
@@ -238,6 +238,11 @@ class main extends AWS_CONTROLLER
 
 	public function index_square_action()
 	{
+		if ($this->user_id > 0)
+		{
+			HTTP::redirect('/home/#focus_topic__focus');
+		}
+
 		if (is_mobile())
 		{
 			HTTP::redirect('/m/topic/');

@@ -569,29 +569,6 @@
   display: inline-block;
   width: 80%;
 }
-.my-icon {
-  display: inline-block;
-  width: 19px;
-  height: 19px;
-  margin-bottom: -4px;
-  background: url("img/ico/icon-emp.png") no-repeat;
-  line-height: 18px;
-}
-.share {
-  background-position: -177px -448px;
-}
-.guanzhu {
-  background-position: -357px -541px;
-}
-.guanzhu-white {
-  background-position: -357px -169px;
-}
-.zan {
-  background-position: -132px -448px;
-}
-.sixin-white {
-  background-position: -267px -169px;
-}
 .msg-ico-panel {
   left: 22px !important;
 }
@@ -653,16 +630,16 @@
 }
 .custom-article-modal .article-author-panel .count-info-panel {
   overflow: hidden;
-  background-color: #F3F3F3;
-  margin-top: 20px;
   height: 65px;
+  margin-top: 20px;
   border-radius: 0 0 9px 9px;
+  background-color: #F3F3F3;
 }
 .custom-article-modal .article-author-panel .count-info-panel .col-xs-4 {
-  text-align: center;
-  padding: 0;
   height: 100%;
+  padding: 0;
   cursor: pointer;
+  text-align: center;
 }
 .custom-article-modal .article-author-panel .count-info-panel .col-xs-4 .custom-panel {
   margin-top: 10px;
@@ -683,14 +660,14 @@
 }
 #login_help .modal-header,
 #publish_help_modal .modal-header {
-  background-color: #2B314B;
-  border-radius: 5px 5px 0px 0px;
   color: white;
+  border-radius: 5px 5px 0 0;
+  background-color: #2B314B;
 }
 #login_help .modal-footer,
 #publish_help_modal .modal-footer {
+  padding-top: 0;
   border-width: 0 0 0 0;
-  padding-top: 0px;
 }
 #publish_help_modal .modal-sm {
   width: 355px !important;
@@ -702,23 +679,49 @@
   width: 100%;
 }
 .custom-topic-sidebar-container .other-topics-panel {
+  overflow: hidden;
   width: 100%;
   margin-top: 20px;
-  overflow: hidden;
 }
 .sidebar-contact-container .panel-heading {
-  color: #1C2C61;
-  border-width: 0px;
-  font-weight: bolder;
   padding-bottom: 5px;
+  color: #1C2C61;
+  border-width: 0;
+  font-weight: bolder;
 }
 .sidebar-contact-container .panel-body {
+  padding: 0 15px 15px;
   color: #1C2C61;
-  background-color: #f5f5f5;
   border-color: #ddd;
-  padding: 0 15px 15px 15px;
+  background-color: #f5f5f5;
 }
 .custon-topic-panel .hot-article-custom-comment {
   position: absolute;
   bottom: -10px;
+}
+.all-stared-topic {
+  margin: 20px;
+}
+.my-icon {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin-bottom: -4px;
+  background: url("img/ico/icon-emp.png") no-repeat;
+  line-height: 18px;
+}
+.share {
+  background-position: -177px -448px;
+}
+.guanzhu {
+  background-position: -357px -541px;
+}
+.guanzhu-white {
+  background-position: -357px -169px;
+}
+.zan {
+  background-position: -132px -448px;
+}
+.sixin-white {
+  background-position: -267px -169px;
 }
