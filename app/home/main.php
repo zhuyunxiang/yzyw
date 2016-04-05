@@ -66,6 +66,10 @@ class main extends AWS_CONTROLLER
 			$recommend_users_topics = $this->model('module')->recommend_users_topics($this->user_id);
 
 			TPL::assign('sidebar_recommend_users_topics', $recommend_users_topics);
+		} else {
+			$recommend_users_topics = $this->model('module')->recommend_users_topics($this->user_id);
+
+			TPL::assign('custom_recommend_users_topics', $recommend_users_topics);
 		}
 
 		// 边栏热门用户
