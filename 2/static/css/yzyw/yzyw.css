@@ -699,6 +699,45 @@
   position: absolute;
   bottom: -10px;
 }
+.other-topics-panel .custom-recommend-topic {
+  min-height: 80px;
+  margin-top: 5px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.other-topics-panel .custom-recommend-topic img {
+  position: absolute;
+  width: 50px;
+}
+.other-topics-panel .custom-recommend-topic p {
+  font-weight: bolder;
+}
+.other-topics-panel .custom-recommend-topic p,
+.other-topics-panel .custom-recommend-topic div {
+  margin-left: 70px;
+}
+.custom-more-topics-container {
+  padding: 5px 0px !important;
+}
+.custom-more-topic-item {
+  min-height: 125px;
+  margin-top: 5px;
+  margin-bottom: 6px;
+  border: solid 1px #e6e6e6;
+  border-width: 0 0 1px 0;
+  overflow: hidden;
+}
+.custom-more-topic-item img {
+  position: absolute;
+  width: 50px;
+}
+.custom-more-topic-item p {
+  font-weight: bolder;
+}
+.custom-more-topic-item p,
+.custom-more-topic-item div {
+  margin-left: 70px;
+}
 .all-stared-topic {
   margin: 20px;
 }
