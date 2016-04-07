@@ -316,10 +316,10 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane" id="fans">
+                            <div class="tab-pane" id="admires">
                                 <div class="aw-mod">
                                     <div class="mod-head">
-                                         <h3><?php _e($this->user['user_name']); ?>被xx人关注</h3>
+                                         <h3><?php _e($this->user['user_name']); ?>关注<?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['friend_count'] . '</em>'); ?></h3>
                                     </div>
                                     <div class="mod-body">
                                          <ul id="contents_user_follows" class="clearfix"></ul>
@@ -334,10 +334,10 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane" id="admires">
+                            <div class="tab-pane" id="fans">
                                 <div class="aw-mod">
                                     <div class="mod-head">
-                                         <h3><?php _e($this->user['user_name']); ?>关注xx人</h3>
+                                         <h3><?php _e($this->user['user_name']); ?>被<?php _e(' %s 人', '<em class="aw-text-color-blue">' . $this->user['fans_count'] . '</em>'); ?>关注</h3>
                                     </div>
                                     <div class="mod-body">
                                           <ul class="clearfix" id="contents_user_fans"></ul>
