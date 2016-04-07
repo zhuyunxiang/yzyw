@@ -338,6 +338,15 @@
 .self-info .valign-center {
   margin: 8px 10px;
 }
+.self-info #actions .aw-item .custom-circle-img {
+  display: none;
+}
+.self-info #actions .aw-item p {
+  margin: 10px 0px !important;
+}
+.self-info #actions .aw-item span {
+  left: 0px !important;
+}
 .self-info #questions #contents_user_actions_questions {
   padding-top: 10px;
 }
@@ -442,7 +451,7 @@
   background-color: #eee;
 }
 .sidebar-hot-user-container .user-item dd {
-  width: 120px;
+  width: 155px;
 }
 .sidebar-hot-user-container .user-item .user-action-info {
   margin-bottom: 5px;
