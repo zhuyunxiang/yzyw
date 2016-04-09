@@ -22,7 +22,29 @@ $(function()
 		{
 			if (G_ADVANCED_EDITOR_ENABLE == 'Y')
 			{
-				EDITOR = CKEDITOR.replace( 'wmd-input');
+				// EDITOR = CKEDITOR.replace( 'wmd-input');
+                function getParameter(name,dflt) {
+        			var value = new RegExp(name+"=([^&]*)","i").exec(window.location);
+        			if (value!=null && value.length>1) return decodeURIComponent(value[1].replace(/\+/g,' ')); else return dflt;
+        		}
+        		var lang = getParameter("language","");
+        		if (lang.length==0) lang="en";
+        		CKEDITOR.config.toolbar_Full =
+        		[
+        			{ name: 'document', items : [ 'Source'] },
+        			{ name: 'clipboard', items : [ 'Cut','Copy','Paste','-','Undo','Redo' ] },
+        			{ name: 'editing', items : [ 'Find'] },
+        			{ name: 'basicstyles', items : [ 'Bold','Italic','Underline'] },
+        			{ name: 'paragraph', items : [ 'JustifyLeft','JustifyCenter','JustifyRight'] }
+        		];
+
+        		CKEDITOR.inline('wmd-input', {
+        			language: lang,
+        			toolbar:'Full'
+        			//wirisimagecolor:'#000000',
+        			//wirisbackgroundcolor:'#ffffff',
+        			//wirisimagefontsize:'16px'
+        		});
 
 				EDITOR_CALLBACK = function (evt)
 				{
@@ -37,7 +59,7 @@ $(function()
 				// 自动保存草稿
 				EDITOR.on( 'blur', EDITOR_CALLBACK);
 			}
-			
+
 		}
 
 		if ($('.aw-upload-box').length)
