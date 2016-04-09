@@ -255,6 +255,7 @@ function get_weixin_rule_image($image_file, $size = '')
 
 function import_editor_static_files()
 {
+	TPL::import_js('js/editor/ckeditor/plugins/ckeditor_wiris/core/display.js');
 	TPL::import_js('js/editor/ckeditor/ckeditor.js');
 	TPL::import_js('js/editor/ckeditor/adapters/jquery.js');
 }
