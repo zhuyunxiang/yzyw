@@ -773,3 +773,6 @@
 .sixin-white {
   background-position: -267px -169px;
 }
+.cke_textarea_inline.cke_editable.cke_editable_inline.cke_contents_ltr.cke_show_borders {
+  min-height: 200px;
+}

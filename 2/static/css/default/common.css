@@ -436,7 +436,7 @@ a.aw-load-more-content{display: block;}
 .aw-article-replay-box .mod-footer input{width: 80px;}
 
 /* 新编辑器 */
-.cke_editable a{color: #666 !important;}
+/*.cke_editable a{color: #666 !important;}
 .cke_chrome{padding:0 !important;}
 .cke_top{position: relative !important;}
 .cke_chrome, .cke_toolgroup{background: none !important;border:none !important;}
@@ -467,7 +467,7 @@ a.cke_button{padding:8px 10px !important;cursor: pointer !important;border-radiu
 .cke_button__source_icon:before {content: "\e609";}
 .cke_button__maximize{position: absolute !important;right: 0;top: 0;}
 .cke_button__maximize_icon:before {content: "\e65d";}
-.cke_button__removeformat_icon:before {content: "\e65f";}
+.cke_button__removeformat_icon:before {content: "\e65f";}*/
 
 .aw-editor-box .mod-head{border:1px solid #e6e6e6;border-radius: 4px;}
 .aw-editor-box textarea{border: none;}

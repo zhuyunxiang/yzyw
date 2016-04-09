@@ -1,4 +1,7 @@
 <?php TPL::output('global/header.tpl.htm'); ?>
+<!--[if IE]><style>#langFormDiv { margin-left:640px; }</style><![endif]-->
+<!--[if lt IE 9]><style>#langFormDiv { margin-left:645px; }</style><![endif]-->
+<!--[if lt IE 8]><style>#iconsDiv {display:inline;zoom:1; margin-bottom:-20px;} #langFormDiv { display:inline; zoom:1; margin-bottom:-20px;}</style><![endif]-->
 
 <div class="aw-container-wrap">
 	<div class="container aw-publish">
@@ -51,7 +54,9 @@
 								<div class="aw-mod aw-editor-box">
 									<div class="mod-head">
 										<div class="wmd-panel">
-								            <textarea class="wmd-input form-control autosize editor" id="wmd-input" rows="15" name="question_detail"><?php echo $this->question_info['question_detail']; ?></textarea>
+								            <textarea class="wmd-input form-control autosize editor" id="wmd-input" rows="15" name="question_detail">
+												<?php echo $this->question_info['question_detail']; ?>
+											</textarea>
 								        </div>
 									</div>
 									<div class="mod-body">
