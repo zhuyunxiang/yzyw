@@ -145,19 +145,28 @@
                                         </a>
                                         <!-- end 话题图片 -->
                                         <p class="clearfix">
-                                            <!-- 话题内容 -->
-                                            <span class="topic-tag">
+
+                                            <span>
                                                 <a class="text" href="topic/<?php echo $val['url_token']; ?>" data-id="<?php echo $val['topic_id']; ?>"><?php echo $val['topic_title']; ?></a>
                                             </span>
-                                            <!-- end 话题内容 -->
+                                            <div>
+                                                <!-- <?php var_dump($val);?> -->
+                                                <?php foreach($val['action_list'] AS $akey=>$aval) { ?>
+
+                                                    <?php if($aval['question_id']) {?>
+                                                    <a>
+                                                        <?php echo $aval['question_content'];?>
+                                                        <?php echo date_friendly($aval['add_time']); ?>
+                                                    </a>
+                                                    <br/>
+                                                    <?php } else {?>
+
+
+                                                    <?php }?>
+                                                <?php } ?>
+                                            </div>
                                         </p>
-                                        <p class="text-color-999">
-                                            <span><?php _e('%s 个讨论', $val['discuss_count']); ?></span>
-                                            <span><?php _e('%s 个关注', $val['focus_count']); ?></span>
-                                        </p>
-                                        <p class="text-color-999">
-                                            <?php _e('7天新增 %s 个讨论', $val['discuss_count_last_week']); ?>, <?php _e('30 天新增 %s 个讨论', $val['discuss_count_last_month']); ?>
-                                        </p>
+
                                     </div>
                                     <?php } ?>
                                     <?php } ?>
@@ -184,7 +193,7 @@
                 <h4 class="modal-title" id="myModalLabel">提示信息！</h4>
             </div>
             <div class="modal-body">
-                您还没有登录，不能分享哦~
+                您还没有登录，不能查看详细哦~
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default commen-btn go-login">去登录</button>
@@ -209,7 +218,7 @@ $(".go-login").on('click', function () {
 });
 
 
-$(".topic-tag a").on('click', function () {
+$(".topic-tag,.img.aw-border-radius-5").on('click', function () {
     if (!checkIsLogin()) {
         return false;
     };

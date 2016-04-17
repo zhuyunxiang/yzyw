@@ -18,10 +18,17 @@
         </span>
         <div>
             <?php foreach($val['action_list'] AS $akey=>$aval) { ?>
+                <!-- <?php var_dump($aval);?> -->
+                <?php if($aval['question_id']) {?>
                 <a>
-                <?php echo $aval['question_content'];?>
-                <?php echo date_friendly($aval['add_time']); ?>
+                    <?php echo $aval['question_content'];?>
+                    <?php echo date_friendly($aval['add_time']); ?>
                 </a>
+                <br/>
+                <?php } else {?>
+
+
+                <?php }?>
             <?php } ?>
         </div>
         <!-- end 话题内容 -->

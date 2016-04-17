@@ -54,6 +54,8 @@ class main extends AWS_CONTROLLER
                 if ($focus_list[$topics_list_v['topic_id']]) {
                     $topics_list[$topics_list_k]['is_focused'] = true;
                 }
+
+				$topics_list[$topics_list_k]['action_list'] = $this->model('posts')->get_posts_list('question', 1, 3, 'new', explode(',', $topics_list_v['topic_id']));
             }
 
             // var_dump(topics_list);

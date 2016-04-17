@@ -311,6 +311,9 @@ class main extends AWS_CONTROLLER
 					$topics_list_total_rows = AWS_APP::cache()->get('square_hot_topic_list_total_rows');
 				}
 
+				foreach ($topics_list as $topics_list_k => $topics_list_v) {
+					$topics_list[$topics_list_k]['action_list'] = $this->model('posts')->get_posts_list('question', 1, 3, 'new', explode(',', $topics_list_v['topic_id']));
+	            }
 				TPL::assign('topics_list', $topics_list);
 			break;
 

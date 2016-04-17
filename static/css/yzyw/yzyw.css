@@ -342,10 +342,10 @@
   display: none;
 }
 .self-info #actions .aw-item p {
-  margin: 10px 0px !important;
+  margin: 10px 0 !important;
 }
 .self-info #actions .aw-item span {
-  left: 0px !important;
+  left: 0 !important;
 }
 .self-info #questions #contents_user_actions_questions {
   padding-top: 10px;
@@ -487,6 +487,7 @@
   height: 40px;
 }
 .aw-topic-list .aw-item {
+  min-height: 135px;
   padding-right: 20px;
 }
 .aw-dropdown.dropdown-list {
@@ -709,10 +710,10 @@
   bottom: -10px;
 }
 .other-topics-panel .custom-recommend-topic {
+  overflow: hidden;
   min-height: 80px;
   margin-top: 5px;
   margin-bottom: 6px;
-  overflow: hidden;
 }
 .other-topics-panel .custom-recommend-topic img {
   position: absolute;
@@ -726,15 +727,15 @@
   margin-left: 70px;
 }
 .custom-more-topics-container {
-  padding: 5px 0px !important;
+  padding: 5px 0 !important;
 }
 .custom-more-topic-item {
+  overflow: hidden;
   min-height: 125px;
   margin-top: 5px;
   margin-bottom: 6px;
   border: solid 1px #e6e6e6;
   border-width: 0 0 1px 0;
-  overflow: hidden;
 }
 .custom-more-topic-item img {
   position: absolute;
@@ -746,6 +747,29 @@
 .custom-more-topic-item p,
 .custom-more-topic-item div {
   margin-left: 70px;
+}
+.custom-topic-container .aw-topic-list-mod .mod-head {
+  position: relative;
+  top: -30px;
+}
+.custom-topic-container .aw-topic-list-mod .mod-head .aw-nav-tabs {
+  min-height: 33px !important;
+  padding-top: 0;
+  padding-left: 82px;
+}
+.custom-topic-container .aw-topic-list-mod .custon-topic-panel {
+  margin-top: -30px;
+}
+.custom-topic-sidebar .focus-users-count-title {
+  margin: 10px 0;
+}
+.custom-topic-sidebar #focus_users {
+  margin-top: 10px;
+}
+.custom-topic-sidebar #focus_users img {
+  width: 30px;
+  width: 60px;
+  border-radius: 50% !important;
 }
 .all-stared-topic {
   margin: 20px;

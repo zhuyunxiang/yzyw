@@ -17,19 +17,15 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container custom-topic-container">
 		<div class="row">
 			<div class="aw-content-wrap clearfix">
 				<div class="col-sm-12 col-md-9 aw-main-content">
 					<div class="aw-mod aw-topic-detail-title">
 						<div class="mod-body">
-							<img src="<?php echo get_topic_pic_url('mid', $this->topic_info['topic_pic']); ?>" alt="<?php echo $this->topic_info['topic_title']; ?>" />
+							<img src="<?php echo get_topic_pic_url('mid', $this->topic_info['topic_pic']); ?>" class="custom-circle-img" alt="<?php echo $this->topic_info['topic_title']; ?>" />
 							<h2 class="pull-left"><?php echo $this->topic_info['topic_title']; ?> <?php if ($this->topic_info['topic_lock']) { ?><i class="aw-icon i-lock" title="<?php _e('已锁定'); ?>"></i><?php } ?></h2>
-							<div class="aw-topic-operate text-color-999">
-								<?php if ($this->user_id) { ?>
-								<a href="javascript:;" onclick="AWS.User.follow($(this), 'topic', <?php echo $this->topic_info['topic_id']; ?>);" class="follow btn btn-normal btn-success<?php if ($this->topic_info['has_focus']) { ?> active<?php } ?>"><span><?php if ($this->topic_info['has_focus']) { ?><?php _e('取消关注'); ?><?php } else { ?><?php _e('关注'); ?><?php } ?></span> <em>|</em> <b><?php echo $this->topic_info['focus_count']; ?></b></a>
-								<?php } ?>
-							</div>
+
 						</div>
 					</div>
 
@@ -41,7 +37,7 @@
 									<li class="active"><a href="#all" data-toggle="tab"><?php _e('全部内容'); ?></a></li>
 									<li><a href="#best_answers" data-toggle="tab"><?php _e('精华'); ?></a></li>
 									<?php if ($this->all_list_bit) { ?>
-									<li><a href="#recommend" data-toggle="tab"><?php _e('推荐'); ?></a></li>
+									<!-- <li><a href="#recommend" data-toggle="tab"><?php _e('推荐'); ?></a></li> -->
 									<?php } ?>
 									<?php if ($this->questions) { ?>
 									<li><a href="#questions" data-toggle="tab"><?php _e('问题'); ?></a></li>
@@ -49,16 +45,16 @@
 									<?php if ($this->recommend_list_bit) { ?>
 									<li><a href="#articles" data-toggle="tab"><?php _e('文章'); ?></a></li>
 									<?php } ?>
-									<li><a href="#favorite" id="i_favorite" data-toggle="tab" style="display:none"><?php _e('我的收藏'); ?></a></li>
-									<li><a href="#about" id="i_about" data-toggle="tab"><?php _e('关于话题'); ?></a></li>
-									<div class="aw-search-bar pull-right hidden-xs">
+									<!-- <li><a href="#favorite" id="i_favorite" data-toggle="tab" style="display:none"><?php _e('我的收藏'); ?></a></li> -->
+									<!-- <li><a href="#about" id="i_about" data-toggle="tab"><?php _e('关于话题'); ?></a></li> -->
+									<!-- <div class="aw-search-bar pull-right hidden-xs">
 										<i class="icon icon-search"></i>
 										<input type="text" id="question-input" class="search-query form-control" placeholder="搜索...">
 										<div class="aw-dropdown">
 											<p class="title"><?php _e('没有找到相关结果'); ?></p>
 											<ul class="aw-dropdown-list"></ul>
 										</div>
-									</div>
+									</div> -->
 								</ul>
 								<!-- end tab 切换 -->
 							</div>
@@ -193,10 +189,24 @@
 
 				<!-- 侧边栏 -->
 				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs">
+					<!-- xx人关注该话题 -->
+					<div class="aw-mod aw-text-align-justify custom-topic-sidebar">
+						<div class="aw-topic-operate text-color-999">
+							<?php if ($this->user_id) { ?>
+							<a href="javascript:;" onclick="AWS.User.follow($(this), 'topic', <?php echo $this->topic_info['topic_id']; ?>);" class="follow btn btn-normal btn-success<?php if ($this->topic_info['has_focus']) { ?> active<?php } ?>"><span><?php if ($this->topic_info['has_focus']) { ?><?php _e('取消关注'); ?><?php } else { ?><?php _e('关注'); ?><?php } ?></span> <em>|</em> <b><?php echo $this->topic_info['focus_count']; ?></b></a>
+							<?php } ?>
+						</div>
+						<div class="mod-body">
+							<h3 class="focus-users-count-title"><?php _e('%s 人关注该话题', $this->topic_info['focus_count']); ?></h3>
+							<div id="focus_users" class="aw-border-radius-5"></div>
+						</div>
+					</div>
+					<!-- end xx人关注该话题 -->
+
 					<!-- 话题描述 -->
 					<div class="aw-mod aw-text-align-justify">
 						<div class="mod-head">
-							<h3><?php _e('话题描述'); ?></h3>
+							<h3><?php _e('话题介绍'); ?></h3>
 						</div>
 						<div class="mod-body">
 							<?php if ($this->topic_info['topic_description']) { ?>
@@ -208,7 +218,7 @@
 					</div>
 					<!-- end 话题描述 -->
 
-					<?php TPL::output('topic/related_topics.tpl.htm'); ?>
+					<!-- <?php TPL::output('topic/related_topics.tpl.htm'); ?> -->
 
 					<?php if ($this->parent_topic_info) { ?>
 					<div class="aw-mod">
@@ -245,17 +255,6 @@
 					</div>
 					<?php } ?>
 					<!-- end 最佳回复者 -->
-
-					<!-- xx人关注该话题 -->
-					<div class="aw-mod topic-status">
-						<div class="mod-head">
-							<h3><?php _e('%s 人关注该话题', $this->topic_info['focus_count']); ?></h3>
-						</div>
-						<div class="mod-body">
-							<div id="focus_users" class="aw-border-radius-5"></div>
-						</div>
-					</div>
-					<!-- end xx人关注该话题 -->
 
 					<!-- 话题修改记录 -->
 					<?php if ($this->user_id) {?>

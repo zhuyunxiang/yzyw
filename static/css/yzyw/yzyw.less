@@ -372,20 +372,19 @@
     .valign-center {
         margin: 8px 10px;
     }
-    #actions{
-        .aw-item{
-            .custom-circle-img{
+    #actions {
+        .aw-item {
+            .custom-circle-img {
                 display: none;
             }
-            p{
-                margin: 10px 0px !important;
+            p {
+                margin: 10px 0 !important;
             }
-            span{
-                left: 0px !important;
+            span {
+                left: 0 !important;
             }
         }
     }
-
     #questions {
         #contents_user_actions_questions {
             padding-top: 10px;
@@ -585,6 +584,8 @@
     }
 }
 .aw-topic-list .aw-item {
+    min-height: 135px;
+
     padding-right: 20px;
 }
 .aw-dropdown.dropdown-list {
@@ -859,47 +860,86 @@
         bottom: -10px;
     }
 }
-.other-topics-panel{
-    .custom-recommend-topic{
+.other-topics-panel {
+    .custom-recommend-topic {
+        overflow: hidden;
+
         min-height: 80px;
         margin-top: 5px;
         margin-bottom: 6px;
-        img{
-                position: absolute;
-                width: 50px;
+        img {
+            position: absolute;
+
+            width: 50px;
         }
-        p{
+        p {
             font-weight: bolder;
         }
-        p, div{
+        p,
+        div {
             margin-left: 70px;
         }
-        overflow: hidden;
     }
 }
-.custom-more-topics-container{
-    padding: 5px 0px !important;
+.custom-more-topics-container {
+    padding: 5px 0 !important;
 }
-.custom-more-topic-item{
+.custom-more-topic-item {
+    overflow: hidden;
+
     min-height: 125px;
     margin-top: 5px;
     margin-bottom: 6px;
+
     border: solid 1px #e6e6e6;
     border-width: 0 0 1px 0;
-    img{
-            position: absolute;
-            width: 50px;
+    img {
+        position: absolute;
+
+        width: 50px;
     }
-    p{
+    p {
         font-weight: bolder;
     }
-    p, div{
+    p,
+    div {
         margin-left: 70px;
     }
-    overflow: hidden;
 }
+// 自定义话题二级页面
+.custom-topic-container {
+    .aw-topic-list-mod {
+        .mod-head {
+            position: relative;
 
-.all-stared-topic{
+            top: -30px;
+            // left: 70px;
+            .aw-nav-tabs {
+                min-height: 33px !important;
+                padding-top: 0;
+                padding-left: 82px;
+            }
+        }
+        .custon-topic-panel {
+            margin-top: -30px;
+        }
+    }
+}
+// 自定义话题页面右边栏
+.custom-topic-sidebar {
+    .focus-users-count-title {
+        margin: 10px 0;
+    }
+    #focus_users {
+        margin-top: 10px;
+        img {
+            width: 30px;
+
+            .custom-circle-img;
+        }
+    }
+}
+.all-stared-topic {
     margin: 20px;
 }
 // Start Icon
