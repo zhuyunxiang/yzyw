@@ -767,7 +767,7 @@
   margin-top: 10px;
 }
 .custom-topic-sidebar #focus_users img {
-  width: 30px;
+  width: 30px !important;
   width: 60px;
   border-radius: 50% !important;
 }
