@@ -92,8 +92,42 @@
 									<!-- end 推荐问题 -->
 									<div class="aw-mod">
 										<div class="mod-body">
-											<div class="aw-common-list" id="c_all_list">
-												<?php echo $this->all_list_bit; ?>
+											<div class="aw-common-list custom-topic-second" id="c_all_list">
+												<!-- <?php //echo $this->all_list_bit; ?> -->
+												<div class="topic-info-item">
+													<span></span>
+												</div>
+												<?php foreach($this->post_question_list AS $plkey => $plval) {?>
+													<?php if ($plval['answer_info']) {?>
+													<div class="">
+														<!-- <?php var_dump($plval);?> -->
+														<div class="question-title">
+															<?php _e($plval['question_content']);?>
+														</div>
+														<div class="question-detail">
+															<?php _e($plval['question_detail']);?>
+														</div>
+														<div class="question-answer-container">
+															<div class="head-img">
+
+																<a class="img aw-border-radius-5" href="people/<?php echo $plval['answer_info']['user_info']['url_token']; ?>" data-id="<?php echo $plval['answer_info']['user_info']['uid']; ?>">
+																	<!-- <img src="<?php echo  get_avatar_url($plval['answer_info']['user_info']['uid'],'mid')?>" class="custom-circle-img" alt=""/> -->
+																	<img alt="<?php echo $plval['answer_info']['user_info']['user_name']; ?>" class="custom-circle-img" src="<?php echo get_avatar_url($plval['answer_info']['user_info']['uid'], 'mid'); ?>" />
+																</a>
+															</div>
+															<div class="answer-title">
+																<span class="name-span"><?php _e($plval['answer_info']['user_info']['user_name']);?></span>发布了一个回答
+																<span class="pull-right"><?php echo date_friendly($plval['answer_info']['add_time']); ?></span>
+															</div>
+															<div class="answer-content">
+																<?php _e($plval['answer_info']['answer_content'])?>
+															</div>
+														</div>
+
+
+													</div>
+													<?php }?>
+												<?php }?>
 											</div>
 										</div>
 										<div class="mod-footer">

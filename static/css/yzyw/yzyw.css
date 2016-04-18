@@ -760,6 +760,29 @@
 .custom-topic-container .aw-topic-list-mod .custon-topic-panel {
   margin-top: -30px;
 }
+.custom-topic-container .custom-topic-second .question-title {
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 10px 0;
+}
+.custom-topic-container .custom-topic-second .question-detail {
+  padding-bottom: 10px;
+}
+.custom-topic-container .custom-topic-second .question-answer-container {
+  overflow: hidden;
+}
+.custom-topic-container .custom-topic-second .question-answer-container .head-img {
+  width: 65px;
+  float: left;
+}
+.custom-topic-container .custom-topic-second .question-answer-container .answer-title .name-span {
+  font-weight: bolder;
+  font-size: 15px;
+  margin-right: 20px;
+}
+.custom-topic-container .custom-topic-second .question-answer-container .answer-content {
+  margin-top: 10px;
+}
 .custom-topic-sidebar .focus-users-count-title {
   margin: 10px 0;
 }

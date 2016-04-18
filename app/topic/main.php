@@ -213,6 +213,11 @@ class main extends AWS_CONTROLLER
 				TPL::assign('list', $this->model('topic')->get_topic_best_answer_action_list($contents_topic_id, $this->user_id, get_setting('contents_per_page')));
 				TPL::assign('best_questions_list_bit', TPL::output('home/ajax/index_actions', false));
 
+				$post_question_list = $this->model('posts')->get_posts_list('question', 1, get_setting('contents_per_page'), 'new', explode(',', $contents_topic_id));
+				$post_article_list = $this->model('posts')->get_posts_list('article', 1, get_setting('contents_per_page'), 'new', explode(',', $contents_topic_id));
+				TPL::assign('post_question_list', $post_question_list);
+				TPL::assign('post_article_list', $post_article_list);
+
 				TPL::assign('posts_list', $this->model('posts')->get_posts_list('question', 1, get_setting('contents_per_page'), 'new', explode(',', $contents_topic_id)));
 				TPL::assign('all_questions_list_bit', TPL::output('explore/ajax/list', false));
 
@@ -311,9 +316,6 @@ class main extends AWS_CONTROLLER
 					$topics_list_total_rows = AWS_APP::cache()->get('square_hot_topic_list_total_rows');
 				}
 
-				foreach ($topics_list as $topics_list_k => $topics_list_v) {
-					$topics_list[$topics_list_k]['action_list'] = $this->model('posts')->get_posts_list('question', 1, 3, 'new', explode(',', $topics_list_v['topic_id']));
-	            }
 				TPL::assign('topics_list', $topics_list);
 			break;
 
