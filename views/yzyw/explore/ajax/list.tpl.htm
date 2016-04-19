@@ -51,7 +51,13 @@
             </a>
             <?php } ?>
             <span class="text-color-999">&nbsp;<?php _e('热门回答'); ?>
-                &nbsp; &nbsp; 来自科技
+                &nbsp; &nbsp;
+                <?php if($val['topics']) _e("来自");?>
+                <?php foreach($val['topics'] AS $tkey=>$tval) {?>
+                    <span>
+                        <?php _e($tval['topic_title']);?>
+                    </span>
+                <?php }?>
                 <!-- •
                 <?php _e('%s 人关注', $val['focus_count']); ?>
                 •
@@ -121,7 +127,13 @@
         <?php } else { ?>
             <a href="javascript:;" class="aw-user-name" data-id="<?php echo $val['uid']; ?>"><?php _e('匿名用户'); ?></a><?php } ?>
             <span class="text-color-999">&nbsp;<?php _e('热门回答'); ?>
-                &nbsp; &nbsp; 来自科技
+                &nbsp; &nbsp;
+                <?php if($val['topics']) _e("来自");?>
+                <?php foreach($val['topics'] AS $tkey=>$tval) {?>
+                    <span>
+                        <?php _e($tval['topic_title']);?>
+                    </span>
+                <?php }?>
                 <!-- •
                 <?php _e('%s 人关注', $val['focus_count']); ?>
                 •
@@ -189,7 +201,13 @@
         <?php } else { ?>
             <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name"><?php echo $val['user_info']['user_name']; ?></a>
             <span class="text-color-999">&nbsp;<?php _e('热门文章'); ?>
-                &nbsp; &nbsp; 来自科技
+                &nbsp; &nbsp;
+                <?php if($val['topics']) _e("来自");?>
+                <?php foreach($val['topics'] AS $tkey=>$tval) {?>
+                    <span>
+                        <?php _e($tval['topic_title']);?>
+                    </span>
+                <?php }?>
                 <!-- •
                 <?php _e('%s 个评论', $val['comments']); ?>
                 •

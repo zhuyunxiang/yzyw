@@ -205,7 +205,6 @@ class main extends AWS_CONTROLLER
 						}
 					}
 				}
-
 				TPL::assign('topic_recommend_list', $posts_list);
 				TPL::assign('posts_list', $posts_list);
 				TPL::assign('recommend_list_bit', TPL::output('explore/ajax/list', false));
@@ -217,6 +216,11 @@ class main extends AWS_CONTROLLER
 				$post_article_list = $this->model('posts')->get_posts_list('article', 1, get_setting('contents_per_page'), 'new', explode(',', $contents_topic_id));
 				TPL::assign('post_question_list', $post_question_list);
 				TPL::assign('post_article_list', $post_article_list);
+				TPL::assign('pagination', AWS_APP::pagination()->initialize(array(
+					'base_url' => get_js_url('/topic/id-'.$_GET['id']),
+					'total_rows' => 12,
+					'per_page' => get_setting('contents_per_page')
+				))->create_links());
 
 				TPL::assign('posts_list', $this->model('posts')->get_posts_list('question', 1, get_setting('contents_per_page'), 'new', explode(',', $contents_topic_id)));
 				TPL::assign('all_questions_list_bit', TPL::output('explore/ajax/list', false));
