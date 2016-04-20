@@ -784,6 +784,20 @@
 .custom-topic-container .mod-body {
   padding: 0 !important;
 }
+.custom-topic-container .mod-body #questions .aw-item,
+.custom-topic-container .mod-body #articles .aw-item {
+  padding-left: 80px;
+  padding-right: 20px;
+}
+.custom-topic-container .mod-body #questions .aw-item .aw-user-name,
+.custom-topic-container .mod-body #articles .aw-item .aw-user-name {
+  left: 20px;
+}
+.custom-topic-container .mod-body #questions .hot-article-custom-comment,
+.custom-topic-container .mod-body #articles .hot-article-custom-comment {
+  position: absolute !important;
+  bottom: -15px;
+}
 .custom-topic-container .mod-body .custom-topic-second .post-question-item {
   padding: 10px 20px;
 }
