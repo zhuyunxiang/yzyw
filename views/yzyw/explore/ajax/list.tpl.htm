@@ -54,9 +54,11 @@
                 &nbsp; &nbsp;
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
+                    <?php if($tkey < 6) {?>
                     <span>
                         <?php _e($tval['topic_title']);?>
                     </span>
+                    <?php }?>
                 <?php }?>
                 <!-- •
                 <?php _e('%s 人关注', $val['focus_count']); ?>
@@ -130,9 +132,11 @@
                 &nbsp; &nbsp;
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
+                    <?php if($tkey < 4) {?>
                     <span>
                         <?php _e($tval['topic_title']);?>
                     </span>
+                    <?php }?>
                 <?php }?>
                 <!-- •
                 <?php _e('%s 人关注', $val['focus_count']); ?>
@@ -204,9 +208,11 @@
                 &nbsp; &nbsp;
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
+                    <?php if($tkey < 6) {?>
                     <span>
                         <?php _e($tval['topic_title']);?>
                     </span>
+                    <?php }?>
                 <?php }?>
                 <!-- •
                 <?php _e('%s 个评论', $val['comments']); ?>

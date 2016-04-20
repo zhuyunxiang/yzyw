@@ -3,6 +3,7 @@
 <div class="aw-container-wrap">
 	<div class="container aw-publish">
 		<div class="row">
+			<form action="publish/ajax/<?php if ($this->question_info['question_id']) { ?>modify<?php } else { ?>publish<?php } ?>_question/" method="post" id="question_form" onsubmit="return false;">
 			<div class="aw-content-wrap clearfix">
 				<div class="col-sm-12 col-md-9 aw-main-content">
 					<!-- tab 切换 -->
@@ -20,7 +21,7 @@
 						<h2 class="hidden-xs"><i class="icon icon-ask"></i> <?php _e('发起'); ?></h2>
 					</ul>
 					<!-- end tab 切换 -->
-					<form action="publish/ajax/<?php if ($this->question_info['question_id']) { ?>modify<?php } else { ?>publish<?php } ?>_question/" method="post" id="question_form" onsubmit="return false;">
+
 						<input type="hidden" name="post_hash" value="<?php echo new_post_hash(); ?>" />
 						<input type="hidden" name="attach_access_key" value="<?php echo $this->attach_access_key; ?>" />
 						<input type="hidden" name="question_id" id="question_id" value="<?php echo $this->question_info['question_id']; ?>" />
@@ -59,6 +60,8 @@
 									</div>
 								</div>
 
+
+
 							</div>
 							<div class="mod-footer clearfix">
 								<?php if (get_setting('integral_system_enabled') == 'Y') { ?><a href="integral/rule/" target="_blank">[<?php _e('积分规则'); ?>]</a><?php } ?>
@@ -77,7 +80,7 @@
 								<a class="btn btn-large btn-success btn-publish-submit commen-btn" id="publish_submit" onclick="AWS.ajax_post($('#question_form')); return false;"><?php _e('发布'); ?></a>
 							</div>
 						</div>
-					</form>
+
 				</div>
 				<!-- 侧边栏 -->
 				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs">
@@ -139,6 +142,7 @@
 				</div>
 				<!-- end 侧边栏 -->
 			</div>
+			</form>
 		</div>
 	</div>
 </div>

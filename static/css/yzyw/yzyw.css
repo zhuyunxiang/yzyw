@@ -1,3 +1,13 @@
+.topic-tag .text {
+  background-color: #303045;
+}
+.topic-tag .text:hover {
+  background-color: #4a4f54;
+}
+.aw-item:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
 .commen-btn,
 .btn-success,
 .btn-blue {
@@ -830,19 +840,28 @@
 .all-stared-topic {
   margin: 20px;
 }
-.my-icon {
+.before-none:before {
+  content: none;
+}
+.my-icon,
+.icon {
   display: inline-block;
-  width: 19px;
-  height: 19px;
+  width: 20px;
+  height: 20px;
   margin-bottom: -4px;
   background: url("img/ico/icon-emp.png") no-repeat;
   line-height: 18px;
 }
-.share {
-  background-position: -177px -448px;
+.share,
+.icon-share {
+  background-position: -174px -440px;
+}
+.share:before,
+.icon-share:before {
+  content: none;
 }
 .guanzhu {
-  background-position: -357px -541px;
+  background-position: -351px -530px;
 }
 .guanzhu-white {
   background-position: -357px -169px;
@@ -852,4 +871,46 @@
 }
 .sixin-white {
   background-position: -267px -169px;
+}
+.icon-agree {
+  background-position: -130px -440px;
+}
+.icon-agree:before {
+  content: none;
+}
+.icon-comment {
+  background-position: -218px -440px;
+}
+.icon-comment:before {
+  content: none;
+}
+.icon-favor {
+  background-position: -262px -440px;
+}
+.icon-favor:before {
+  content: none;
+}
+.icon-report {
+  background-position: -217px -532px;
+}
+.icon-report:before {
+  content: none;
+}
+.icon-draft {
+  background-position: -353px -484px;
+}
+.icon-draft:before {
+  content: none;
+}
+.icon-check {
+  background-position: -445px -484px;
+}
+.icon-check:before {
+  content: none;
+}
+.icon-invite {
+  background-position: -130px -532px;
+}
+.icon-invite:before {
+  content: none;
 }
