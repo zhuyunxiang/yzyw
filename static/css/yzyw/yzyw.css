@@ -449,7 +449,8 @@
 .sidebar-hot-user-container .user-action-info .row .col-md-3:last-child {
   width: 34%;
 }
-.sidebar-hot-user-container .user-action-info .row .col-md-3 .custom-empty-btn {
+.sidebar-hot-user-container .user-action-info .row .col-md-3 .custom-empty-btn,
+.sidebar-hot-user-container .user-action-info .row .col-md-3 .custom-favor-btn {
   position: absolute;
   top: 9px;
   left: -2px;

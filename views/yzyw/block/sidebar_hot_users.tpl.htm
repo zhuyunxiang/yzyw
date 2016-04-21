@@ -20,6 +20,7 @@
                     <!-- <p><?php _e('%s 个问题', '<b>' . $val['answer_count'] . '</b>'); ?>,
                         <?php _e('%s 次赞同', '<b>' . $val['agree_count'] . '</b>'); ?></p> -->
                     <p>
+                        <!-- <?php var_dump($val);?> -->
                         这里应该是用户的自我介绍，不过我到现在还没有找到！
                     </p>
                 </dd>
@@ -31,12 +32,12 @@
                     <span class="col-md-3">回答</span>
                     <span class="col-md-3">精华</span>
                     <span class="col-md-3">
-                        <button type="button" name="button" class="custom-empty-btn"><i class="my-icon guanzhu pull-left"></i> 关注</button>
+                        <button type="button" name="button" class="custom-favor-btn"><i class="my-icon guanzhu pull-left"></i> 关注</button>
                     </span>
                 </div>
                 <div class="row">
-                    <span class="col-md-3">1</span>
-                    <span class="col-md-3">2</span>
+                    <span class="col-md-3"><?php _e($val['article_count'])?></span>
+                    <span class="col-md-3"><?php _e($val['answer_count'])?></span>
                     <span class="col-md-3">3</span>
                     <span class="col-md-3">
                     </span>
