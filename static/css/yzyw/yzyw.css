@@ -4,8 +4,17 @@
 .topic-tag .text:hover {
   background-color: #4a4f54;
 }
+.commem-content-hover {
+  color: #6173AE;
+  background-color: #FAFAFA;
+  cursor: pointer;
+}
+.aw-explore-list {
+  padding: 0;
+}
 .aw-item:hover {
-  background-color: #eee;
+  color: #6173AE;
+  background-color: #FAFAFA;
   cursor: pointer;
 }
 .commen-btn,
@@ -397,6 +406,7 @@
 .tourist-index .aw-item,
 .custom-topic-container .aw-item {
   padding-top: 40px;
+  padding-left: 70px;
 }
 .tourist-index .aw-question-content,
 .custom-topic-container .aw-question-content {
@@ -487,8 +497,12 @@
   color: white;
   font-size: 12px;
 }
-.aw-container-wrap .container .row .aw-item img {
+.aw-container-wrap .container .row .aw-item .aw-user-name img {
   border-radius: 50%;
+  margin-left: 20px;
+}
+.aw-container-wrap .container .row .aw-item .aw-user-name i {
+  margin-left: 20px;
 }
 .focus-topics-list img {
   width: 50px;
@@ -496,6 +510,15 @@
 .focus-topics-list .text-color-999 {
   overflow: hidden;
   height: 40px;
+}
+.home-panel #main_contents {
+  padding: 0px;
+}
+.home-panel #main_contents .focus-topics-list {
+  padding-left: 85px;
+}
+.home-panel #main_contents .focus-topics-list .img.aw-border-radius-5 {
+  margin-left: 20px;
 }
 .aw-topic-list .aw-item {
   min-height: 135px;

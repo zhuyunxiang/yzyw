@@ -20,8 +20,7 @@
                     <!-- <p><?php _e('%s 个问题', '<b>' . $val['answer_count'] . '</b>'); ?>,
                         <?php _e('%s 次赞同', '<b>' . $val['agree_count'] . '</b>'); ?></p> -->
                     <p>
-                        <!-- <?php var_dump($val);?> -->
-                        这里应该是用户的自我介绍，不过我到现在还没有找到！
+                        <?php _e(($val['detail']['signature'])?subString_UTF8($val['detail']['signature'],0,50):"这个人很懒，什么都没有写！");?>
                     </p>
                 </dd>
             </dl>
