@@ -497,11 +497,13 @@
   color: white;
   font-size: 12px;
 }
-.aw-container-wrap .container .row .aw-item .aw-user-name img {
+.aw-container-wrap .container .row .aw-item img {
   border-radius: 50%;
+}
+.aw-container-wrap .container .row .aw-item .aw-user-name.hidden-xs img {
   margin-left: 20px;
 }
-.aw-container-wrap .container .row .aw-item .aw-user-name i {
+.aw-container-wrap .container .row .aw-item .aw-user-name.hidden-xs i {
   margin-left: 20px;
 }
 .focus-topics-list img {
@@ -637,7 +639,7 @@
 }
 .topic-detail-panel a.a-aw-user-name,
 .topic-detail-panel .content-panel {
-  margin-left: 50px;
+  margin-left: 70px;
 }
 .topic-detail-panel h4.h4-question-title a {
   font-size: 18px;
