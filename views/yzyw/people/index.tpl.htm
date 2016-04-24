@@ -62,10 +62,11 @@
                                 </a> -->
                                 <a href="javascript:;" class="pull-right follow btn btn-sm commen-btn valign-center<?php if ($this->user_follow_check) { ?> active<?php } ?>" onclick="AWS.User.follow($(this), 'user', <?php echo $this->user['uid']; ?>);">
                                     <span>
-                                    <i class="icon icon-plus"></i>
                                     <?php if ($this->user_follow_check) { ?>
+                                        <i class="my-icon icon-unfavor gray pull-left"></i>
                                         <?php _e('取消关注'); ?>
                                     <?php } else { ?>
+                                        <i class="my-icon guanzhu gray pull-left"></i>
                                         <?php _e('关注'); ?>
                                     <?php } ?>
                                     </span>

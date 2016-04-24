@@ -357,6 +357,10 @@
 .self-info .valign-center {
   margin: 8px 10px;
 }
+.self-info .valign-center i {
+  top: -2px !important;
+  margin-right: 3px;
+}
 .self-info #actions .aw-item .custom-circle-img {
   display: none;
 }
@@ -450,7 +454,7 @@
   margin-left: -10px;
 }
 .sidebar-hot-user-container .user-action-info .row .col-md-3 {
-  width: 22%;
+  width: 21%;
   padding-right: 0 !important;
   padding-left: 0 !important;
   text-align: center;
@@ -467,7 +471,7 @@
 }
 .sidebar-hot-user-container .user-item {
   margin-top: 10px;
-  padding: 2px 0 2px 10px;
+  padding: 2px 0 2px 2px;
   border-radius: 5px;
   background-color: #eee;
 }
@@ -479,6 +483,17 @@
   border: solid 1px;
   border-width: 1px 0 0 0;
   border-color: #e6e6e6;
+}
+.sidebar-hot-user-container .user-item .custom-favor-btn {
+  border-color: #344068;
+  color: #344068;
+  border: solid 2px;
+  border-radius: 2px;
+  padding: 2px 4px;
+  margin-left: 10px;
+}
+.sidebar-hot-user-container .user-item .custom-favor-btn.active {
+  margin-left: -2px;
 }
 .sidebar-hot-topic-container .mod-body {
   min-height: 100px;
@@ -903,14 +918,26 @@
 .guanzhu {
   background-position: -351px -530px;
 }
+.guanzhu:before {
+  content: none;
+}
 .guanzhu-white {
-  background-position: -357px -169px;
+  background-position: -352px -164px;
+}
+.guanzhu-white:before {
+  content: none;
 }
 .zan {
   background-position: -132px -448px;
 }
+.zan:before {
+  content: none;
+}
 .sixin-white {
-  background-position: -267px -169px;
+  background-position: -262px -165px;
+}
+.sixin-white:before {
+  content: none;
 }
 .icon-agree {
   background-position: -130px -440px;
@@ -928,6 +955,12 @@
   background-position: -262px -440px;
 }
 .icon-favor:before {
+  content: none;
+}
+.icon-unfavor {
+  background-position: -352px -440px;
+}
+.icon-unfavor:before {
   content: none;
 }
 .icon-report {

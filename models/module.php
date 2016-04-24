@@ -69,6 +69,7 @@ class module_class extends AWS_MODEL
 				{
 					$users_list[$key]['url_token'] = urlencode($val['user_name']);
 					$users_list[$key]['detail'] = $this->model('account')->get_user_info_by_uid($val['uid'],true);
+					$users_list[$key]['is_followed'] = $this->model('follow')->user_follow_check($uid, $val['uid']);
 				}
 			}
 		}

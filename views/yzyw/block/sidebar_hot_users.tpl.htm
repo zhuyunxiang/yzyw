@@ -25,13 +25,25 @@
                 </dd>
             </dl>
             <dl class="user-action-info user-custom-action-info">
-
+                <!-- <?php var_dump($val);?> -->
                 <div class="row">
                     <span class="col-md-3">文章</span>
                     <span class="col-md-3">回答</span>
                     <span class="col-md-3">精华</span>
                     <span class="col-md-3">
-                        <button type="button" name="button" class="custom-favor-btn"><i class="my-icon guanzhu pull-left"></i> 关注</button>
+                        <!-- <button type="button" name="button" class="custom-favor-btn"><i class="my-icon guanzhu pull-left"></i> 关注</button> -->
+
+                        <a href="javascript:;" class="custom-favor-btn <?php if ($val['is_followed']) { ?> active<?php } ?>" uid="<?php echo $val['uid']; ?>">
+                            <span>
+                            <?php if ($val['is_followed']) { ?>
+                                <i class="my-icon icon-unfavor gray pull-left"></i>
+                                <?php _e('取消关注'); ?>
+                            <?php } else { ?>
+                                <i class="my-icon guanzhu gray pull-left"></i>
+                                <?php _e('关注'); ?>
+                            <?php } ?>
+                            </span>
+                        </a>
                     </span>
                 </div>
                 <div class="row">

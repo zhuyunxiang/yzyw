@@ -215,11 +215,11 @@
         };
         alert("赞");
     });
-    $(".custom-favor-btn").on('click', function () {
+    $(".custom-favor-btn").on('click', function (e) {
         if (!favorCheckIsLogin()) {
             return false;
         };
-        alert("赞");
+        AWS.User.follow($(this), 'user', $(this).attr('uid'));
     });
 </script>
 
