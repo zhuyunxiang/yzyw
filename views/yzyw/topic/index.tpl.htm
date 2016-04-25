@@ -27,7 +27,7 @@
                             <h2 class="pull-left custom-topic-title"><?php echo $this->topic_info['topic_title']; ?>
                                 <?php if ($this->topic_info['topic_lock']) { ?>
                                 <i class="aw-icon i-lock" title="<?php _e('已锁定'); ?>"></i><?php } ?>
-							</h2>
+                            </h2>
                         </div>
                     </div>
 
@@ -82,7 +82,7 @@
                         <div class="mod-body custon-topic-panel">
                             <!-- tab 切换内容 -->
                             <div class="tab-content">
-                                <div class="tab-pane active" id="all">
+                                <div class="tab-pane" id="all">
                                     <!-- 推荐问题 -->
                                     <?php if ($this->recommend_list) { ?>
                                     <div class="aw-mod aw-topic-recommend-list">
@@ -117,165 +117,164 @@
                                                 <!-- <div class="topic-info-item">
                                                     <span>123123</span>
                                                 </div> -->
-												<!-- <?php var_dump($this->posts_list);?> -->
+                                                <!-- <?php var_dump($this->posts_list);?> -->
 
                                                 <?php foreach($this->post_question_list AS $plkey => $plval) {?>
-	                                                <?php if ($plval['post_type'] == 'question') {?>
+                                                <?php if ($plval['post_type'] == 'question') {?>
 
-		                                                <div class="post-question-item">
-		                                                    <!-- <?php //var_dump($plval);?> -->
-		                                                    <div class="question-title">
-		                                                        <?php _e($plval['question_content']);?>
-		                                                    </div>
-		                                                    <div class="question-detail">
-		                                                        <?php _e($plval['question_detail']);?>
-		                                                    </div>
-															<?php if ($plval['answer_info'] ) {?>
-		                                                    <div class="question-answer-container">
-		                                                        <div class="head-img">
+                                                <div class="post-question-item">
+                                                    <!-- <?php //var_dump($plval);?> -->
+                                                    <div class="question-title">
+                                                        <?php _e($plval['question_content']);?>
+                                                    </div>
+                                                    <div class="question-detail">
+                                                        <?php _e($plval['question_detail']);?>
+                                                    </div>
+                                                    <?php if ($plval['answer_info'] ) {?>
+                                                    <div class="question-answer-container">
+                                                        <div class="head-img">
 
-		                                                            <a class="img aw-border-radius-5" href="people/<?php echo $plval['answer_info']['user_info']['url_token']; ?>" data-id="<?php echo $plval['answer_info']['user_info']['uid']; ?>">
-		                                                                <!-- <img src="<?php echo  get_avatar_url($plval['answer_info']['user_info']['uid'],'mid')?>" class="custom-circle-img" alt=""/> -->
-		                                                                <img alt="<?php echo $plval['answer_info']['user_info']['user_name']; ?>" class="custom-circle-img" src="<?php echo get_avatar_url($plval['answer_info']['user_info']['uid'], 'mid'); ?>"/>
-		                                                            </a>
-		                                                        </div>
-		                                                        <div class="answer-title">
-		                                                            <span class="name-span"><?php _e($plval['answer_info']['user_info']['user_name']);?></span>发布了一个回答
-		                                                            <span class="pull-right"><?php echo date_friendly($plval['answer_info']['add_time']); ?></span>
-		                                                        </div>
-		                                                        <div class="answer-content">
-		                                                            <?php _e($plval['answer_info']['answer_content'])?>
-		                                                        </div>
-		                                                    </div>
-															<?php }?>
+                                                            <a class="img aw-border-radius-5" href="people/<?php echo $plval['answer_info']['user_info']['url_token']; ?>" data-id="<?php echo $plval['answer_info']['user_info']['uid']; ?>">
+                                                                <!-- <img src="<?php echo  get_avatar_url($plval['answer_info']['user_info']['uid'],'mid')?>" class="custom-circle-img" alt=""/> -->
+                                                                <img alt="<?php echo $plval['answer_info']['user_info']['user_name']; ?>" class="custom-circle-img" src="<?php echo get_avatar_url($plval['answer_info']['user_info']['uid'], 'mid'); ?>"/>
+                                                            </a>
+                                                        </div>
+                                                        <div class="answer-title">
+                                                            <span class="name-span"><?php _e($plval['answer_info']['user_info']['user_name']);?></span>发布了一个回答
+                                                            <span class="pull-right"><?php echo date_friendly($plval['answer_info']['add_time']); ?></span>
+                                                        </div>
+                                                        <div class="answer-content">
+                                                            <?php _e($plval['answer_info']['answer_content'])?>
+                                                        </div>
+                                                    </div>
+                                                    <?php }?>
 
-															<div class="custom-options-panel">
-																<div class="custom-comment hot-article-custom-comment">
-																	<span class="agree-span">
-																		<i class="icon icon-agree"></i>
-																		赞<?php echo $val['votes']; ?></span>
-																	&nbsp;&nbsp;&nbsp;&nbsp;
-																	<span class="share-to-others">
-																		<i class="my-icon share"></i>
-																		分享
-																		<div class="share-panel">
-																			<div class="share-item">
-																				<a onclick="AWS.User.share_out({webid: 'weixin', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
-																					<div class="weixin">
-																						<span class="pull-right">微信好友</span>
-																					</div>
-																				</a>
+                                                    <div class="custom-options-panel">
+                                                        <div class="custom-comment hot-article-custom-comment">
+                                                            <span class="agree-span">
+                                                                <i class="icon icon-agree"></i>
+                                                                赞<?php echo $val['votes']; ?></span>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <span class="share-to-others">
+                                                                <i class="my-icon share"></i>
+                                                                分享
+                                                                <div class="share-panel">
+                                                                    <div class="share-item">
+                                                                        <a onclick="AWS.User.share_out({webid: 'weixin', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
+                                                                            <div class="weixin">
+                                                                                <span class="pull-right">微信好友</span>
+                                                                            </div>
+                                                                        </a>
 
-																			</div>
-																			<div class="share-item">
-																				<a onclick="AWS.User.share_out({webid: 'tsina', title: SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
-																					<div class="weibo">
-																						<span class="pull-right">新浪微博</span>
-																					</div>
-																				</a>
+                                                                    </div>
+                                                                    <div class="share-item">
+                                                                        <a
+                                                                            onclick="AWS.User.share_out({webid: 'tsina', title: SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
+                                                                            <div class="weibo">
+                                                                                <span class="pull-right">新浪微博</span>
+                                                                            </div>
+                                                                        </a>
 
-																			</div>
-																			<div class="share-item">
-																				<a onclick="AWS.User.share_out({webid: 'qzone', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
-																					<div class="qq">
-																						<span class="pull-right">QQ</span>
-																					</div>
-																				</a>
-																			</div>
-																		</div>
-																	</span>
-																	<?php if($this->user_info['group_name'] != "游客"){?>
-																	&nbsp;&nbsp;&nbsp;&nbsp;
-																	<i class="icon icon-comment"></i>
-																	<?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
-																	<i class="icon icon-favor"></i>
-																	收藏 &nbsp;&nbsp;&nbsp;&nbsp;
-																	<i class="icon icon-report"></i>
-																	举报 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
-																	<?php } ?>
-																</div>
-															</div>
+                                                                    </div>
+                                                                    <div class="share-item">
+                                                                        <a onclick="AWS.User.share_out({webid: 'qzone', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
+                                                                            <div class="qq">
+                                                                                <span class="pull-right">QQ</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                            <?php if($this->user_info['group_name'] != "游客"){?>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="icon icon-comment"></i>
+                                                            <?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="icon icon-favor"></i>
+                                                            收藏 &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="icon icon-report"></i>
+                                                            举报 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                                                            <?php } ?>
+                                                        </div>
+                                                    </div>
 
-		                                                </div>
+                                                </div>
 
-	                                                <?php }?>
+                                                <?php }?>
                                                 <?php }?>
 
-												<?php foreach($this->post_article_list AS $plkey => $plval) {?>
-	                                                <!-- <?php var_dump($plval);?> -->
-	                                                <?php if ($plval['post_type'] == 'article') {?>
-		                                                <div class="post-question-item">
-		                                                    <!-- <?php //var_dump($plval);?> -->
-		                                                    <div class="question-title">
-		                                                        <?php _e($plval['title']);?>
-		                                                    </div>
-		                                                    <div class="question-detail">
-		                                                        <?php _e($plval['message']);?>
-		                                                    </div>
-		                                                    <div class="question-answer-container">
-		                                                        <div class="head-img">
+                                                <?php foreach($this->post_article_list AS $plkey => $plval) {?>
+                                                <?php if ($plval['post_type'] == 'article') {?>
+                                                <div class="post-question-item">
+                                                    <div class="question-title">
+                                                        <?php _e($plval['title']);?>
+                                                    </div>
+                                                    <div class="question-detail">
+                                                        <?php _e($plval['message']);?>
+                                                    </div>
+                                                    <div class="question-answer-container">
+                                                        <div class="head-img">
 
-		                                                            <a class="img aw-border-radius-5" href="people/<?php echo $plval['answer_info']['user_info']['url_token']; ?>" data-id="<?php echo $plval['answer_info']['user_info']['uid']; ?>">
-		                                                                <!-- <img src="<?php echo  get_avatar_url($plval['answer_info']['user_info']['uid'],'mid')?>" class="custom-circle-img" alt=""/> -->
-		                                                                <img alt="<?php echo $plval['answer_info']['user_info']['user_name']; ?>" class="custom-circle-img" src="<?php echo get_avatar_url($plval['answer_info']['user_info']['uid'], 'mid'); ?>"/>
-		                                                            </a>
-		                                                        </div>
-		                                                        <div class="answer-title">
-		                                                            <span class="name-span"><?php _e($plval['answer_info']['user_info']['user_name']);?></span>发布了一个评论
-		                                                            <span class="pull-right"><?php echo date_friendly($plval['answer_info']['add_time']); ?></span>
-		                                                        </div>
-		                                                        <div class="answer-content">
-		                                                            <?php _e($plval['answer_info']['answer_content'])?>
-		                                                        </div>
-		                                                    </div>
-															<div class="custom-options-panel">
-																<div class="custom-comment hot-article-custom-comment">
-																	<span class="agree-span">
-																		<i class="icon icon-agree"></i>
-																		赞<?php echo $val['votes']; ?></span>
-																	&nbsp;&nbsp;&nbsp;&nbsp;
-																	<span class="share-to-others">
-																		<i class="my-icon share"></i>
-																		分享
-																		<div class="share-panel">
-																			<div class="share-item">
-																				<a onclick="AWS.User.share_out({webid: 'weixin', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
-																					<div class="weixin">
-																						<span class="pull-right">微信好友</span>
-																					</div>
-																				</a>
+                                                            <a class="img aw-border-radius-5" href="people/<?php echo $plval['answer_info']['user_info']['url_token']; ?>" data-id="<?php echo $plval['answer_info']['user_info']['uid']; ?>">
+                                                                <img alt="<?php echo $plval['answer_info']['user_info']['user_name']; ?>" class="custom-circle-img" src="<?php echo get_avatar_url($plval['answer_info']['user_info']['uid'], 'mid'); ?>"/>
+                                                            </a>
+                                                        </div>
+                                                        <div class="answer-title">
+                                                            <span class="name-span"><?php _e($plval['answer_info']['user_info']['user_name']);?></span>发布了一个评论
+                                                            <span class="pull-right"><?php echo date_friendly($plval['answer_info']['add_time']); ?></span>
+                                                        </div>
+                                                        <div class="answer-content">
+                                                            <?php _e($plval['answer_info']['answer_content'])?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-options-panel">
+                                                        <div class="custom-comment hot-article-custom-comment">
+                                                            <span class="agree-span">
+                                                                <i class="icon icon-agree"></i>
+                                                                赞<?php echo $val['votes']; ?></span>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <span class="share-to-others">
+                                                                <i class="my-icon share"></i>
+                                                                分享
+                                                                <div class="share-panel">
+                                                                    <div class="share-item">
+                                                                        <a onclick="AWS.User.share_out({webid: 'weixin', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail')});">
+                                                                            <div class="weixin">
+                                                                                <span class="pull-right">微信好友</span>
+                                                                            </div>
+                                                                        </a>
 
-																			</div>
-																			<div class="share-item">
-																				<a onclick="AWS.User.share_out({webid: 'tsina', title: SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
-																					<div class="weibo">
-																						<span class="pull-right">新浪微博</span>
-																					</div>
-																				</a>
+                                                                    </div>
+                                                                    <div class="share-item">
+                                                                        <a
+                                                                            onclick="AWS.User.share_out({webid: 'tsina', title: SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>', content: $(this).parents('.aw-question-detail').find('.markitup-box:last')});">
+                                                                            <div class="weibo">
+                                                                                <span class="pull-right">新浪微博</span>
+                                                                            </div>
+                                                                        </a>
 
-																			</div>
-																			<div class="share-item">
-																				<a onclick="AWS.User.share_out({webid: 'qzone', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
-																					<div class="qq">
-																						<span class="pull-right">QQ</span>
-																					</div>
-																				</a>
-																			</div>
-																		</div>
-																	</span>
-																	<?php if($this->user_info['group_name'] != "游客"){?>
-																	&nbsp;&nbsp;&nbsp;&nbsp;
-																	<i class="icon icon-comment"></i>
-																	<?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
-																	<i class="icon icon-favor"></i>
-																	收藏 &nbsp;&nbsp;&nbsp;&nbsp;
-																	<i class="icon icon-report"></i>
-																	举报 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
-																	<?php } ?>
-																</div>
-															</div>
-		                                                </div>
-	                                                <?php }?>
+                                                                    </div>
+                                                                    <div class="share-item">
+                                                                        <a onclick="AWS.User.share_out({webid: 'qzone', title:SubstringDemo($(this).parents('.aw-item').find('.markitup-box:last').eq(0).text().trim(),0,200), url: '<?php echo $val['link']; ?>',  content: $(this).parents('.aw-question-detail')});">
+                                                                            <div class="qq">
+                                                                                <span class="pull-right">QQ</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                            <?php if($this->user_info['group_name'] != "游客"){?>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="icon icon-comment"></i>
+                                                            <?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="icon icon-favor"></i>
+                                                            收藏 &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <i class="icon icon-report"></i>
+                                                            举报 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                                                            <?php } ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
                                                 <?php }?>
                                             </div>
                                         </div>
@@ -283,7 +282,7 @@
                                             <!-- <a class="aw-load-more-content" id="c_all_more" auto-load="false">
                                                 <span><?php _e('更多'); ?>...</span>
                                             </a> -->
-											<?php _e($this->pagination);?>
+                                            <?php _e($this->pagination);?>
                                         </div>
                                     </div>
                                 </div>
@@ -292,6 +291,20 @@
                                     <div class="aw-feed-list" id="c_best_question_list">
                                         <div class="mod-body">
                                             <?php echo $this->best_questions_list_bit; ?>
+                                        </div>
+                                        <div class="mod-footer">
+                                            <a class="aw-load-more-content" id="bp_best_question_more" auto-load="false">
+                                                <span><?php _e('更多'); ?>...</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="best_articles">
+                                    <div class="aw-feed-list" id="">
+                                        <div class="mod-body">
+                                            <!-- <?php echo $this->best_questions_list_bit; ?> -->
+                                            12312313
                                         </div>
                                         <div class="mod-footer">
                                             <a class="aw-load-more-content" id="bp_best_question_more" auto-load="false">
@@ -331,7 +344,7 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane" id="articles">
+                                <div class="tab-pane active" id="articles">
                                     <!-- 动态首页&话题精华模块 -->
                                     <div class="aw-mod">
                                         <div class="mod-body">
@@ -365,6 +378,7 @@
                                         <?php echo $this->topic_info['topic_description']; ?>
                                     </div>
                                 </div>
+
                             </div>
                             <!-- end tab 切换内容 -->
                         </div>
@@ -592,22 +606,63 @@
         _init_tab();
         $(this).parent().addClass('active');
         $("#best_answers_href").parent().removeClass('active');
+
+        // 显示 文章
+        $("#articles").addClass('active');
+        $("#questions").removeClass('active');
+        $("#best_answers").removeClass("active");
+        $("#best_articles").removeClass("active");
     });
 
     $("#best_answers_href").on('click', function () {
         _init_tab();
         $(this).parent().addClass('active');
         $("#all_href").parent().removeClass('active');
+
+        // 显示 文章
+        $("#articles").removeClass('active');
+        $("#questions").removeClass('active');
+        $("#best_answers").removeClass("active");
+        $("#best_articles").addClass("active");
     });
 
     $("#questions_href").on('click', function () {
         $(this).parent().addClass('active');
         $("#article_href").parent().removeClass('active');
+
+        // 全部内容
+        if ($("#all_href").parent().hasClass('active')) {
+
+            $("#questions").addClass('active');
+            $("#articles").removeClass('active');
+            $("#best_answers").removeClass("active");
+            $("#best_articles").removeClass("active");
+        } else {
+            // 精华
+            $("#questions").removeClass('active');
+            $("#articles").removeClass('active');
+            $("#best_answers").addClass("active");
+            $("#best_articles").removeClass("active");
+        }
     });
 
     $("#article_href").on('click', function () {
         $(this).parent().addClass('active');
         $("#questions_href").parent().removeClass('active');
+
+        // 全部内容
+        if ($("#all_href").parent().hasClass('active')) {
+            $("#articles").addClass('active');
+            $("#questions").removeClass('active');
+            $("#best_answers").removeClass("active");
+            $("#best_articles").removeClass("active");
+        } else {
+            // 精华
+            $("#articles").removeClass('active');
+            $("#questions").removeClass('active');
+            $("#best_answers").removeClass("active");
+            $("#best_articles").addClass("active");
+        }
     });
 </script>
 <?php TPL::output('global/footer.tpl.htm'); ?>
