@@ -273,7 +273,6 @@ class main extends AWS_CONTROLLER
 
 			TPL::assign('today_topic', $today_topic);
 		}
-
 		switch ($_GET['channel'])
 		{
 			case 'focus':
@@ -303,7 +302,6 @@ class main extends AWS_CONTROLLER
 				}
 
 				$cache_key = 'square_hot_topic_list' . md5($order) . '_' . intval($_GET['page']);
-
 				if (!$topics_list = AWS_APP::cache()->get($cache_key))
 				{
 					if ($topics_list = $this->model('topic')->get_topic_list(null, $order, 20, $_GET['page']))
@@ -319,7 +317,9 @@ class main extends AWS_CONTROLLER
 				{
 					$topics_list_total_rows = AWS_APP::cache()->get('square_hot_topic_list_total_rows');
 				}
-
+				foreach ($topics_list as $key => $value) {
+					$topics_list[$key]['action_list'] = $this->model('posts')->get_posts_list('question', 1, 3, 'new', explode(',', $value['topic_id']));
+				}
 				TPL::assign('topics_list', $topics_list);
 			break;
 
@@ -346,7 +346,6 @@ class main extends AWS_CONTROLLER
 				{
 					$topics_list_total_rows = AWS_APP::cache()->get('square_parent_topics_topic_list_' . intval($_GET['topic_id']) . '_total_rows');
 				}
-
 				TPL::assign('topics_list', $topics_list);
 			break;
 		}

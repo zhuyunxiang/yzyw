@@ -37,10 +37,12 @@
                                 <!-- tab 切换 -->
                                 <ul class="nav nav-tabs aw-nav-tabs hidden-xs">
                                     <li class="active">
-                                        <a href="#all" id="all_href" data-toggle="tab"><?php _e('全部内容'); ?></a>
+                                        <a id="all_href"><?php _e('全部内容'); ?></a>
+                                        <!-- <a href="#all" id="all_href"><?php _e('全部内容'); ?></a> -->
                                     </li>
                                     <li>
-                                        <a href="#best_answers" id="best_answers_href" data-toggle="tab"><?php _e('精华'); ?></a>
+                                        <a id="best_answers_href"><?php _e('精华'); ?></a>
+                                        <!-- <a href="#best_answers" id="best_answers_href"><?php _e('精华'); ?></a> -->
                                     </li>
                                     <li class="pull-right">
                                         <a class="pull-right" id="questions_href"><?php _e('问题'); ?></a>
@@ -579,18 +581,30 @@
         alert("赞");
     });
 
+    var _init_tab = function () {
+        $("#questions_href").parent().removeClass('active');
+        $("#article_href").parent().removeClass('active');
+
+        $("#article_href").parent().addClass('active');
+    }
+
     $("#all_href").on('click', function () {
-        console.log("123");
-        $("#questions_href").parent().addClass('active');
+        _init_tab();
+        $(this).parent().addClass('active');
+        $("#best_answers_href").parent().removeClass('active');
     });
+
     $("#best_answers_href").on('click', function () {
-        console.log("123");
-        $("#questions_href").parent().addClass('active');
+        _init_tab();
+        $(this).parent().addClass('active');
+        $("#all_href").parent().removeClass('active');
     });
+
     $("#questions_href").on('click', function () {
         $(this).parent().addClass('active');
         $("#article_href").parent().removeClass('active');
     });
+
     $("#article_href").on('click', function () {
         $(this).parent().addClass('active');
         $("#questions_href").parent().removeClass('active');
