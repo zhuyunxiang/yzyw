@@ -50,12 +50,11 @@
 				<?php if ($this->user_id) { ?>
 					<a href="people/<?php echo $this->user_info['url_token']; ?>" class="aw-user-nav-dropdown">
 						<img alt="<?php echo $this->user_info['user_name']; ?>" class="custom-circle-img" src="<?php echo get_avatar_url($this->user_info['uid'], 'mid'); ?>" />
-
 					</a>
 
 					<div class="aw-dropdown dropdown-list pull-right">
 						<ul class="aw-dropdown-list">
-							<li><a href="inbox/"><i class="icon icon-inbox"></i> <?php _e('私信'); ?><span class="badge badge-important hide" id="inbox_unread">0</span></a></li>
+							<!-- <li><a href="inbox/"><i class="icon icon-inbox"></i> <?php _e('私信'); ?><span class="badge badge-important hide" id="inbox_unread">0</span></a></li> -->
 							<li class="hidden-xs"><a href="account/setting/profile/"><i class="icon icon-setting"></i> <?php _e('设置'); ?></a></li>
 							<?php if ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator']) { ?>
 							<li class="hidden-xs"><a href="admin/"><i class="icon icon-job"></i> <?php _e('管理'); ?></a></li>
@@ -72,7 +71,7 @@
 			<?php if ($this->user_id) { ?>
 			<div class="aw-user-nav custom-aw-user-nav">
 				<span class="aw-user-nav-dropdown private-msg-a">
-					<a href="people/<?php echo $this->user_info['url_token']; ?>">
+					<a href="inbox/">
 						<div class="private-msg-ico custom-circle-img" ></div>
 						<?php if ($this->user_info['inbox_unread'] != 0) {?>
 							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
@@ -80,21 +79,21 @@
 					</a>
 					<div class="aw-dropdown dropdown-list">
 						<ul class="aw-dropdown-list">
-							<li><a href="inbox/"><i class="icon icon-inbox"></i> <?php _e('私信'); ?><span class="badge badge-important hide" id="inbox_unread">0</span></a></li>
-							<li class="hidden-xs"><a href="account/setting/profile/"><i class="icon icon-setting"></i> <?php _e('设置'); ?></a></li>
-							<?php if ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator']) { ?>
-							<li class="hidden-xs"><a href="admin/"><i class="icon icon-job"></i> <?php _e('管理'); ?></a></li>
-							<?php } ?>
-							<li><a href="account/logout/"><i class="icon icon-logout"></i> <?php _e('退出'); ?></a></li>
+							<li>
+								<a href="inbox/">
+									<i class="icon icon-inbox"></i> <?php _e('私信'); ?>
+									<!-- <span class="badge badge-important hide" id="inbox_unread">0</span> -->
+								</a>
+						</li>
 						</ul>
 					</div>
 				</span>
 
 				<span class="aw-user-nav-dropdown private-msg-a">
-					<a href="people/<?php echo $this->user_info['url_token']; ?>">
+					<a href="notifications">
 						<div class="msg-ico custom-circle-img" ></div>
-						<?php if ($this->user_info['inbox_unread'] != 0) {?>
-							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
+						<?php if ($this->user_info['notification_unread'] != 0) {?>
+							<span class="badge badge-important"><?php echo $this->user_info['notification_unread']?></span>
 						<?php } ?>
 					</a>
 					<!-- <div class="aw-dropdown dropdown-list msg-ico-panel">
@@ -120,8 +119,8 @@
 				<span class="aw-user-nav-dropdown private-msg-a">
 					<a href="people/<?php echo $this->user_info['url_token']; ?>">
 						<div class="comments-ico custom-circle-img" ></div>
-						<?php if ($this->user_info['inbox_unread'] != 0) {?>
-							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
+						<?php if ($this->user_info['notification_unread'] != 0) {?>
+							<span class="badge badge-important"><?php echo $this->user_info['notification_unread']?></span>
 						<?php } ?>
 					</a>
 					<div class="aw-dropdown dropdown-list comments-ico-panel">
