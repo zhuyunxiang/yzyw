@@ -1,28 +1,24 @@
-.topic-tag{
-    .text{
+.topic-tag {
+    .text {
         background-color: #303045;
-        &:hover{
+        &:hover {
             background-color: #4a4f54;
         }
     }
 }
-
-.commem-content-hover{
+.commem-content-hover {
     color: #6173AE;
     background-color: #FAFAFA;
     cursor: pointer;
 }
-
-.aw-explore-list{
+.aw-explore-list {
     padding: 0;
 }
-
-.aw-item{
-    &:hover{
+.aw-item {
+    &:hover {
         .commem-content-hover;
     }
 }
-
 @gray-color: #303045;
 .commen-btn,
 .btn-success,
@@ -368,7 +364,7 @@
     }
     .valign-center {
         margin: 8px 10px;
-        i{
+        i {
             top: -2px !important;
             margin-right: 3px;
         }
@@ -508,7 +504,8 @@
                 &:last-child {
                     width: 34%;
                 }
-                .custom-empty-btn,.custom-favor-btn {
+                .custom-empty-btn,
+                .custom-favor-btn {
                     position: absolute;
                     top: 9px;
                     left: -2px;
@@ -530,15 +527,14 @@
             border-width: 1px 0 0 0;
             border-color: #e6e6e6;
         }
-
-        .custom-favor-btn{
+        .custom-favor-btn {
             border-color: #344068;
             color: #344068;
             border: solid 2px;
             border-radius: 2px;
             padding: 2px 4px;
             margin-left: 10px;
-            &.active{
+            &.active {
                 margin-left: -2px;
             }
         }
@@ -568,14 +564,14 @@
     .container {
         .row {
             .aw-item {
-                img{
+                img {
                     border-radius: 50%;
                 }
-                .aw-user-name.hidden-xs{
+                .aw-user-name.hidden-xs {
                     img {
                         margin-left: 20px;
                     }
-                    i{
+                    i {
                         margin-left: 20px;
                     }
                 }
@@ -592,20 +588,17 @@
         height: 40px;
     }
 }
-
-.home-panel{
-    #main_contents{
-        padding: 0px;
-
-        .focus-topics-list{
+.home-panel {
+    #main_contents {
+        padding: 0;
+        .focus-topics-list {
             padding-left: 85px;
-            .img.aw-border-radius-5{
+            .img.aw-border-radius-5 {
                 margin-left: 20px;
             }
         }
     }
 }
-
 .aw-topic-list .aw-item {
     min-height: 150px;
     padding-right: 20px;
@@ -733,17 +726,15 @@
         }
     }
 }
-
 .commen-custom-options-panel {
     .hot-article-custom-comment {
         position: static !important;
-        margin: 10px 0px !important;
-        &.custom-detail{
+        margin: 10px 0 !important;
+        &.custom-detail {
             margin: 10px 70px !important;
         }
     }
 }
-
 // 自定义查看全部弹出框
 .custom-article-modal {
     .commen-custom-options-panel;
@@ -908,10 +899,10 @@
 .custom-topic-container {
     .commen-custom-options-panel;
     h2.custom-topic-title {
-        margin: 0 0 0 75px;
+        // margin: 0 0 0 75px;
     }
     .aw-topic-list-mod {
-        .mod-head {
+        .custom-mod-head {
             position: relative;
             top: -30px;
             // left: 70px;
@@ -925,24 +916,49 @@
             margin-top: -30px;
         }
     }
-    .mod-body {
+    .custom-mod-body {
         padding: 0 !important;
-        #questions, #articles{
-            .aw-item{
+        #questions,
+        #articles {
+            .aw-item {
                 // margin: 0 20px;
-                padding-left: 80px;
-                .aw-user-name{
+                padding-left: 70px;
+                .aw-user-name {
                     left: 15px;
                 }
                 padding-right: 20px;
+                .aw-user-name{
+                    left: 0px;
+                }
             }
-
-            .hot-article-custom-comment{
+            .hot-article-custom-comment {
                 position: absolute !important;
                 bottom: -15px;
             }
+            .modal{
+                .hot-article-custom-comment{
+                    position: static !important;
+                }
+                .article-author-panel{
+                    .aw-item{
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        .hidden-xs{
+                            img{
+                                margin-left: 0px;
+                            }
+                        }
+                        .a-aw-user-name{
+                            margin-left: 50px;
+                        }
+                    }
+                }
+            }
         }
 
+        .custom-options-panel{
+            position: relative;
+        }
         .custom-topic-second {
             .post-question-item {
                 padding: 10px 20px;
@@ -979,13 +995,13 @@
     }
 }
 //分页
-.pagination{
-    li.active{
-        a{
+.pagination {
+    li.active {
+        a {
             border: solid 1px #26335F;
             color: #999;
             background-color: white;
-            &:hover{
+            &:hover {
                 border: solid 1px #26335F;
                 color: #999;
                 background-color: #eee;
@@ -994,7 +1010,6 @@
         }
     }
 }
-
 // 自定义话题页面右边栏
 .custom-topic-sidebar {
     .focus-users-count-title {
@@ -1011,15 +1026,14 @@
 .all-stared-topic {
     margin: 20px;
 }
-
-.before-none{
-    &:before{
+.before-none {
+    &:before {
         content: none;
     }
 }
-
 // Start Icon
-.my-icon ,.icon{
+.my-icon,
+.icon {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -1028,7 +1042,8 @@
     background: url("img/ico/icon-emp.png") no-repeat;
     line-height: 18px;
 }
-.share,.icon-share {
+.share,
+.icon-share {
     background-position: -174px -440px;
     .before-none;
 }
@@ -1038,51 +1053,45 @@
 }
 .guanzhu-white {
     background-position: -352px -164px;
-    .before-none
+    .before-none;
 }
 .zan {
     background-position: -132px -448px;
-    .before-none
+    .before-none;
 }
 .sixin-white {
     background-position: -262px -165px;
-    .before-none
+    .before-none;
 }
-
-
-.icon-agree{
+.icon-agree {
     background-position: -130px -440px;
     .before-none;
 }
-.icon-comment{
+.icon-comment {
     background-position: -218px -440px;
     .before-none;
 }
-
-.icon-favor{
+.icon-favor {
     background-position: -262px -440px;
     .before-none;
 }
-
-.icon-unfavor{
+.icon-unfavor {
     background-position: -352px -440px;
     .before-none;
 }
-
-.icon-report{
+.icon-report {
     background-position: -217px -532px;
     .before-none;
 }
-
-.icon-draft{
+.icon-draft {
     background-position: -353px -484px;
     .before-none;
 }
-.icon-check{
+.icon-check {
     background-position: -445px -484px;
     .before-none;
 }
-.icon-invite{
+.icon-invite {
     background-position: -130px -532px;
     .before-none;
 }
