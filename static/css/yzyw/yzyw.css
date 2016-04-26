@@ -816,6 +816,9 @@
 .custom-topic-container .hot-article-custom-comment.custom-detail {
   margin: 10px 70px !important;
 }
+.custom-topic-container .mod-body {
+  padding: 0px !important;
+}
 .custom-topic-container .aw-topic-list-mod .custom-mod-head {
   position: relative;
   top: -30px;
