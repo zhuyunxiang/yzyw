@@ -133,8 +133,8 @@
                 <?php echo($val['comment_count']); ?>
                 评论 &nbsp;&nbsp;&nbsp;&nbsp;
                 </a>
-                <i class="icon icon-favor"></i>
-                收藏 &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:;" onclick="AWS.dialog('favorite', {item_id:<?php echo $val['question_id']; ?>, item_type:'question'});" class="text-color-999"><i class="icon icon-favor"></i> 收藏</a>
+                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>})"><i class="icon icon-report"></i>举报</a>
                  &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
                 <?php } ?>
@@ -223,8 +223,8 @@
                 <?php echo($val['comment_count']); ?>
                 评论 &nbsp;&nbsp;&nbsp;&nbsp;
                 </a>
-                <i class="icon icon-favor"></i>
-                收藏 &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:;" onclick="AWS.dialog('favorite', {item_id:<?php echo $val['question_id']; ?>, item_type:'question'});" class="text-color-999"><i class="icon icon-favor"></i> 收藏</a>
+                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>})"><i class="icon icon-report"></i>举报</a>
                 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
                 <?php } ?>
@@ -288,9 +288,9 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <i class="icon icon-comment"></i>
                 <?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
-                <i class="icon icon-favor"></i>
-                收藏 &nbsp;&nbsp;&nbsp;&nbsp;
-                <!-- <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'article', item_id:<?php echo $val['article_id']; ?>})"><i class="icon icon-report"></i>举报</a> -->
+                <a href="javascript:;" onclick="AWS.dialog('favorite', {item_id:<?php echo $val['id']; ?>, item_type:'article'});" class="text-color-999"><i class="icon icon-favor"></i> 收藏</a>
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'article', item_id:<?php echo $val['id']; ?>})"><i class="icon icon-report"></i>举报</a>
 
                 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
                 <?php } ?>
