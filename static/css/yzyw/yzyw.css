@@ -936,6 +936,10 @@ em.badge.badge-info {
 .before-none:before {
   content: none;
 }
+.aw-back-top.hidden-xs .icon {
+  height: 100% !important;
+  width: auto !important;
+}
 .my-icon,
 .icon {
   display: inline-block;

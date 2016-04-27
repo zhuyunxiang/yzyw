@@ -1,27 +1,32 @@
 <?php if ($this->posts_list) { ?>
 <?php foreach($this->posts_list as $key => $val) { ?>
+    <!-- <?php var_dump($val);?> -->
 <div
     class="aw-item <?php if ($val['question_id']) { ?><?php if ($val['answer_count'] == 0) { ?>active<?php } ?><?php } else {?>article<?php } ?>"
     data-topic-id="<?php foreach ($val['topics'] AS $k => $v) { ?><?php echo $v['topic_id']; ?>,<?php } ?>">
     <?php if ($val['anonymous'] == 0) { ?>
-    <a class="aw-user-name hidden-xs" data-id="<?php echo $val['user_info']['uid']; ?>" href="people/<?php echo $val['user_info']['url_token']; ?>" rel="nofollow"><img src="<?php echo get_avatar_url($val['user_info']['uid'], 'max'); ?>" class="custom-circle-img" alt=""/><?php if ($val['user_info']['verified']) { ?><?php if ($val['user_info']['verified'] == 'personal') { ?>
-        <i class="icon icon-v"></i>
-    <?php } else { ?>
-        <i class="icon icon-v i-ve"></i>
+    <a class="aw-user-name hidden-xs" data-id="<?php echo $val['user_info']['uid']; ?>" href="people/<?php echo $val['user_info']['url_token']; ?>" rel="nofollow">
+        <img src="<?php echo get_avatar_url($val['user_info']['uid'], 'max'); ?>" class="custom-circle-img" alt=""/>
+        <?php if ($val['user_info']['verified']) { ?>
+            <?php if ($val['user_info']['verified'] == 'personal') { ?>
+                <i class="icon icon-v"></i>
+            <?php } else { ?>
+                <i class="icon icon-v i-ve"></i>
+            <?php } ?>
         <?php } ?>
-        <?php } ?></a>
-<?php } else { ?>
+    </a>
+    <?php } else { ?>
     <a class="aw-user-name hidden-xs" href="javascript:;"><img src="<?php echo G_STATIC_URL; ?>/common/avatar-max-img.png" alt="<?php _e('匿名用户'); ?>" class="custom-circle-img" title="<?php _e('匿名用户'); ?>"/></a>
     <?php } ?>
     <div class="aw-question-content">
         <h4>
             <?php if ($val['question_id']) { ?>
-            <a href="question/<?php echo $val['question_id']; ?>"><?php echo ($val['question_content']); ?></a>
-            <div class="markitup-box">
-                <?php echo(subString_UTF8($val['question_detail'], 0, 120)); ?>
-            </div>
-        <?php } else { ?>
-            <a href="article/<?php echo $val['id']; ?>"><?php echo $val['title']; ?></a>
+                <a href="question/<?php echo $val['question_id']; ?>"><?php echo ($val['question_content']); ?></a>
+                <div class="markitup-box">
+                    <?php echo(subString_UTF8($val['question_detail'], 0, 120)); ?>
+                </div>
+            <?php } else { ?>
+                <a href="article/<?php echo $val['id']; ?>"><?php echo $val['title']; ?></a>
             <?php } ?>
         </h4>
 
@@ -32,7 +37,7 @@
             <a class="aw-user-name" data-id="<?php echo $answer_user['uid']; ?>" href="people/<?php echo $answer_user['url_token']; ?>" rel="nofollow"><img src="<?php echo get_avatar_url($answer_user['uid'], 'mid'); ?>" class="custom-circle-img" alt=""/></a>
             <?php } ?>
         </div> -->
-    <?php } else if ($val['question_id']) { ?>
+        <?php } else if ($val['question_id']) { ?>
         <!-- <a href="question/<?php echo $val['question_id']; ?>#!answer_form" class="pull-right text-color-999"><?php _e('回复'); ?></a> -->
         <?php } ?>
 
@@ -50,7 +55,7 @@
                 <?php echo $val['answer_info']['user_info']['user_name']; ?>
             </a>
             <?php } ?>
-            <span class="text-color-999">&nbsp;<?php _e('热门回答'); ?>
+            <span class="text-color-999">&nbsp;<?php _e('热门问题'); ?>
                 &nbsp; &nbsp;
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
@@ -72,8 +77,20 @@
 
             <div class="custom-comment">
                 <?php if($this->user_info['group_name'] != "游客"){?>
-                <i class="icon icon-plus"></i>
-                关注 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a onclick="AWS.User.follow($(this), 'question', <?php echo $val['question_id']; ?>);" class="change-focus-btn <?php if($val['question_is_focus']) echo 'active';?>">
+                        <?php if($val['question_is_focus']) {?>
+                        <span>
+                            <i class="icon icon-unfavor gray"></i>
+                            &nbsp;取消关注
+                        </span>
+                        <?php } else { ?>
+                        <span>
+                            <i class="icon guanzhu gray"></i>
+                            关注
+                        </span>
+                        <?php }?>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                 <?php } ?>
 
                 <span class="agree-span">
@@ -118,8 +135,8 @@
                 </a>
                 <i class="icon icon-favor"></i>
                 收藏 &nbsp;&nbsp;&nbsp;&nbsp;
-                <i class="icon icon-report"></i>
-                举报 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>})"><i class="icon icon-report"></i>举报</a>
+                 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
                 <?php } ?>
             </div>
             <!-- <div class="markitup-box"> <?php echo $val['question_content']; ?> </div> -->
@@ -149,8 +166,20 @@
             </span>
             <div class="custom-comment">
                 <?php if($this->user_info['group_name'] != "游客"){?>
-                <i class="icon icon-plus"></i>
-                关注 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a onclick="AWS.User.follow($(this), 'question', <?php echo $val['question_id']; ?>);" class="change-focus-btn <?php if($val['question_is_focus']) echo 'active';?>">
+                        <?php if($val['question_is_focus']) {?>
+                        <span>
+                            <i class="icon icon-unfavor gray"></i>
+                            &nbsp;取消关注
+                        </span>
+                        <?php } else { ?>
+                        <span>
+                            <i class="icon guanzhu gray"></i>
+                            关注
+                        </span>
+                        <?php }?>
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                 <?php } ?>
 
                 <span class="agree-span">
@@ -196,8 +225,8 @@
                 </a>
                 <i class="icon icon-favor"></i>
                 收藏 &nbsp;&nbsp;&nbsp;&nbsp;
-                <i class="icon icon-report"></i>
-                举报 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>})"><i class="icon icon-report"></i>举报</a>
+                &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
                 <?php } ?>
 
             </div>
@@ -261,13 +290,15 @@
                 <?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
                 <i class="icon icon-favor"></i>
                 收藏 &nbsp;&nbsp;&nbsp;&nbsp;
-                <i class="icon icon-report"></i>
-                举报 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                <!-- <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'article', item_id:<?php echo $val['article_id']; ?>})"><i class="icon icon-report"></i>举报</a> -->
+
+                &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
                 <?php } ?>
             </div>
             <?php } ?>
             <span class="text-color-999 related-topic hide">
-                • 来自相关话题</span>
+                • 来自相关话题
+            </span>
         </p>
 
         <?php if (!$val['question_id']) { ?>
@@ -353,8 +384,8 @@
                                     <?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
                                     <i class="icon icon-favor"></i>
                                     收藏 &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <i class="icon icon-report"></i>
-                                    举报 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                                    <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'article', item_id:<?php echo $val['article_id']; ?>})"><i class="icon icon-report"></i>举报</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
                                     <?php } ?>
                                 </div>
                             </div>

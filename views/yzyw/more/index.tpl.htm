@@ -22,11 +22,10 @@
 
                                 <span class="pull-right">
                                     <a onclick="AWS.User.follow($(this), 'topic', <?php echo $val['topic_id']; ?>);" class="change-focus-btn <?php if($val['is_focused']) echo 'active';?>">
-                                        <i class="icon icon-plus"></i>
                                         <?php if($val['is_focused']) {?>
-                                        <span>取消关注</span>
-                                    <?php } else { ?>
-                                        <span>关注</span>
+                                        <span><i class="icon icon-unfavor gray"></i>取消关注</span>
+                                        <?php } else { ?>
+                                        <span><i class="icon icon-plus gray"></i>关注</span>
                                         <?php }?>
                                     </a>
                                 </span>

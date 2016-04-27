@@ -1426,13 +1426,13 @@ AWS.User =
 		{
 			if (selector.hasClass('active'))
 			{
-				selector.find('span').html('<i class="my-icon guanzhu gray pull-left"></i>关注');
+				selector.find('span').html('<i class="my-icon guanzhu gray pull-left"></i>&nbsp;关注');
 
 				selector.find('b').html(parseInt(selector.find('b').html()) - 1);
 			}
 			else
 			{
-				selector.find('span').html('<i class="my-icon icon-unfavor gray pull-left"></i>取消关注');
+				selector.find('span').html('<i class="my-icon icon-unfavor gray pull-left"></i>&nbsp;取消关注');
 
 				selector.find('b').html(parseInt(selector.find('b').html()) + 1);
 			}
@@ -1941,7 +1941,11 @@ AWS.User =
 				$('.aw-favorite-box .aw-favorite-tag-list').show();
 				$('.aw-favorite-box .aw-favorite-tag-add').hide();
 
-				$('.aw-favorite-tag-list ul').prepend('<li class="active"><a data-value="' + $('#favorite_form .add-input').val() + '"><span class="title">' + $('#favorite_form .add-input').val() + '</span></a><i class="icon icon-followed"></i></li>');
+				$('.aw-favorite-tag-list ul').prepend('<li class="active"><a data-value="'
+				+ $('#favorite_form .add-input').val()
+				+ '"><span class="title">'
+				+ $('#favorite_form .add-input').val()
+				+ '</span></a><i class="icon icon-followed"></i></li>');
 			}
 		}, 'json');
 	}

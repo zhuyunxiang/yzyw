@@ -141,6 +141,10 @@ class main extends AWS_CONTROLLER
 				$posts_list[$key]['custom_user_info'] = $this->model('account')->get_user_info_by_uid($val['uid']);
 				$posts_list[$key]['custom_user_info']['is_followed'] = $this->model('follow')->user_follow_check($this->user_id, $val['uid']);
 
+				if ($val['question_id']) {
+					$posts_list[$key]['question_is_focus'] = $this->model('question')->has_focus_question($val['question_id'], $this->user_id);
+				}
+
 				if ($val['answer_count'])
 				{
 					$posts_list[$key]['answer_users'] = $this->model('question')->get_answer_users_by_question_id($val['question_id'], 2, $val['published_uid']);

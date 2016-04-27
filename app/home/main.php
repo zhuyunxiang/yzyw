@@ -76,7 +76,6 @@ class main extends AWS_CONTROLLER
 		if (TPL::is_output('block/sidebar_hot_users.tpl.htm', 'home/index'))
 		{
 			$sidebar_hot_users = $this->model('module')->sidebar_hot_users($this->user_id);
-
 			TPL::assign('sidebar_hot_users', $sidebar_hot_users);
 		}
 
