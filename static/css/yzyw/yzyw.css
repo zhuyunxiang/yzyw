@@ -450,6 +450,12 @@ em.badge.badge-info {
 .aw-side-bar {
   padding: 20px 10px;
 }
+.aw-side-bar .topic-tag .close {
+  width: 30px;
+}
+.aw-dropdown {
+  padding: 3px 10px;
+}
 .sidebar-hot-user-container .col-md-4 {
   padding-left: 0 !important;
   text-align: center;
@@ -498,7 +504,7 @@ em.badge.badge-info {
   margin-left: 10px;
 }
 .sidebar-hot-user-container .user-item .custom-favor-btn.active {
-  margin-left: -2px;
+  margin-left: -6px;
 }
 .sidebar-hot-topic-container .mod-body {
   min-height: 100px;

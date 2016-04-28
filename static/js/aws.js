@@ -1426,13 +1426,13 @@ AWS.User =
 		{
 			if (selector.hasClass('active'))
 			{
-				selector.find('span').html('<i class="my-icon guanzhu gray pull-left"></i>&nbsp;关注');
+				selector.find('span').html('<i class="my-icon guanzhu gray"></i>&nbsp;关注');
 
 				selector.find('b').html(parseInt(selector.find('b').html()) - 1);
 			}
 			else
 			{
-				selector.find('span').html('<i class="my-icon icon-unfavor gray pull-left"></i>&nbsp;取消关注');
+				selector.find('span').html('<i class="my-icon icon-unfavor gray"></i>&nbsp;取消关注');
 
 				selector.find('b').html(parseInt(selector.find('b').html()) + 1);
 			}
@@ -1441,11 +1441,11 @@ AWS.User =
 		{
 			if (selector.hasClass('active'))
 			{
-				selector.attr('data-original-title', '<i class="my-icon guanzhu gray pull-left"></i>关注');
+				selector.attr('data-original-title', '<i class="my-icon guanzhu gray"></i>关注');
 			}
 			else
 			{
-				selector.attr('data-original-title', '<i class="my-icon icon-unfavor gray pull-left"></i>取消关注');
+				selector.attr('data-original-title', '<i class="my-icon icon-unfavor gray"></i>取消关注');
 			}
 		}
 

@@ -93,10 +93,12 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                 <?php } ?>
 
-                <span class="agree-span">
+                <!-- 问题不需要赞 -->
+                <!-- <span class="agree-span">
                     <i class="icon icon-agree"></i>
-                    赞<?php echo $val['agree_count']; ?></span>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                    赞<?php echo $val['agree_count']; ?>
+                </span> -->
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
                 <span class="share-to-others">
                     <i class="my-icon share"></i>
                     分享
@@ -567,8 +569,8 @@
         <div class="img pull-right"></div>
         <?php echo subString_UTF8(nl2br(trim(strip_tags(FORMAT::parse_attachs(FORMAT::parse_bbcode($val['message']))))), 0, 130); ?>
         <?php if (cjk_strlen($val['message']) > 130) { ?>
-        <!-- <a class="more" href="article/<?php echo $val['id']; ?>">查看全部</a> -->
-        <a data-toggle="modal" data-target="#login_help_<?php echo $val['id']; ?>">查看全部</a>
+        <a class="more" href="article/<?php echo $val['id']; ?>">查看全部</a>
+        <!-- <a data-toggle="modal" data-target="#login_help_<?php echo $val['id']; ?>">查看全部</a> -->
         <?php } ?>
     </div>
 
