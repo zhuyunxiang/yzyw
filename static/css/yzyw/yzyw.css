@@ -642,7 +642,15 @@ em.badge.badge-info {
   width: 80%;
 }
 .msg-ico-panel {
-  left: 22px !important;
+  left: -58px !important;
+  padding: 5px 5px;
+  min-width: 280px !important;
+  max-width: 300px !important;
+  width: auto !important;
+  font-size: 12px;
+}
+.msg-ico-panel p {
+  padding: 0px;
 }
 .msg-ico-panel .mod-footer {
   text-align: center;

@@ -77,7 +77,7 @@
 
             <div class="custom-comment">
                 <?php if($this->user_info['group_name'] != "游客"){?>
-                    <a onclick="AWS.User.follow($(this), 'question', <?php echo $val['question_id']; ?>);" class="change-focus-btn <?php if($val['question_is_focus']) echo 'active';?>">
+                    <a onclick="AWS.User.follow($(this), 'question', <?php echo $val['question_id']; ?>);" class="text-color-999 change-focus-btn <?php if($val['question_is_focus']) echo 'active';?>">
                         <?php if($val['question_is_focus']) {?>
                         <span>
                             <i class="icon icon-unfavor gray"></i>
@@ -101,6 +101,7 @@
                 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
                 <span class="share-to-others">
                     <i class="my-icon share"></i>
+                    <!-- <span class="text-color-999">分享</span> -->
                     分享
                     <div class="share-panel">
                         <div class="share-item">
@@ -130,7 +131,7 @@
                 </span>
                 <?php if($this->user_info['group_name'] != "游客"){?>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="question/<?php echo $val['question_id']; ?>#!answer_form">
+                <a href="question/<?php echo $val['question_id']; ?>#!answer_form" class="text-color-999">
                 <i class="icon icon-comment"></i>
                 <?php echo($val['comment_count']); ?>
                 评论 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -168,7 +169,7 @@
             </span>
             <div class="custom-comment">
                 <?php if($this->user_info['group_name'] != "游客"){?>
-                    <a onclick="AWS.User.follow($(this), 'question', <?php echo $val['question_id']; ?>);" class="change-focus-btn <?php if($val['question_is_focus']) echo 'active';?>">
+                    <a onclick="AWS.User.follow($(this), 'question', <?php echo $val['question_id']; ?>);" class="text-color-999 change-focus-btn <?php if($val['question_is_focus']) echo 'active';?>">
                         <?php if($val['question_is_focus']) {?>
                         <span>
                             <i class="icon icon-unfavor gray"></i>
@@ -220,7 +221,7 @@
 
                 <?php if($this->user_info['group_name'] != "游客"){?>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="question/<?php echo $val['question_id']; ?>#!answer_form">
+                <a href="question/<?php echo $val['question_id']; ?>#!answer_form" class="text-color-999">
                 <i class="icon icon-comment"></i>
                 <?php echo($val['comment_count']); ?>
                 评论 &nbsp;&nbsp;&nbsp;&nbsp;
