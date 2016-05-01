@@ -68,8 +68,12 @@
 								<span class="aw-anonymity">
 									<label class="pull-left"><input type="checkbox" class="pull-left" value="1" name="notcopy" />
 										<?php _e('禁止转载'); ?></label>
-									<label><a href="">存草稿</a></label>&nbsp;&nbsp;
-									<label><a href="">取消</a></label>
+									<label>
+										<a href="" class="btn btn-large btn-success commen-btn btn-publish-submit">存草稿</a>
+									</label>&nbsp;&nbsp;
+									<label>
+										<a href="" class="btn btn-large btn-success commen-btn btn-publish-submit">取消</a>
+									</label>
 									<?php if ($this->question_info['question_id'] AND ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator'])) { ?>
 									<label><input type="checkbox" class="pull-left" value="1" name="do_delete" />
 										<?php _e('删除问题'); ?></label>

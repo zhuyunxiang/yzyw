@@ -1043,3 +1043,10 @@ em.badge.badge-info {
 .icon-invite:before {
   content: none;
 }
+.sidebar-hot-user-container .custom-favor-btn {
+  height: 28px;
+}
+.hover-text-blue:hover,
+.topic-hover-blue:hover {
+  color: #155FAA !important;
+}

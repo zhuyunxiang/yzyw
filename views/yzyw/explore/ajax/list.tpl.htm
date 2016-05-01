@@ -51,7 +51,7 @@
             <?php if ($val['answer_info']['anonymous']) { ?>
             <a href="javascript:;" class="aw-user-name"><?php _e('匿名用户'); ?></a>
         <?php } else { ?>
-            <a href="people/<?php echo $val['answer_info']['user_info']['url_token']; ?>" class="aw-user-name" data-id="<?php echo $val['answer_info']['user_info']['uid']; ?>">
+            <a href="people/<?php echo $val['answer_info']['user_info']['url_token']; ?>" class="aw-user-name hover-text-blue" data-id="<?php echo $val['answer_info']['user_info']['uid']; ?>">
                 <?php echo $val['answer_info']['user_info']['user_name']; ?>
             </a>
             <?php } ?>
@@ -60,8 +60,8 @@
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
                     <?php if($tkey < 6) {?>
-                    <span>
-                        <?php _e($tval['topic_title']);?>
+                    <span class="topic-hover-blue">
+                        <a href="topic/<?php _e($tval['topic_title']);?>"><?php _e($tval['topic_title']);?></a>
                     </span>
                     <?php }?>
                 <?php }?>
@@ -145,7 +145,7 @@
             <!-- <div class="markitup-box"> <?php echo $val['question_content']; ?> </div> -->
         <?php } else { ?>
             <?php if ($val['anonymous'] == 0) { ?>
-            <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name"><?php echo $val['user_info']['user_name']; ?></a>
+            <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name hover-text-blue"><?php echo $val['user_info']['user_name']; ?></a>
         <?php } else { ?>
             <a href="javascript:;" class="aw-user-name" data-id="<?php echo $val['uid']; ?>"><?php _e('匿名用户'); ?></a><?php } ?>
             <span class="text-color-999">&nbsp;<?php _e('热门回答'); ?>
@@ -153,8 +153,8 @@
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
                     <?php if($tkey < 4) {?>
-                    <span>
-                        <?php _e($tval['topic_title']);?>
+                    <span class="topic-hover-blue">
+                        <a href="topic/<?php _e($tval['topic_title']);?>"><?php _e($tval['topic_title']);?></a>
                     </span>
                     <?php }?>
                 <?php }?>
@@ -235,14 +235,14 @@
             </div>
             <?php } ?>
         <?php } else { ?>
-            <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name"><?php echo $val['user_info']['user_name']; ?></a>
+            <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name hover-text-blue"><?php echo $val['user_info']['user_name']; ?></a>
             <span class="text-color-999">&nbsp;<?php _e('热门文章'); ?>
                 &nbsp; &nbsp;
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
                     <?php if($tkey < 6) {?>
-                    <span>
-                        <?php _e($tval['topic_title']);?>
+                    <span class="topic-hover-blue">
+                        <a href="topic/<?php _e($tval['topic_title']);?>"><?php _e($tval['topic_title']);?></a>
                     </span>
                     <?php }?>
                 <?php }?>
@@ -327,7 +327,7 @@
                                 <?php } ?>
 
                                 <?php if ($val['anonymous'] == 0) { ?>
-                                <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name a-aw-user-name">
+                                <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name a-aw-user-name hover-text-blue">
                                     <?php echo $val['user_info']['user_name']; ?>
                                 </a>
                             <?php } else { ?>
