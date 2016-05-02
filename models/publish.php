@@ -320,14 +320,15 @@ class publish_class extends AWS_MODEL
 		return $question_id;
 	}
 
-	public function publish_article($title, $message, $uid, $topics = null, $category_id = null, $attach_access_key = null, $create_topic = true)
+	public function publish_article($title, $message, $uid, $topics = null, $category_id = null, $attach_access_key = null, $create_topic = true, $forbidden_reprint = 0)
 	{
 		if ($article_id = $this->insert('article', array(
 			'uid' => intval($uid),
 			'title' => htmlspecialchars($title),
 			'message' => htmlspecialchars($message),
 			'category_id' => intval($category_id),
-			'add_time' => time()
+			'add_time' => time(),
+			'forbidden_reprint' => intval($forbidden_reprint)
 		)))
 		{
 			set_human_valid('question_valid_hour');

@@ -71,6 +71,8 @@ CREATE TABLE `[#DB_PREFIX#]article` (
   `is_recommend` tinyint(1) DEFAULT '0',
   `chapter_id` int(10) UNSIGNED DEFAULT NULL,
   `sort` tinyint(2) UNSIGNED NOT NULL DEFAULT '0',
+  `forbidden_reprint` int(10) DEFAULT '0',
+
   PRIMARY KEY (`id`),
   KEY `has_attach` (`has_attach`),
   KEY `uid` (`uid`),
@@ -473,6 +475,8 @@ CREATE TABLE `[#DB_PREFIX#]question` (
   `received_email_id` int(10) DEFAULT NULL,
   `chapter_id` int(10) UNSIGNED DEFAULT NULL,
   `sort` tinyint(2) UNSIGNED NOT NULL DEFAULT '0',
+  `forbidden_reprint` int(10) DEFAULT '0',
+
   PRIMARY KEY (`question_id`),
   KEY `category_id` (`category_id`),
   KEY `update_time` (`update_time`),

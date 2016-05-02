@@ -689,6 +689,7 @@ class ajax extends AWS_CONTROLLER
                 'message' => $_POST['message'],
                 'category_id' => $_POST['category_id'],
                 'topics' => $_POST['topics'],
+                'forbidden_reprint' => $_POST['forbidden_reprint'],
                 'permission_create_topic' => $this->user_info['permission']['create_topic']
             ), $this->user_id, $_POST['attach_access_key']);
 
@@ -698,7 +699,7 @@ class ajax extends AWS_CONTROLLER
         }
         else
         {
-            $article_id = $this->model('publish')->publish_article($_POST['title'], $_POST['message'], $this->user_id, $_POST['topics'], $_POST['category_id'], $_POST['attach_access_key'], $this->user_info['permission']['create_topic']);
+            $article_id = $this->model('publish')->publish_article($_POST['title'], $_POST['message'], $this->user_id, $_POST['topics'], $_POST['category_id'], $_POST['attach_access_key'], $this->user_info['permission']['create_topic'], $_POST['forbidden_reprint']);
 
             if ($_POST['_is_mobile'])
             {
