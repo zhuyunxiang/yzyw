@@ -249,6 +249,9 @@ em.badge.badge-info {
 .aw-publish-title input {
   width: 100%;
 }
+.aw-anonymity {
+  margin-right: 10px !important;
+}
 .aw-user-detail-box .mod-head img {
   top: 55px;
   width: 75px;
@@ -522,6 +525,15 @@ em.badge.badge-info {
 .sidebar-hot-topic-container .mod-body dl a {
   color: white;
   font-size: 12px;
+}
+.sidebar-hot-topic-container .mod-body .topic-title > a,
+.sidebar-hot-topic-container .mod-body .topic-description {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.sidebar-hot-topic-container .mod-body .topic-description {
+  font-size: 12px;
+  margin-top: 7px;
 }
 .aw-container-wrap .container .row .aw-item img {
   border-radius: 50%;
@@ -1041,6 +1053,24 @@ em.badge.badge-info {
   background-position: -130px -532px;
 }
 .icon-invite:before {
+  content: none;
+}
+.icon-plus {
+  background-position: -398px -440px;
+}
+.icon-plus:before {
+  content: none;
+}
+.icon-fold {
+  background-position: -173px -534px;
+}
+.icon-fold:before {
+  content: none;
+}
+.custom-post-list .guanzhu {
+  background-position: -398px -440px;
+}
+.custom-post-list .guanzhu:before {
   content: none;
 }
 .sidebar-hot-user-container .custom-favor-btn {

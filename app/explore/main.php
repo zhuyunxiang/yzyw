@@ -166,6 +166,7 @@ class main extends AWS_CONTROLLER
 
 		TPL::assign('posts_list', $posts_list);
 		TPL::assign('posts_list_bit', TPL::output('explore/ajax/list', false));
+		TPL::assign('posts_his_list_bit', TPL::output('explore/ajax/his_list', false));
 
 		TPL::output('explore/index');
 	}

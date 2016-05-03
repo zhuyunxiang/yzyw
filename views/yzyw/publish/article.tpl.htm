@@ -63,21 +63,7 @@
                                     </div>
                                 </div>
 
-                                <?php if ($_POST['topics']) { ?>
-                                <?php foreach ($_POST['topics'] AS $key => $val) { ?>
-                                <span class="topic-tag">
-                                    <a class="text"><?php echo $val; ?></a>
-                                    <input type="hidden" value="<?php echo $val; ?>" name="topics[]"/>
-                                </span>
-                                <?php } ?>
-                            <?php } else if ($this->article_topics) { ?>
-                                <?php foreach ($this->article_topics AS $key => $val) { ?>
-                                <span class="topic-tag">
-                                    <a class="text"><?php echo $val['topic_title']; ?></a>
-                                    <input type="hidden" value="<?php echo $val['topic_title']; ?>" name="topics[]"/>
-                                </span>
-                                <?php } ?>
-                                <?php } ?>
+
 
                                 <?php if ($this->human_valid) { ?>
                                 <div class="aw-auth-img clearfix">
@@ -94,14 +80,16 @@
                                         <?php _e('禁止转载'); ?></label>
                                     <label>
                                         <a href="" class="btn btn-large btn-success commen-btn btn-publish-submit">存草稿</a>
-                                    </label>&nbsp;&nbsp;
+                                    </label>
+                                    &nbsp;&nbsp;
                                     <label>
                                         <a href="" class="btn btn-large btn-success commen-btn btn-publish-submit">取消</a>
                                     </label>
-                                    <?php if ($this->article_info['id'] AND ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator'])) { ?>
+                                    <!-- <?php if ($this->article_info['id'] AND ($this->user_info['permission']['is_administortar'] OR $this->user_info['permission']['is_moderator'])) { ?>
                                     <label><input type="checkbox" class="pull-left" value="1" name="do_delete"/>
-                                        <?php _e('删除文章'); ?></label>
-                                    <?php } ?>
+                                        <?php _e('删除文章'); ?>
+                                    </label>
+                                    <?php } ?> -->
                                 </span>
                                 <a class="btn btn-large btn-success commen-btn btn-publish-submit" id="publish_submit" onclick="AWS.ajax_post($('#question_form')); return false;"><?php _e('发布'); ?></a>
                             </div>
@@ -126,7 +114,21 @@
                                         </span>
                                         <input type="hidden" value="<?php echo urldecode($_GET['topic_title']); ?>" name="topics[]"/>
                                         <?php } ?>
-
+                                        <?php if ($_POST['topics']) { ?>
+                                            <?php foreach ($_POST['topics'] AS $key => $val) { ?>
+                                            <span class="topic-tag">
+                                                <a class="text"><?php echo $val; ?></a>
+                                                <input type="hidden" value="<?php echo $val; ?>" name="topics[]"/>
+                                            </span>
+                                            <?php } ?>
+                                        <?php } else if ($this->article_topics) { ?>
+                                            <?php foreach ($this->article_topics AS $key => $val) { ?>
+                                            <span class="topic-tag">
+                                                <a class="text"><?php echo $val['topic_title']; ?></a>
+                                                <input type="hidden" value="<?php echo $val['topic_title']; ?>" name="topics[]"/>
+                                            </span>
+                                            <?php } ?>
+                                        <?php } ?>
                                         <span class="aw-edit-topic icon-inverse">
                                             <i class="icon icon-edit"></i>
                                             <?php _e('编辑话题'); ?></span>
