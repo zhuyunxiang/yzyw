@@ -1,5 +1,5 @@
 <?php TPL::output('global/header_meta.tpl.htm'); ?>
-
+<!-- <?php var_dump($this->user_info);?> -->
 <body>
 	<div class="aw-top-menu-wrap">
 		<div class="container">
@@ -77,7 +77,7 @@
 							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
 						<?php } ?>
 					</a>
-					<div class="aw-dropdown dropdown-list">
+					<div class="aw-dropdown dropdown-list inbox-panel">
 						<ul class="aw-dropdown-list">
 							<li>
 								<a href="inbox/">

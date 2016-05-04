@@ -667,8 +667,17 @@ em.badge.badge-info {
 .msg-ico-panel .mod-footer {
   text-align: center;
 }
+.inbox-panel {
+  min-width: 280px !important;
+  max-width: 300px !important;
+  left: -110px !important;
+  text-align: center;
+}
 .comments-ico-panel {
-  left: 70px !important;
+  min-width: 280px !important;
+  max-width: 300px !important;
+  left: -8px !important;
+  text-align: center;
 }
 .comments-ico-panel .mod-footer {
   text-align: center;
@@ -1071,6 +1080,12 @@ em.badge.badge-info {
   background-position: -398px -440px;
 }
 .custom-post-list .guanzhu:before {
+  content: none;
+}
+.more-container .guanzhu {
+  background-position: -398px -440px;
+}
+.more-container .guanzhu:before {
   content: none;
 }
 .sidebar-hot-user-container .custom-favor-btn {
