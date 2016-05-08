@@ -2494,7 +2494,6 @@ AWS.Message =
 						$('#nocomment_notification_count').remove();
 					},1000);
 				}
-				console.log(result);
 			},'json');
 		}
 	},
