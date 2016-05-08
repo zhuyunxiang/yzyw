@@ -130,6 +130,10 @@ em.badge.badge-info {
   background: url('img/comments-ico.png') no-repeat;
   background-size: 32px 32px;
 }
+#header_notification_list p,
+#header_comment_notification_list p {
+  white-space: nowrap;
+}
 .aw-user-nav {
   height: 42px;
 }
@@ -166,6 +170,9 @@ em.badge.badge-info {
 }
 .aw-user-nav .dropdown-list .inbox-unread-panel:hover:last-child {
   border-radius: 0 0 4px 4px;
+}
+.aw-user-nav .dropdown-list .mod-footer {
+  padding: 5px 10px;
 }
 .custom-search-box {
   float: right;

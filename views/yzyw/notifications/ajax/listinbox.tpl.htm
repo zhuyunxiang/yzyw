@@ -1,0 +1,16 @@
+<?php
+if($this->inbox_list){
+    foreach($this->inbox_list AS $key => $val) {
+     if($val['unread']){ ?>
+
+    <div class="inbox-unread-panel">
+        <a href="inbox/">
+        <span style="white-space: nowrap;"><?php echo $val['user_name']."：".$val['last_message'];?></span><br/>
+        <span><?php echo "时间：".date_friendly($val['update_time'], 604800, 'Y-m-d');?></span>
+        </a>
+    </div>
+     <?php
+        }
+    }
+}
+?>

@@ -77,7 +77,7 @@ class notify_class extends AWS_MODEL
 
 	/**
 	 * 发送通知
-	 * 
+	 *
 	 * @param $action_type	操作类型，使用notify_class调用TYPE
 	 * @param $uid			接收用户id
 	 * @param $data			附加数据
@@ -119,12 +119,365 @@ class notify_class extends AWS_MODEL
 
 	/**
 	 * 获得通知列表
-	 * 
+	 *
 	 * @param $read_status 0 - 未读, 1 - 已读, other - 所有
 	 */
 	public function list_notification($recipient_uid, $read_status = 0, $limit = null)
 	{
 		if (!$notify_ids = $this->get_notification_list($recipient_uid, $read_status, $limit))
+		{
+			return false;
+		}
+
+		if (!$notify_list = $this->get_notification_by_ids($notify_ids))
+		{
+			return false;
+		}
+
+		if ($unread_notifys = $this->get_unread_notification($recipient_uid))
+		{
+			$unread_extends = array();
+			$unique_people = array();
+
+			foreach ($unread_notifys as $key => $val)
+			{
+				if ($val['model_type'] == self::CATEGORY_QUESTION OR $val['model_type'] == self::CATEGORY_ARTICLE)
+				{
+					if (isset($unique_people[$val['source_id']][$val['action_type']][$val['data']['from_uid']]))
+					{
+						continue;
+					}
+
+					$unread_extends[$val['model_type']][$val['source_id']][] = $val;
+
+					$action_type = $val['action_type'];
+
+					if ($val['action_type'] == self::TYPE_QUESTION_THANK)
+					{
+						$action_type = self::TYPE_ANSWER_THANK;
+					}
+
+					$action_ex_details[$val['source_id']][$action_type][] = $val;
+
+					$uids[] = $val['data']['from_uid'];
+
+					$unique_people[$val['source_id']][$val['action_type']][$val['data']['from_uid']] = 1;
+				}
+			}
+		}
+
+		foreach ($notify_list as $key => $val)
+		{
+			if ($val['data']['question_id'])
+			{
+				$question_ids[] = $val['data']['question_id'];
+			}
+
+			if ($val['data']['article_id'])
+			{
+				$article_ids[] = $val['data']['article_id'];
+			}
+
+			if ($val['data']['ticket_id'])
+			{
+				$ticket_ids[] = $val['data']['ticket_id'];
+			}
+
+			if ($val['data']['from_uid'])
+			{
+				$uids[] = intval($val['data']['from_uid']);
+			}
+
+			if ($read_status == 0 AND count($unread_extends[$val['model_type']][$val['source_id']]) AND $this->notify_action_details[$val['action_type']]['combine'] == 1)
+			{
+				$notify_list[$key]['extends'] = $unread_extends[$val['model_type']][$val['source_id']];
+				$notify_list[$key]['extend_details'] = $action_ex_details[$val['source_id']];
+			}
+		}
+
+		if ($question_ids)
+		{
+			$question_list = $this->model('question')->get_question_info_by_ids($question_ids);
+		}
+
+		if ($article_ids)
+		{
+			$article_list = $this->model('article')->get_article_info_by_ids($article_ids);
+		}
+
+		if ($ticket_ids)
+		{
+			$ticket_list = $this->model('ticket')->get_tickets_list($ticket_ids);
+		}
+
+		if ($uids)
+		{
+			$user_infos = $this->model('account')->get_user_info_by_uids($uids);
+		}
+
+		foreach ($notify_list as $key => $notify)
+		{
+			if (!$data = $notify['data'])
+			{
+				continue;
+			}
+
+			$tmp_data = array();
+
+			$tmp_data['notification_id'] = $notify['notification_id'];
+			$tmp_data['model_type'] = $notify['model_type'];
+			$tmp_data['action_type'] = $notify['action_type'];
+			$tmp_data['read_flag'] = $notify['read_flag'];
+			$tmp_data['add_time'] = $notify['add_time'];
+
+			$tmp_data['anonymous'] = $data['anonymous'];
+
+			if ($data['from_uid'])
+			{
+				$user_info = $user_infos[$data['from_uid']];
+
+				$tmp_data['p_user_name'] = $user_info['user_name'];
+				$tmp_data['p_url'] = get_js_url('/people/' . $user_info['url_token']);
+			}
+
+			$token = 'notification_id=' . $notify['notification_id'];
+
+			switch ($notify['model_type'])
+			{
+				case self::CATEGORY_ARTICLE :
+					if ($notify['action_type'] == self::TYPE_ARTICLE_REFUSED)
+					{
+						$tmp_data['title'] = $data['title'];
+					}
+					else
+					{
+						if (!$article_list[$data['article_id']])
+						{
+							continue;
+						}
+
+						$tmp_data['title'] = $article_list[$data['article_id']]['title'];
+					}
+
+					$querys = array();
+
+					$querys[] = $token;
+
+					if ($notify['extends'])
+					{
+						$tmp_data['extend_count'] = count($notify['extends']);
+
+						foreach ($notify['extends'] as $ex_key => $ex_notify)
+						{
+							$from_uid = $ex_notify['data']['from_uid'];
+
+							if ($ex_notify['data']['item_id'])
+							{
+								$item_ids[] = $ex_notify['data']['item_id'];
+							}
+						}
+
+						if ($item_ids)
+						{
+							asort($item_ids);
+
+							$querys[] = 'item_id=' . implode(',', array_unique($item_ids));
+						}
+
+						$tmp_data['extend_details'] = $this->format_extend_detail($notify['extend_details'], $user_infos);
+					}
+					else if ($data['item_id'])
+					{
+						$querys[] = 'item_id=' . $data['item_id'];
+					}
+
+					$tmp_data['key_url'] = get_js_url('/article/' . $data['article_id'] . '?' . implode('&', $querys));
+
+					break;
+
+				case self::CATEGORY_QUESTION :
+					switch ($notify['action_type'])
+					{
+						default :
+							if ($notify['action_type'] == self::TYPE_QUESTION_REFUSED)
+							{
+								$tmp_data['title'] = $data['title'];
+							}
+							else
+							{
+								if (!$question_list[$data['question_id']])
+								{
+									continue;
+								}
+
+								$tmp_data['title'] = $question_list[$data['question_id']]['question_content'];
+							}
+
+							$rf = false;
+
+							$querys = array();
+
+							$querys[] = $token;
+
+							if ($notify['extends'])
+							{
+								$tmp_data['extend_count'] = count($notify['extends']);
+
+								$answer_ids = array();
+
+								$comment_type = array();
+
+								foreach ($notify['extends'] as $ex_key => $ex_notify)
+								{
+									if ($ex_notify['action_type'] == self::TYPE_INVITE_QUESTION)
+									{
+										$from_uid = $ex_notify['data']['from_uid'];
+									}
+
+									if ($ex_notify['action_type'] == self::TYPE_QUESTION_COMMENT OR $ex_notify['action_type'] == self::TYPE_COMMENT_AT_ME)
+									{
+										$comment_type[] = 'question';
+									}
+
+									if ($ex_notify['data']['item_id'])
+									{
+										$answer_ids[] = $ex_notify['data']['item_id'];
+									}
+
+									if ($ex_notify['action_type'] == self::TYPE_REDIRECT_QUESTION)
+									{
+										$rf = true;
+									}
+								}
+
+								if (! $rf)
+								{
+									$querys[] = 'rf=false';
+								}
+
+								if ($from_uid)
+								{
+									$querys[] = 'source=' . base64_encode($from_uid);
+								}
+
+								if ($comment_type)
+								{
+									if (count(array_unique($comment_type)) == 1)
+									{
+										$querys[] = 'comment_unfold=' . array_pop($comment_type);
+									}
+									else if (count(array_unique($comment_type)) == 2)
+									{
+										$querys[] = 'comment_unfold=all';
+									}
+								}
+
+								if ($answer_ids)
+								{
+									$answer_ids = array_unique($answer_ids);
+
+									asort($answer_ids);
+
+									$querys[] = 'item_id=' . implode(',', $answer_ids) . '#!answer_' . array_pop($answer_ids);
+								}
+
+								$tmp_data['extend_details'] = $this->format_extend_detail($notify['extend_details'], $user_infos);
+							}
+							else
+							{
+								switch ($notify['action_type'])
+								{
+									case self::TYPE_REDIRECT_QUESTION:
+									case self::TYPE_QUESTION_REFUSED:
+										break;
+
+									case self::TYPE_MOD_QUESTION:
+										$querys[] = 'column=log';
+
+										break;
+
+									case self::TYPE_INVITE_QUESTION:
+										$querys[] = 'source=' . base64_encode($data['from_uid']);
+
+										break;
+
+									case self::TYPE_QUESTION_COMMENT:
+									case self::TYPE_COMMENT_AT_ME:
+										$querys[] = 'comment_unfold=question';
+										break;
+
+									default:
+										$querys[] = 'rf=false';
+
+										break;
+								}
+
+								if ($data['item_id'])
+								{
+									$querys[] = 'item_id=' . $data['item_id'] . '&answer_id=' . $data['item_id'] . '&single=TRUE#!answer_' . $data['item_id'];
+								}
+							}
+
+							$tmp_data['key_url'] = get_js_url('/question/' . $data['question_id'] . '?' . implode('&', $querys));
+
+							break;
+					}
+
+					break;
+
+				case self::CATEGORY_PEOPLE :
+					if (!$user_info)
+					{
+						unset($tmp_data);
+
+						continue;
+					}
+
+					$tmp_data['key_url'] = $tmp_data['p_url'] . '?' . $token;
+
+					break;
+
+				case self::CATEGORY_CONTEXT :
+					$tmp_data['content'] = $data['content'];
+
+					break;
+
+				case self::CATEGORY_TICKET:
+					$querys[] = $token;
+
+					$tmp_data['title'] = $ticket_list[$data['ticket_id']]['title'];
+
+					if ($data['reply_id'])
+					{
+						$querys[] = 'reply_id=' . $data['reply_id'];
+					}
+
+					$tmp_data['key_url'] = get_js_url('/ticket/' . $data['ticket_id'] . '?' . implode('&', $querys));
+
+					break;
+			}
+
+			if ($tmp_data)
+			{
+				$list[] = $tmp_data;
+			}
+			else
+			{
+				$this->delete_notify('notification_id = ' . intval($notify['notification_id']));
+			}
+		}
+
+		return $this->format_notification($list);
+	}
+
+	/**
+	 * 获得通知列表
+	 *
+	 * @param $read_status 0 - 未读, 1 - 已读, other - 所有
+	 */
+	public function list_custom_notification($recipient_uid, $read_status = 0, $limit = null, $isComent = true)
+	{
+		if (!$notify_ids = $this->get_notification_list($recipient_uid, $read_status, $limit, $isComent))
 		{
 			return false;
 		}
@@ -717,7 +1070,7 @@ class notify_class extends AWS_MODEL
 		return $this->delete('notification', $where);
 	}
 
-	function get_notification_list($recipient_uid, $read_flag = null, $limit = null)
+	function get_notification_list($recipient_uid, $read_flag = null, $limit = null, $isComment= null)
 	{
 		if (!$recipient_uid)
 		{
@@ -729,6 +1082,14 @@ class notify_class extends AWS_MODEL
 		if (isset($read_flag))
 		{
 			$where[] = 'read_flag = ' . intval($read_flag);
+		}
+
+		if ($isComment == true) {
+			$where[] = 'action_type IN('.intval(self::TYPE_ANSWER_COMMENT).','.intval(self::TYPE_QUESTION_COMMENT).','.intval(self::TYPE_ARTICLE_NEW_COMMENT).')';
+		}
+
+		if ($isComment == false) {
+			$where[] = 'action_type NOT IN('.intval(self::TYPE_ANSWER_COMMENT).','.intval(self::TYPE_QUESTION_COMMENT).','.intval(self::TYPE_ARTICLE_NEW_COMMENT).')';
 		}
 
 		if ($read_flag == 0)
@@ -1092,10 +1453,10 @@ class notify_class extends AWS_MODEL
 
 		return $data;
 	}
-	
+
 	/**
 	 * 定期清理已读通知
-	 * 
+	 *
 	 * @param $period 周期, 单位: 秒
 	 */
 	public function clean_mark_read_notifications($period)
@@ -1108,7 +1469,7 @@ class notify_class extends AWS_MODEL
 				$this->delete('notification_data', 'notification_id = ' . $v['notification_id']);
 			}
 		}
-		
+
 		return true;
 	}
 }

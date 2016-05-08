@@ -39,7 +39,7 @@ class account_class extends AWS_MODEL
     public function check_username($user_name)
     {
     	$user_name = trim($user_name);
-    	
+
         return $this->fetch_one('users', 'uid', "user_name = '" . $this->quote($user_name) . "' OR url_token = '" . $this->quote($user_name) . "'");
     }
 
@@ -752,6 +752,15 @@ class account_class extends AWS_MODEL
         return $this->shutdown_update('users', array(
             'notification_unread' => $this->count('notification', 'read_flag = 0 AND recipient_uid = ' . intval($uid))
         ), 'uid = ' . intval($uid));
+    }
+
+    public function get_comment_notification_count($uid)
+    {
+
+        $allCount = $this->count('notification', 'read_flag = 0 AND recipient_uid = ' . intval($uid));
+        $commentCount = $this->count('notification', 'read_flag = 0 AND action_type IN (105,106,117) AND recipient_uid = ' . intval($uid));
+        $noCommentCount = $allCount - $commentCount;
+        return array('all' =>$allCount ,'commentCount'=>$commentCount, 'noCommentCount'=>$noCommentCount );
     }
 
     public function update_question_invite_count($uid)

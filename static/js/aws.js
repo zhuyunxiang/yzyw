@@ -2352,6 +2352,7 @@ AWS.Message =
 			}
 			else
 			{
+				AWS.Message.load_notification_list();
 				if ($('#header_notification_list').length)
 				{
 					$("#header_notification_list").html('<p class="aw-padding10" align="center">' + _t('没有未读通知') + '</p>');
@@ -2408,11 +2409,24 @@ AWS.Message =
 				window.location.reload();
 			}
 		});
+		AWS.Message.load_notification_list();
 	},
 
 	// 重新加载通知列表
 	load_notification_list: function()
 	{
+		$.get(G_BASE_URL + '/notifications/ajax/listinbox/', function (result)
+		{
+			if (result.length)
+			{
+				$("#inbox_list_panel").html(result);
+			}
+			else
+			{
+				$("#inbox_list_panel").html('<p class="aw-padding10" align="center">' + _t('没有未读私信') + '</p>');
+			}
+		});
+
 		if ($("#index_notification").length)
 		{
 			// 给首页通知box内label添加未读消息数量
@@ -2432,7 +2446,7 @@ AWS.Message =
 
 		if ($("#header_notification_list").length)
 		{
-			$.get(G_BASE_URL + '/notifications/ajax/list/flag-0__limit-5__template-header_list', function (result)
+			$.get(G_BASE_URL + '/notifications/ajax/list/flag-0__limit-5__template-header_list__type-nocomment', function (result)
 			{
 				if (result.length)
 				{
@@ -2443,6 +2457,45 @@ AWS.Message =
 					$("#header_notification_list").html('<p class="aw-padding10" align="center">' + _t('没有未读通知') + '</p>');
 				}
 			});
+			$.get(G_BASE_URL + '/notifications/ajax/list/flag-0__limit-5__template-header_list__type-comment', function (result)
+			{
+				if (result.length)
+				{
+					$("#header_comment_notification_list").html(result);
+				}
+				else
+				{
+					$("#header_comment_notification_list").html('<p class="aw-padding10" align="center">' + _t('没有未读评论') + '</p>');
+				}
+			});
+
+			$.get(G_BASE_URL + '/notifications/ajax/commentcount/', function (result)
+			{
+				var commentHtml = '<span class="badge badge-important" id="comment_notification_count">'+result.commentCount+'</span>';
+				var noCommentHtml = '<span class="badge badge-important" id="nocomment_notification_count">'+result.noCommentCount+'</span>';
+				if(result.commentCount > 0)
+				{
+					$("#comment_notification_count_a").append(commentHtml);
+				}
+				else
+				{
+					setTimeout(function () {
+						$('#comment_notification_count').remove();
+					},1000);
+				}
+
+				if(result.noCommentCount > 0)
+				{
+					$("#nocomment_notification_count_a").append(noCommentHtml);
+				}
+				else
+				{
+					setTimeout(function () {
+						$('#nocomment_notification_count').remove();
+					},1000);
+				}
+				console.log(result);
+			},'json');
 		}
 	},
 

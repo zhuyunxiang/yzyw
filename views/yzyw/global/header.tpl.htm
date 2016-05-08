@@ -52,7 +52,7 @@
 						<img alt="<?php echo $this->user_info['user_name']; ?>" class="custom-circle-img" src="<?php echo get_avatar_url($this->user_info['uid'], 'mid'); ?>" />
 					</a>
 
-					<div class="aw-dropdown dropdown-list pull-right">
+					<div class="aw-dropdown dropdown-list pull-right sixin-nav">
 						<ul class="aw-dropdown-list">
 							<!-- <li><a href="inbox/"><i class="icon icon-inbox"></i> <?php _e('私信'); ?><span class="badge badge-important hide" id="inbox_unread">0</span></a></li> -->
 							<li class="hidden-xs"><a href="account/setting/profile/"><i class="icon icon-setting"></i> <?php _e('设置'); ?></a></li>
@@ -71,15 +71,12 @@
 			<?php if ($this->user_id) { ?>
 			<div class="aw-user-nav">
 				<span class="aw-user-nav-dropdown">
-					<a href="people/<?php echo $this->user_info['url_token']; ?>">
+					<a href="people/<?php echo $this->user_info['url_token']; ?>" id="comment_notification_count_a">
 						<div class="comments-ico custom-circle-img" ></div>
-						<?php if ($this->user_info['notification_unread'] != 0) {?>
-							<span class="badge badge-important"><?php echo $this->user_info['notification_unread']?></span>
-						<?php } ?>
 					</a>
-					<div class="aw-dropdown dropdown-list comments-ico-panel">
+					<div class="aw-dropdown dropdown-list comments-ico-panel sixin-nav">
 						<div class="mod-body">
-							<!-- <ul id="header_notification_list"></ul> -->
+							<ul id="header_comment_notification_list"></ul>
 						</div>
 						<div class="mod-footer">
 							<a href="notifications/"><?php _e('查看全部'); ?></a>
@@ -90,13 +87,10 @@
 			<!-- 通知 -->
 			<div class="aw-user-nav">
 				<span class="aw-user-nav-dropdown">
-					<a href="notifications">
+					<a href="notifications" id="nocomment_notification_count_a">
 						<div class="msg-ico custom-circle-img" ></div>
-						<?php if ($this->user_info['notification_unread'] != 0) {?>
-							<span class="badge badge-important"><?php echo $this->user_info['notification_unread']?></span>
-						<?php } ?>
 					</a>
-					<div class="aw-dropdown dropdown-list msg-ico-panel">
+					<div class="aw-dropdown dropdown-list msg-ico-panel sixin-nav">
 						<div class="mod-body">
 							<ul id="header_notification_list"></ul>
 						</div>
@@ -115,26 +109,15 @@
 							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
 						<?php } ?>
 					</a>
-					<div class="custom-dropdown aw-dropdown dropdown-list">
-						<?php
-						foreach($this->inbox_list AS $key => $val) {
-						 if($val['unread']){ ?>
+					<div class="custom-dropdown aw-dropdown dropdown-list sixin-nav">
+						<div id="inbox_list_panel">
 
-						<div class="inbox-unread-panel">
-							<a href="inbox/">
-							<span style="white-space: nowrap;"><?php echo $val['user_name']."：".$val['last_message'];?></span><br/>
-							<span><?php echo "时间：".date_friendly($val['update_time'], 604800, 'Y-m-d');?></span>
-							</a>
 						</div>
-						 <?php
-					 		}
-						}
-						?>
 						<div class="inbox-unread-panel">
 							<div>
 								<a href="account/setting/privacy/#!inbox">设置</a>
-							<span class="pull-right"><a href="inbox/">查看全部</a></span></div>
-
+								<span class="pull-right"><a href="inbox/">查看全部</a></span>
+							</div>
 						</div>
 					</div>
 				</span>
@@ -170,3 +153,23 @@
 		</div>
 	</div>
 	<?php } ?>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var load = function () {
+				var b =0;
+				$('.sixin-nav').each(function(){
+					 b =(32-$(this).width())/2+15;
+					$(this).css("left",b+"px");
+				});
+				setTimeout(function(){
+					load();
+				},1000);
+			}
+
+			$(".aw-user-nav").click(function () {
+				load();
+			});
+			load();
+
+		})
+	</script>
