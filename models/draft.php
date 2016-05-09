@@ -27,7 +27,7 @@ class draft_class extends AWS_MODEL
 			return false;
 		}
 
-		if ($draft = $this->get_draft($item_id, $type, $uid))
+		if ($item_id != 0 && $draft = $this->get_draft($item_id, $type, $uid))
 		{
 			$this->update('draft', array(
 				'data' => serialize($data)
@@ -67,7 +67,8 @@ class draft_class extends AWS_MODEL
 
 	public function get_draft_count($type, $uid)
 	{
-		return $this->count('draft', "uid = " . intval($uid) . " AND `type` = '" . $this->quote($type) . "'");
+		// return $this->count('draft', "uid = " . intval($uid) . " AND `type` = '" . $this->quote($type) . "'");
+		return $this->count('draft', "uid = " . intval($uid));
 	}
 
 	public function delete_draft($item_id, $type, $uid)
@@ -80,7 +81,7 @@ class draft_class extends AWS_MODEL
 
 		return true;
 	}
-	
+
 	public function clean_draft($uid)
 	{
 		$this->delete('draft', "uid = " . intval($uid));
@@ -101,7 +102,8 @@ class draft_class extends AWS_MODEL
 
 	public function get_all($type, $uid, $page = null)
 	{
-		if ($draft = $this->fetch_all('draft', "uid = " . intval($uid) . " AND `type` = '" . $this->quote($type) . "'", 'time DESC', $page))
+		// if ($draft = $this->fetch_all('draft', "uid = " . intval($uid) . " AND `type` = '" . $this->quote($type) . "'", 'time DESC', $page))
+		if ($draft = $this->fetch_all('draft', "uid = " . intval($uid), 'time DESC', $page))
 		{
 			foreach ($draft AS $key => $val)
 			{

@@ -200,6 +200,86 @@ var AWS =
 		});
 	},
 
+	ajax_post_draft: function(formEl, processer, type) // 表单对象，用 jQuery 获取，回调函数名
+	{
+		// 若有编辑器的话就更新编辑器内容再提交
+		if (typeof CKEDITOR != 'undefined')
+		{
+			for ( instance in CKEDITOR.instances ) {
+				CKEDITOR.instances[instance].updateElement();
+			}
+		}
+
+		if (typeof (processer) != 'function')
+		{
+			var processer = AWS.ajax_processer;
+
+			AWS.loading('show');
+		}
+
+		if (!type)
+		{
+			var type = 'default';
+		}
+		else if (type == 'reply_question')
+		{
+			AWS.loading('show');
+
+			$('.btn-reply').addClass('disabled');
+
+			// 删除草稿绑定事件
+			if (EDITOR != undefined)
+			{
+				EDITOR.removeListener('blur', EDITOR_CALLBACK);
+			}
+		}
+
+		var custom_data = {
+			_post_type: 'ajax'
+		};
+
+		$.post(G_BASE_URL + save_draft_url, $('#question_form').serialize(), function (result)
+        {
+            // processer(type, result);
+			alert("草稿已保存！");
+        }, 'json').error(function (error)
+        {
+            alert("服务器连接失败");
+        });
+
+		// formEl.ajaxSubmit(
+		// {
+		// 	dataType: 'json',
+		// 	data: custom_data,
+		// 	success: function (result)
+		// 	{
+		// 		processer(type, result);
+		// 	},
+		// 	error: function (error)
+		// 	{
+		// 		console.log(error);
+		// 		if ($.trim(error.responseText) != '')
+		// 		{
+		// 			AWS.loading('hide');
+		//
+		// 			alert(_t('发生错误, 返回的信息:') + ' ' + error.responseText);
+		// 		}
+		// 		else if (error.status == 0)
+		// 		{
+		// 			AWS.loading('hide');
+		//
+		// 			alert(_t('网络链接异常'));
+		// 		}
+		// 		else if (error.status == 500)
+		// 		{
+		// 			AWS.loading('hide');
+		//
+		// 			alert(_t('内部服务器错误'));
+		// 		}
+		// 	}
+		// });
+	},
+
 	// ajax提交callback
 	ajax_processer: function (type, result)
 	{

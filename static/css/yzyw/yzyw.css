@@ -1063,6 +1063,12 @@ em.badge.badge-info {
 .icon-plus:before {
   content: none;
 }
+.icon-plus.active {
+  background-position: -352px -440px;
+}
+.icon-plus.active:before {
+  content: none;
+}
 .icon-fold {
   background-position: -173px -534px;
 }
@@ -1087,4 +1093,7 @@ em.badge.badge-info {
 .hover-text-blue:hover,
 .topic-hover-blue:hover {
   color: #155FAA !important;
+}
+.draft-list {
+  padding: 20px !important;
 }

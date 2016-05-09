@@ -69,7 +69,7 @@
 									<label class="pull-left"><input type="checkbox" class="pull-left" value="1" name="notcopy" />
 										<?php _e('禁止转载'); ?></label>
 									<label>
-										<a href="" class="btn btn-large btn-success commen-btn btn-publish-submit">存草稿</a>
+										<a href="" class="btn btn-large btn-success commen-btn btn-publish-submit" onclick="AWS.ajax_post_draft($('#question_form')); return false;">存草稿</a>
 									</label>&nbsp;&nbsp;
 									<label>
 										<a href="" class="btn btn-large btn-success commen-btn btn-publish-submit">取消</a>
@@ -155,6 +155,7 @@
 	var ATTACH_ACCESS_KEY = '<?php echo $this->attach_access_key; ?>';
 	var CATEGORY_ID = <?php echo $this->question_info['category_id']; ?>;
 	var PUBLISH_TYPE = 'question';
+	var save_draft_url = "/account/ajax/save_draft/item_id-000__type-question";
 </script>
 
 <?php TPL::output('global/footer.tpl.htm'); ?>

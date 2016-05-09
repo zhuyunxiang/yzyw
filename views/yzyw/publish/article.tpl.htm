@@ -79,7 +79,7 @@
                                     <label class="pull-left"><input type="checkbox" class="pull-left" value="1" name="forbidden_reprint"/>
                                         <?php _e('禁止转载'); ?></label>
                                     <label>
-                                        <a class="btn btn-large btn-success commen-btn btn-publish-submit save-draft-btn">存草稿</a>
+                                        <a class="btn btn-large btn-success commen-btn btn-publish-submit" onclick="AWS.ajax_post_draft($('#question_form')); return false;">存草稿</a>
                                     </label>
                                     &nbsp;&nbsp;
                                     <label>
@@ -248,17 +248,7 @@
     var ATTACH_ACCESS_KEY = '<?php echo $this->attach_access_key; ?>';
     var CATEGORY_ID = <?php echo $this->article_info['category_id']; ?>;
     var PUBLISH_TYPE = 'article';
-    var save_draft_url = "/account/ajax/save_draft/item_id-9990__type-article";
-
-    $(".save-draft-btn").click(function () {
-        $.post(G_BASE_URL+save_draft_url, $('#question_form').serialize(), function (result)
-        {
-            alert();
-        }, 'json').error(function (error)
-        {
-            alert("失败");
-        });
-    });
+    var save_draft_url = "/account/ajax/save_draft/item_id-000__type-article";
 
 </script>
 
