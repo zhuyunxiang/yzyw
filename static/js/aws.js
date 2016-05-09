@@ -2415,6 +2415,7 @@ AWS.Message =
 	load_notification_count_list: function () {
 		$.get(G_BASE_URL + '/notifications/ajax/commentcount/', function (result)
 		{
+			console.log(result);
 			var commentHtml = '<span class="badge badge-important" id="comment_notification_count">'+result.commentCount+'</span>';
 			var noCommentHtml = '<span class="badge badge-important" id="nocomment_notification_count">'+result.noCommentCount+'</span>';
 			if(result.commentCount > 0)
@@ -2423,9 +2424,7 @@ AWS.Message =
 			}
 			else
 			{
-				setTimeout(function () {
-					$('#comment_notification_count').remove();
-				},1000);
+				$('#comment_notification_count').remove();
 			}
 
 			if(result.noCommentCount > 0)
@@ -2434,9 +2433,7 @@ AWS.Message =
 			}
 			else
 			{
-				setTimeout(function () {
-					$('#nocomment_notification_count').remove();
-				},1000);
+				$('#nocomment_notification_count').remove();
 			}
 		},'json');
 	},
