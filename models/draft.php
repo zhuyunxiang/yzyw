@@ -71,9 +71,9 @@ class draft_class extends AWS_MODEL
 		return $this->count('draft', "uid = " . intval($uid));
 	}
 
-	public function delete_draft($item_id, $type, $uid)
+	public function delete_draft($id, $type, $uid)
 	{
-		$this->delete('draft', "item_id = " . intval($item_id) . " AND uid = " . intval($uid) . " AND `type` = '" . $this->quote($type) . "'");
+		$this->delete('draft', "id = " . intval($id) . " AND uid = " . intval($uid) . " AND `type` = '" . $this->quote($type) . "'");
 
 		$this->shutdown_update('users', array(
 			'draft_count' => $this->get_draft_count('answer', $uid)

@@ -420,7 +420,7 @@ class ajax extends AWS_CONTROLLER
 		}
 		else
 		{
-			$this->model('draft')->delete_draft($_POST['item_id'], $_POST['type'], $this->user_id);
+			$this->model('draft')->delete_draft($_POST['id'], $_POST['type'], $this->user_id);
 		}
 
 		H::ajax_json_output(AWS_APP::RSM(null, 1, null));

@@ -242,7 +242,6 @@ var AWS =
         {
             // processer(type, result);
 			AWS.loading('hide');
-			// alert("草稿已保存！");
 			AWS.alert(_t('草稿已保存！'));
         }, 'json').error(function (error)
         {
@@ -1621,7 +1620,7 @@ AWS.User =
 	},
 
 	// 删除草稿
-	delete_draft: function(item_id, type)
+	delete_draft: function(id, type)
 	{
 		if (type == 'clean')
 		{
@@ -1635,7 +1634,7 @@ AWS.User =
 		}
 		else
 		{
-			$.post(G_BASE_URL + '/account/ajax/delete_draft/', 'item_id=' + item_id + '&type=' + type, function (result)
+			$.post(G_BASE_URL + '/account/ajax/delete_draft/', 'id=' + id + '&type=' + type, function (result)
 			{
 				if (result.errno != 1)
 				{
