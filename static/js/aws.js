@@ -2403,13 +2403,42 @@ AWS.Message =
 		$.get(url, function (result)
 		{
 			AWS.Message.check_notifications();
-
+			AWS.Message.load_notification_count_list();
 			if (reload)
 			{
 				window.location.reload();
 			}
 		});
-		AWS.Message.load_notification_list();
+
+	},
+
+	load_notification_count_list: function () {
+		$.get(G_BASE_URL + '/notifications/ajax/commentcount/', function (result)
+		{
+			var commentHtml = '<span class="badge badge-important" id="comment_notification_count">'+result.commentCount+'</span>';
+			var noCommentHtml = '<span class="badge badge-important" id="nocomment_notification_count">'+result.noCommentCount+'</span>';
+			if(result.commentCount > 0)
+			{
+				$("#comment_notification_count_a").append(commentHtml);
+			}
+			else
+			{
+				setTimeout(function () {
+					$('#comment_notification_count').remove();
+				},1000);
+			}
+
+			if(result.noCommentCount > 0)
+			{
+				$("#nocomment_notification_count_a").append(noCommentHtml);
+			}
+			else
+			{
+				setTimeout(function () {
+					$('#nocomment_notification_count').remove();
+				},1000);
+			}
+		},'json');
 	},
 
 	// 重新加载通知列表
@@ -2469,33 +2498,7 @@ AWS.Message =
 				}
 			});
 
-			$.get(G_BASE_URL + '/notifications/ajax/commentcount/', function (result)
-			{
-				var commentHtml = '<span class="badge badge-important" id="comment_notification_count">'+result.commentCount+'</span>';
-				var noCommentHtml = '<span class="badge badge-important" id="nocomment_notification_count">'+result.noCommentCount+'</span>';
-				if(result.commentCount > 0)
-				{
-					$("#comment_notification_count_a").append(commentHtml);
-				}
-				else
-				{
-					setTimeout(function () {
-						$('#comment_notification_count').remove();
-					},1000);
-				}
-
-				if(result.noCommentCount > 0)
-				{
-					$("#nocomment_notification_count_a").append(noCommentHtml);
-				}
-				else
-				{
-					setTimeout(function () {
-						$('#nocomment_notification_count').remove();
-					},1000);
-				}
-				console.log(result);
-			},'json');
+			AWS.Message.load_notification_count_list();
 		}
 	},
 
