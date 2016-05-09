@@ -241,7 +241,9 @@ var AWS =
 		$.post(G_BASE_URL + save_draft_url, $('#question_form').serialize(), function (result)
         {
             // processer(type, result);
-			alert("草稿已保存！");
+			AWS.loading('hide');
+			// alert("草稿已保存！");
+			AWS.alert(_t('草稿已保存！'));
         }, 'json').error(function (error)
         {
             alert("服务器连接失败");
