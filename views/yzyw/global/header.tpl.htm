@@ -104,10 +104,8 @@
 			<div class="aw-user-nav">
 				<span class="aw-user-nav-dropdown">
 					<a href="inbox/">
-						<div class="private-msg-ico custom-circle-img" ></div>
-						<?php if ($this->user_info['inbox_unread'] != 0) {?>
-							<span class="badge badge-important"><?php echo $this->user_info['inbox_unread']?></span>
-						<?php } ?>
+						<div class="private-msg-ico custom-circle-img" id="inbox_unread_count_panel"></div>
+
 					</a>
 					<div class="custom-dropdown aw-dropdown dropdown-list sixin-nav">
 						<div id="inbox_list_panel">
@@ -171,5 +169,21 @@
 			});
 			load();
 
+			var setInboxNum = function () {
+				$.get(G_BASE_URL + '/notifications/ajax/inboxunreadcount/', function (result)
+				{
+					var htmlInfo = '<span class="badge badge-important" id="inbox_unread_count_span">'+result+'</span>';
+					if (result > 0) {
+						$("#inbox_unread_count_panel").append(htmlInfo);
+					} else {
+						$("#inbox_unread_count_span").remove();
+					}
+					setTimeout(function(){
+						setInboxNum();
+					},2000);
+				},'json');
+			}
+
+			setInboxNum();
 		})
 	</script>

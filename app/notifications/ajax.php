@@ -41,6 +41,10 @@ class ajax extends AWS_CONTROLLER
 	{
 		H::ajax_json_output($this->model('account')->get_comment_notification_count($this->user_id));
 	}
+	public function inboxunreadcount_action()
+	{
+		H::ajax_json_output($this->user_info['inbox_unread']);
+	}
 
 	public function listinbox_action()
 	{
