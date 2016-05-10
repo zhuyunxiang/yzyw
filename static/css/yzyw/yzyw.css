@@ -137,6 +137,10 @@ em.badge.badge-info {
 .aw-user-nav {
   height: 42px;
 }
+.aw-user-nav span.aw-user-nav-dropdown,
+.aw-user-nav a.aw-user-nav-dropdown {
+  height: 60px;
+}
 .aw-user-nav .aw-user-nav-dropdown {
   overflow: hidden;
   margin: 0 0 0 15px;
@@ -155,9 +159,6 @@ em.badge.badge-info {
   line-height: 30px;
   border: solid 1px #F5F5F5;
   border-width: 1px 0 0 0;
-}
-.aw-user-nav .dropdown-list .inbox-unread-panel a {
-  color: #464758;
 }
 .aw-user-nav .dropdown-list .inbox-unread-panel:first-child {
   border-width: 0;
@@ -698,6 +699,15 @@ em.badge.badge-info {
 }
 .commen-custom-options-panel .hot-article-custom-comment.custom-detail {
   margin: 10px 70px !important;
+}
+.aw-tips-box .modal-header {
+  background-color: #303045;
+}
+.aw-tips-box .modal-title {
+  color: white !important;
+}
+.aw-tips-box .modal-body {
+  background: white;
 }
 .custom-article-modal .hot-article-custom-comment {
   position: static !important;

@@ -1630,10 +1630,14 @@ AWS.User =
 				{
 					AWS.alert(result.err);
 				}
+				location.reload();
 			}, 'json');
 		}
 		else
 		{
+			var OLD_COUNT = parseInt($(".custom-draft-badge").html());
+			$(".custom-draft-badge").html(OLD_COUNT - 1);
+
 			$.post(G_BASE_URL + '/account/ajax/delete_draft/', 'id=' + id + '&type=' + type, function (result)
 			{
 				if (result.errno != 1)
