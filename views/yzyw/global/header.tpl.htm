@@ -21,10 +21,10 @@
 				<nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
 				  <ul class="nav navbar-nav">
 					<li><a href="<?php echo base_url(); ?>" <?php if ($_GET['app'] == 'explore') { ?>class="active"<?php } ?>>首页</a></li>
-					<li>
+					<li class="topic">
 						<!-- 判断登录状态返回不同链接 -->
 						<?php if($this->user_info['group_name']!="游客"){ ?>
-							<a href="home/#focus_topic__focus" <?php if ($_GET['app'] == 'home'||$_GET['app'] == 'topic') { ?>class="active"<?php } ?>><?php _e('话题'); ?></a>
+							<a href="home/#focus_topic__focus" id="topic_a" <?php if ($_GET['app'] == 'home'||$_GET['app'] == 'topic') { ?>class="active"<?php } ?>><?php _e('话题'); ?></a>
 						<?php } else{ ?>
 							<a href="topic" <?php if ($_GET['app'] == 'home'||$_GET['app'] == 'topic') { ?>class="active"<?php } ?>><?php _e('话题'); ?></a>
 						<?php } ?>
@@ -71,7 +71,7 @@
 			<?php if ($this->user_id) { ?>
 			<div class="aw-user-nav">
 				<span class="aw-user-nav-dropdown">
-					<a href="people/<?php echo $this->user_info['url_token']; ?>" id="comment_notification_count_a">
+					<a href="notifications" id="comment_notification_count_a">
 						<div class="comments-ico custom-circle-img" ></div>
 					</a>
 					<div class="aw-dropdown dropdown-list comments-ico-panel sixin-nav">
@@ -79,7 +79,7 @@
 							<ul id="header_comment_notification_list"></ul>
 						</div>
 						<div class="mod-footer">
-							<a href="notifications/"><?php _e('查看全部'); ?></a>
+							<center><a href="notifications/" class="btn btn-mini btn-success"><?php _e('查看全部'); ?></a></center>
 						</div>
 					</div>
 				</span>
@@ -95,7 +95,7 @@
 							<ul id="header_notification_list"></ul>
 						</div>
 						<div class="mod-footer">
-							<a href="notifications/"><?php _e('查看全部'); ?></a>
+							<center><a href="notifications/" class="btn btn-mini btn-success"><?php _e('查看全部'); ?></a></center>
 						</div>
 					</div>
 				</span>

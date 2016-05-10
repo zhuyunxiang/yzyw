@@ -65,6 +65,9 @@ $(function()
 
 			case '#draft_list__draft':
 				var request_url = G_BASE_URL + '/home/ajax/draft/page-' + $(this).attr('data-page');
+				$(".all-stared-topic").hide();
+				$(".custom-topic-sidebar-container").hide();
+				$("#topic_a").removeClass('active');
 				if($('#main_title .btn-success').length <=0)
 				{
 					$('#main_title').prepend('<a class="pull-right btn btn-mini btn-success" onclick="AWS.User.delete_draft(\'\', \'clean\');">' + _t('清空所有') + '</a>');
@@ -184,7 +187,7 @@ function welcome_step(step)
 }
 
 function reload_list()
-{	
+{
 	$('#main_contents').html('<p style="padding: 15px 0" align="center"><img src="' + G_STATIC_URL + '/common/loading_b.gif" alt="" /></p>');
 
 	$('#bp_more').attr('data-page', 0).click();

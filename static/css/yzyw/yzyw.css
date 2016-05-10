@@ -148,9 +148,13 @@ em.badge.badge-info {
 .aw-user-nav .aw-user-nav-dropdown .badge {
   right: auto;
 }
+.aw-user-nav .aw-dropdown-list li {
+  text-align: center;
+}
 .aw-user-nav .dropdown-list {
   left: -130%;
   width: auto;
+  min-width: 170px;
 }
 .aw-user-nav .dropdown-list .inbox-unread-panel {
   padding: 5px 15px;
