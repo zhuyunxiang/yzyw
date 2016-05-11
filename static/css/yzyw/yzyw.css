@@ -154,7 +154,7 @@ em.badge.badge-info {
 .aw-user-nav .dropdown-list {
   left: -130%;
   width: auto;
-  min-width: 170px;
+  min-width: 120px;
 }
 .aw-user-nav .dropdown-list .inbox-unread-panel {
   padding: 5px 15px;
@@ -792,6 +792,7 @@ em.badge.badge-info {
 }
 .custom-focus-topics-container .aw-item {
   width: 100% !important;
+  padding: 15px 20px;
 }
 .custom-topic-sidebar-container .create-topic-panel .btn-success {
   width: 100%;
@@ -1069,6 +1070,12 @@ em.badge.badge-info {
   background-position: -130px -532px;
 }
 .icon-invite:before {
+  content: none;
+}
+.icon-config {
+  background-position: -444px -365px;
+}
+.icon-config:before {
   content: none;
 }
 .icon-plus {
