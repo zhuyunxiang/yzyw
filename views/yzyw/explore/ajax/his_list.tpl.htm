@@ -55,7 +55,7 @@
                 <?php echo $val['answer_info']['user_info']['user_name']; ?>
             </a>
             <?php } ?>
-            <span class="text-color-999">&nbsp;<?php _e('发起了一个问题'); ?>
+            <span class="text-color-999">&nbsp;<?php _e('回答了问题'); ?>
                 &nbsp; &nbsp;
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
@@ -148,7 +148,7 @@
             <a href="people/<?php echo $val['user_info']['url_token']; ?>" class="aw-user-name hover-text-blue"><?php echo $val['user_info']['user_name']; ?></a>
         <?php } else { ?>
             <a href="javascript:;" class="aw-user-name" data-id="<?php echo $val['uid']; ?>"><?php _e('匿名用户'); ?></a><?php } ?>
-            <span class="text-color-999">&nbsp;<?php _e('发表了一个回答'); ?>
+            <span class="text-color-999">&nbsp;<?php _e('发表了一个问题'); ?>
                 &nbsp; &nbsp;
                 <?php if($val['topics']) _e("来自");?>
                 <?php foreach($val['topics'] AS $tkey=>$tval) {?>
