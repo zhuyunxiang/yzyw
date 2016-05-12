@@ -994,7 +994,8 @@ em.badge.badge-info {
 }
 .share,
 .icon-share {
-  background-position: -174px -440px;
+  background: url("img/ico/share.png") no-repeat;
+  background-position: 0px 2px;
 }
 .share:before,
 .icon-share:before {
@@ -1025,19 +1026,22 @@ em.badge.badge-info {
   content: none;
 }
 .icon-agree {
-  background-position: -130px -440px;
+  background: url("img/ico/support.png") no-repeat;
+  background-position: 0px 2px;
 }
 .icon-agree:before {
   content: none;
 }
 .icon-comment {
-  background-position: -218px -440px;
+  background: url("img/ico/comments.png") no-repeat;
+  background-position: 0px 4px;
 }
 .icon-comment:before {
   content: none;
 }
 .icon-favor {
-  background-position: -262px -440px;
+  background: url("img/ico/favourite.png") no-repeat;
+  background-position: 0px 2px;
 }
 .icon-favor:before {
   content: none;
@@ -1049,7 +1053,8 @@ em.badge.badge-info {
   content: none;
 }
 .icon-report {
-  background-position: -217px -532px;
+  background: url("img/ico/jubao.png") no-repeat;
+  background-position: 0px 2px;
 }
 .icon-report:before {
   content: none;
@@ -1079,7 +1084,8 @@ em.badge.badge-info {
   content: none;
 }
 .icon-plus {
-  background-position: -398px -440px;
+  background: url("img/ico/attention.png") no-repeat;
+  background-position: 0px 4px;
 }
 .icon-plus:before {
   content: none;
@@ -1097,13 +1103,15 @@ em.badge.badge-info {
   content: none;
 }
 .custom-post-list .guanzhu {
-  background-position: -398px -440px;
+  background: url("img/ico/attention.png") no-repeat;
+  background-position: 0px 4px;
 }
 .custom-post-list .guanzhu:before {
   content: none;
 }
 .more-container .guanzhu {
-  background-position: -398px -440px;
+  background: url("img/ico/attention.png") no-repeat;
+  background-position: 0px 4px;
 }
 .more-container .guanzhu:before {
   content: none;
