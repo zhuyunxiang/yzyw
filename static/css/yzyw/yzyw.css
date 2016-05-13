@@ -1002,7 +1002,8 @@ em.badge.badge-info {
   content: none;
 }
 .guanzhu {
-  background-position: -351px -530px;
+  background: url("img/ico/invite-friend.png") no-repeat;
+  background-position: 0px 3px;
 }
 .guanzhu:before {
   content: none;
@@ -1047,7 +1048,8 @@ em.badge.badge-info {
   content: none;
 }
 .icon-unfavor {
-  background-position: -352px -440px;
+  background: url("img/ico/complete.png") no-repeat;
+  background-position: 0px 6px;
 }
 .icon-unfavor:before {
   content: none;
@@ -1091,7 +1093,8 @@ em.badge.badge-info {
   content: none;
 }
 .icon-plus.active {
-  background-position: -352px -440px;
+  background: url("img/ico/complete.png") no-repeat;
+  background-position: 0px 6px;
 }
 .icon-plus.active:before {
   content: none;
