@@ -254,9 +254,11 @@
                 <?php echo date_friendly($val['add_time']); ?> -->
             </span>
             <div class="custom-comment hot-article-custom-comment">
-                <span class="agree-span">
-                    <i class="icon icon-agree"></i>
-                    赞<?php echo $val['votes']; ?></span>
+                <span class="agree-span vote-span">
+                    <!-- <i class="icon icon-agree"></i> -->
+                    <!-- 赞<?php echo $val['votes']; ?> -->
+                    <a href="javascript:;" class="agree<?php if ($val['votes'] >= 1) { ?> active<?php } ?>" onclick="AWS.User.article_vote($(this), <?php echo $val['id']; ?>, 1);"><i class="icon icon-agree"></i> <b><?php echo $val['votes']; ?></b></a>
+                </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <span class="share-to-others">
                     <i class="my-icon share"></i>
@@ -584,3 +586,4 @@
 </div>
 <?php } ?>
 <?php } ?>
+<?php echo($this->pagination);?>

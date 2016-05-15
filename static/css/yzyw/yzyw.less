@@ -1,3 +1,21 @@
+body {
+    background-image: none!important;
+}
+.col-md-9.aw-main-content,
+.col-md-3.aw-side-bar,
+.aw-content-wrap {
+    border-width: 0;
+}
+.aw-top-menu-wrap {
+    width: 1010px;
+    margin: 0 auto;
+
+    border: 1px solid #e6e6e6;
+    border-width: 0 0 1px 0;
+}
+.col-md-9.aw-main-content {
+    padding-right: 30px;
+}
 .topic-tag {
     .text {
         background-color: #303045;
@@ -55,9 +73,14 @@ em.badge.badge-info {
         background-color: #4a4f54 !important;
     }
 }
-.aw-mod.side-nav ul li a.active {
-    color: white !important;
-    background-color: @gray-color !important;
+.aw-mod.side-nav ul li {
+    a {
+        font-size: 16px;
+        .active {
+            color: white !important;
+            background-color: @gray-color !important;
+        }
+    }
 }
 .commen-white-btn {
     // background-color: @gray-color;
@@ -129,19 +152,19 @@ em.badge.badge-info {
     background: url('img/comments-ico.png') no-repeat;
     background-size: 32px 32px;
 }
-
-#header_notification_list, #header_comment_notification_list{
-    p{
-    white-space: nowrap;
+#header_notification_list,
+#header_comment_notification_list {
+    p {
+        white-space: nowrap;
     }
 }
-
 //   88
 .aw-user-nav {
-    span.aw-user-nav-dropdown,a.aw-user-nav-dropdown{
+    height: 42px;
+    span.aw-user-nav-dropdown,
+    a.aw-user-nav-dropdown {
         height: 60px;
     }
-    height: 42px;
     .aw-user-nav-dropdown {
         overflow: hidden;
 
@@ -150,38 +173,39 @@ em.badge.badge-info {
             right: auto;
         }
     }
-    .aw-dropdown-list{
-        li{
+    .aw-dropdown-list {
+        li {
             text-align: center;
         }
     }
     .dropdown-list {
         left: -130%;
+
         width: auto;
         min-width: 120px;
-
-        .inbox-unread-panel{
+        .inbox-unread-panel {
+            min-width: 150px;
             padding: 5px 15px;
-            color: #464758;
-            min-width: 150px;
 
-            line-height: 30px;
+            color: #464758;
             border: solid 1px #F5F5F5;
             border-width: 1px 0 0 0;
-            &:first-child{
+
+            line-height: 30px;
+            &:first-child {
                 border-width: 0;
-                &:hover{
+                &:hover {
                     border-radius: 4px 4px 0 0;
                 }
             }
-            &:hover{
+            &:hover {
                 background-color: #F5F5F5;
-                &:last-child{
+                &:last-child {
                     border-radius: 0 0 4px 4px;
                 }
             }
         }
-        .mod-footer{
+        .mod-footer {
             padding: 5px 10px;
         }
     }
@@ -558,9 +582,9 @@ em.badge.badge-info {
         width: 30px;
     }
 }
-
 // 右侧热门用户
 .sidebar-hot-user-container {
+    border-top: 0 !important;
     .col-md-4 {
         padding-left: 0 !important;
 
@@ -570,7 +594,8 @@ em.badge.badge-info {
     }
     .user-action-info {
         .row {
-            margin-left: -10px;
+            // margin-left: -10px;
+            margin-left: 32px;
             .col-md-3 {
                 width: 21%;
                 padding-right: 0 !important;
@@ -596,16 +621,19 @@ em.badge.badge-info {
         padding: 2px 0 2px 2px;
 
         border-radius: 5px;
-        background-color: #eee;
+        // background-color: #eee;
+        background-color: #F3F3F3;
         dd {
             width: 155px;
         }
         .user-action-info {
-            margin-bottom: 5px;
+            margin-bottom: 0;
+            padding-bottom: 5px;
 
             border: solid 1px;
-            border-width: 1px 0 0 0;
+            border-width: 0 0 0 0;
             border-color: #e6e6e6;
+            background-color: #EEEEEE;
         }
         .custom-favor-btn {
             margin-left: 10px;
@@ -615,14 +643,17 @@ em.badge.badge-info {
             border: solid 2px;
             border-color: #344068;
             border-radius: 2px;
+
+            font-size: xx-small;
             &.active {
-                margin-left: -6px;
+                // margin-left: -6px;
             }
         }
     }
 }
 // 右侧热门话题
 .sidebar-hot-topic-container {
+    border-top: 0 !important;
     .mod-body {
         min-height: 100px;
         padding: 5px;
@@ -788,6 +819,10 @@ em.badge.badge-info {
 .agree-span {
     cursor: pointer;
 }
+.agree.active,
+em.badge.badge-info {
+    background-color: #FFFFFF !important;
+}
 .custom-invite-item {
     .img-container {
         display: inline-block;
@@ -835,19 +870,15 @@ em.badge.badge-info {
         }
     }
 }
-
 .aw-tips-box {
-    .modal-header{
+    .modal-header {
         background-color: #303045;
-
     }
-    .modal-title{
-
+    .modal-title {
         color: white !important;
     }
-    .modal-body{
+    .modal-body {
         background: white;
-
     }
 }
 // 自定义查看全部弹出框
@@ -1190,14 +1221,15 @@ em.badge.badge-info {
 .share,
 .icon-share {
     background: url("img/ico/share.png") no-repeat;
-    background-position: 0px 2px;
+    background-position: 0 2px;
 
     .before-none;
 }
 .guanzhu {
     //  background-position: -351px -530px;
     background: url("img/ico/invite-friend.png") no-repeat;
-    background-position: 0px 3px;
+    background-position: 0 3px;
+
     .before-none;
 }
 .guanzhu-white {
@@ -1217,28 +1249,33 @@ em.badge.badge-info {
 }
 .icon-agree {
     background: url("img/ico/support.png") no-repeat;
-    background-position: 0px 2px;
+    background-position: 0 2px;
+
     .before-none;
 }
 .icon-comment {
     background: url("img/ico/comments.png") no-repeat;
-    background-position: 0px 4px;
+    background-position: 0 4px;
+
     .before-none;
 }
 .icon-favor {
     background: url("img/ico/favourite.png") no-repeat;
-    background-position: 0px 2px;
+    background-position: 0 2px;
+
     .before-none;
 }
 .icon-unfavor {
     // background-position: -352px -440px;
     background: url("img/ico/complete.png") no-repeat;
-    background-position: 0px 6px;
+    background-position: 0 6px;
+
     .before-none;
 }
 .icon-report {
     background: url("img/ico/jubao.png") no-repeat;
-    background-position: 0px 2px;
+    background-position: 0 2px;
+
     .before-none;
 }
 .icon-draft {
@@ -1258,18 +1295,19 @@ em.badge.badge-info {
 }
 .icon-config {
     background-position: -444px -365px;
+
     .before-none;
 }
 .icon-plus {
     // background-position: -398px -440px;
     background: url("img/ico/attention.png") no-repeat;
-    background-position: 0px 4px;
+    background-position: 0 4px;
+
     .before-none;
 }
-.icon-plus.active{
+.icon-plus.active {
     .icon-unfavor;
 }
-
 .icon-fold {
     background-position: -173px -534px;
 
@@ -1288,7 +1326,27 @@ em.badge.badge-info {
 // End Icon
 .sidebar-hot-user-container {
     .custom-favor-btn {
+        float: right;
+
+        min-width: 85px;
         height: 28px;
+    }
+    .guanzhu {
+        margin-left: 13px;
+    }
+    .signature {
+        margin-top: 3px;
+
+        color: #303045 !important;
+    }
+    a.aw-user-name {
+        color: #323045 !important;
+
+        font-size: 15px;
+        font-weight: bolder;
+        &:hover {
+            color: #323045 !important;
+        }
     }
 }
 .hover-text-blue,
@@ -1298,7 +1356,6 @@ em.badge.badge-info {
         color: #155FAA !important;
     }
 }
-
-.draft-list{
+.draft-list {
     padding: 20px !important;
 }

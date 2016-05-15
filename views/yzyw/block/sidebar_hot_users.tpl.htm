@@ -19,21 +19,19 @@
                     <p class="signature"><?php echo $val['signature']; ?></p>
                     <!-- <p><?php _e('%s 个问题', '<b>' . $val['answer_count'] . '</b>'); ?>,
                         <?php _e('%s 次赞同', '<b>' . $val['agree_count'] . '</b>'); ?></p> -->
-                    <p>
+                    <p class="signature">
                         <?php _e(($val['detail']['signature'])?subString_UTF8($val['detail']['signature'],0,50):"这个人很懒，什么都没有写！");?>
                     </p>
                 </dd>
             </dl>
             <dl class="user-action-info user-custom-action-info">
-                <!-- <?php var_dump($val);?> -->
                 <div class="row">
                     <span class="col-md-3">文章</span>
                     <span class="col-md-3">回答</span>
                     <!-- <span class="col-md-3">精华</span> -->
-                    <span class="col-md-3"></span>
+                    <!-- <span class="col-md-3"></span> -->
                     <span class="col-md-3">
                         <!-- <button type="button" name="button" class="custom-favor-btn"><i class="my-icon guanzhu pull-left"></i> 关注</button> -->
-
                         <a href="javascript:;" class="custom-favor-btn <?php if ($val['is_followed']) { ?> active<?php } ?>" uid="<?php echo $val['uid']; ?>">
                             <span>
                             <?php if ($val['is_followed']) { ?>
@@ -50,10 +48,9 @@
                 <div class="row">
                     <span class="col-md-3"><?php _e($val['article_count'])?></span>
                     <span class="col-md-3"><?php _e($val['answer_count'])?></span>
-                    <span class="col-md-3"></span>
+                    <!-- <span class="col-md-3"></span> -->
                     <!-- <span class="col-md-3">3</span> -->
-                    <span class="col-md-3">
-                    </span>
+                    <span class="col-md-3"> </span>
                 </div>
             </dl>
         </div>
