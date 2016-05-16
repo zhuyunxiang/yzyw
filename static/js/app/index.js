@@ -65,8 +65,13 @@ $(function()
 
 			case '#draft_list__draft':
 				var request_url = G_BASE_URL + '/home/ajax/draft/page-' + $(this).attr('data-page');
+				// $(".custom-topic-sidebar-container").hide();
+
+				$(".create-topic-panel").hide();
 				$(".all-stared-topic").hide();
-				$(".custom-topic-sidebar-container").hide();
+				$(".other-topics-panel").hide();
+				$(".custom-topic-sidebar-container .hide").removeClass('hide');
+
 				$("#topic_a").removeClass('active');
 				if($('#main_title .btn-success').length <=0)
 				{

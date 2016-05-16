@@ -44,8 +44,12 @@
 				</div>
 				<!-- 侧边栏 -->
 				<div class="col-sm-12 col-md-3 aw-side-bar hidden-xs hidden-sm custom-topic-sidebar-container">
-					<div class="hidden">
-						<?php TPL::output('block/old_sidebar_menu.tpl.htm'); ?>
+					<div class="hide">
+						<?php TPL::output('block/sidebar_menu.tpl.htm'); ?>
+					</div>
+
+					<div class="hide">
+						<?php TPL::output('block/sidebar_hot_users.tpl.htm'); ?>
 					</div>
 
 					<div class="create-topic-panel">

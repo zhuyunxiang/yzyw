@@ -24,7 +24,7 @@
 					<li class="topic">
 						<!-- 判断登录状态返回不同链接 -->
 						<?php if($this->user_info['group_name']!="游客"){ ?>
-							<a href="home/#focus_topic__focus" id="topic_a" <?php if ($_GET['app'] == 'home'||$_GET['app'] == 'topic') { ?>class="active"<?php } ?>><?php _e('话题'); ?></a>
+							<a href="topic" id="topic_a" <?php if ($_GET['app'] == 'home'||$_GET['app'] == 'topic') { ?>class="active"<?php } ?>><?php _e('话题'); ?></a>
 						<?php } else{ ?>
 							<a href="topic" <?php if ($_GET['app'] == 'home'||$_GET['app'] == 'topic') { ?>class="active"<?php } ?>><?php _e('话题'); ?></a>
 						<?php } ?>
