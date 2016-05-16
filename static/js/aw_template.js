@@ -133,7 +133,7 @@ var AW_TEMPLATE = {
 								'<div class="alert alert-danger hide error_message"><i class="icon icon-delete"></i> <em></em></div>'+
 							'</div>'+
 							'<div class="modal-footer">'+
-								'<a class="pull-left" onclick="$(\'.aw-favorite-box .aw-favorite-tag-list\').hide();$(\'.aw-favorite-box .aw-favorite-tag-add\').show();">' + _t('创建标签') + '</a>'+
+								'<a class="pull-left" onclick="$(\'.aw-favorite-box .aw-favorite-tag-list\').hide();$(\'.aw-favorite-box .aw-favorite-tag-add\').show();">' + _t('<i class="icon icon-plus gray"></i>创建新收藏标签') + '</a>'+
 								'<a href="javascript:;"  data-dismiss="modal" aria-hidden="true" class="btn btn-large btn-gray" onclick="return false;">' + _t('关闭') + '</a>'+
 							'</div>'+
 						'</div>'+
@@ -316,7 +316,7 @@ var AW_TEMPLATE = {
 					'<div class="modal-content">'+
 						'<div class="modal-header">'+
 							'<a type="button" class="close icon icon-delete" data-dismiss="modal" aria-hidden="true"></a>'+
-							'<h3 class="modal-title" id="myModalLabel">' + _t('举报问题') + '</h3>'+
+							'<h3 class="modal-title" id="myModalLabel">' + _t('请填写你的举报理由') + '</h3>'+
 						'</div>'+
 						'<form id="quick_publish" method="post" action="' + G_BASE_URL + '/question/ajax/save_report/">'+
 							'<input type="hidden" name="type" value="{{item_type}}" />'+

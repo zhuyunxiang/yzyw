@@ -40,30 +40,37 @@ em.badge.badge-info {
   background-color: #FAFAFA;
 }
 .commen-btn,
+.btn-gray,
 .btn-success,
 .btn-blue {
   color: white;
   background-color: #303045;
 }
 .commen-btn:hover,
+.btn-gray:hover,
 .btn-success:hover,
 .btn-blue:hover {
   color: white;
   background-color: #4a4f54 !important;
 }
 .commen-btn:visited,
+.btn-gray:visited,
 .btn-success:visited,
 .btn-blue:visited,
 .commen-btn:focus,
+.btn-gray:focus,
 .btn-success:focus,
 .btn-blue:focus,
 .commen-btn.active,
+.btn-gray.active,
 .btn-success.active,
 .btn-blue.active,
 .commen-btn.active:hover,
+.btn-gray.active:hover,
 .btn-success.active:hover,
 .btn-blue.active:hover,
 .commen-btn.active:focus,
+.btn-gray.active:focus,
 .btn-success.active:focus,
 .btn-blue.active:focus {
   color: white;
@@ -632,7 +639,7 @@ em.badge.badge-info {
   margin-left: -8px;
   content: '';
   border-right: 8px solid transparent;
-  border-bottom: 8px solid white;
+  border-bottom: 8px solid #D8D5D5;
   border-left: 8px solid transparent;
 }
 .aw-common-list .aw-item {
@@ -1175,4 +1182,45 @@ em.badge.badge-info {
 }
 .draft-list {
   padding: 20px !important;
+}
+.aw-favorite-box .modal-header {
+  background: #2B314B;
+}
+.aw-favorite-box .modal-header .modal-title {
+  color: #FFFFFF;
+}
+.aw-favorite-box .aw-favorite-tag-list ul li {
+  width: 96% !important;
+}
+.aw-report-box .modal-header {
+  background: #2B314B;
+}
+.aw-report-box .modal-header .modal-title {
+  color: #FFFFFF;
+}
+.report-panel {
+  position: absolute;
+  z-index: 1000;
+  right: -16px;
+  border: 1px solid;
+  background-color: #FFFFFF;
+  border: solid 1px #e6e6e6;
+  border-radius: 5px;
+}
+.report-panel ul li {
+  border: solid 1px #e6e6e6;
+  border-width: 0 0 1px 0;
+  padding: 10px;
+  color: #666666;
+}
+.report-panel ul li:first-child {
+  border-radius: 5px 5px 0 0;
+}
+.report-panel ul li:nth-last-child(1) {
+  border-width: 0;
+  border-radius: 0 0 5px 5px;
+}
+.report-panel ul li:hover {
+  background-color: #EEEEEE;
+  color: #6173AE;
 }

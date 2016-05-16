@@ -138,8 +138,18 @@
                 </a>
                 <a href="javascript:;" onclick="AWS.dialog('favorite', {item_id:<?php echo $val['question_id']; ?>, item_type:'question'});" class="text-color-999"><i class="icon icon-favor"></i> 收藏</a>
                  &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>})"><i class="icon icon-report"></i>举报</a>
+                <a href="javascript:;" class="text-color-999 report-btn"><i class="icon icon-report"></i>举报</a>
                  &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+
+                <div class="report-panel hide">
+                    <ul>
+                        <li onclick="saveCustomReport('question','广告等垃圾信息','<?php echo $val['question_id']; ?>')">广告等垃圾信息</li>
+                        <li onclick="saveCustomReport('question','不友善内容','<?php echo $val['question_id']; ?>')">不友善内容</li>
+                        <li onclick="saveCustomReport('question','违反法律法规的内容','<?php echo $val['question_id']; ?>')">违反法律法规的内容</li>
+                        <li onclick="saveCustomReport('question','不宜公开讨论的政治内容','<?php echo $val['question_id']; ?>')">不宜公开讨论的政治内容</li>
+                        <li onclick="AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>});">其他</li>
+                    </ul>
+                </div>
                 <?php } ?>
             </div>
             <!-- <div class="markitup-box"> <?php echo $val['question_content']; ?> </div> -->
@@ -228,8 +238,17 @@
                 </a>
                 <a href="javascript:;" onclick="AWS.dialog('favorite', {item_id:<?php echo $val['question_id']; ?>, item_type:'question'});" class="text-color-999"><i class="icon icon-favor"></i> 收藏</a>
                  &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>})"><i class="icon icon-report"></i>举报</a>
+                <a href="javascript:;" class="text-color-999 report-btn"><i class="icon icon-report"></i>举报</a>
                 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                <div class="report-panel hide">
+                    <ul>
+                        <li onclick="saveCustomReport('question','广告等垃圾信息','<?php echo $val['question_id']; ?>')">广告等垃圾信息</li>
+                        <li onclick="saveCustomReport('question','不友善内容','<?php echo $val['question_id']; ?>')">不友善内容</li>
+                        <li onclick="saveCustomReport('question','违反法律法规的内容','<?php echo $val['question_id']; ?>')">违反法律法规的内容</li>
+                        <li onclick="saveCustomReport('question','不宜公开讨论的政治内容','<?php echo $val['question_id']; ?>')">不宜公开讨论的政治内容</li>
+                        <li onclick="AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>});">其他</li>
+                    </ul>
+                </div>
                 <?php } ?>
 
             </div>
@@ -295,9 +314,18 @@
                 <?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="javascript:;" onclick="AWS.dialog('favorite', {item_id:<?php echo $val['id']; ?>, item_type:'article'});" class="text-color-999"><i class="icon icon-favor"></i> 收藏</a>
                  &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'article', item_id:<?php echo $val['id']; ?>})"><i class="icon icon-report"></i>举报</a>
+                <a href="javascript:;" class="text-color-999 report-btn"><i class="icon icon-report"></i>举报</a>
 
                 &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                <div class="report-panel hide">
+                    <ul>
+                        <li onclick="saveCustomReport('article','广告等垃圾信息','<?php echo $val['id']; ?>')">广告等垃圾信息</li>
+                        <li onclick="saveCustomReport('article','不友善内容','<?php echo $val['id']; ?>')">不友善内容</li>
+                        <li onclick="saveCustomReport('article','违反法律法规的内容','<?php echo $val['id']; ?>')">违反法律法规的内容</li>
+                        <li onclick="saveCustomReport('article','不宜公开讨论的政治内容','<?php echo $val['id']; ?>')">不宜公开讨论的政治内容</li>
+                        <li onclick="AWS.dialog('report', {item_type:'article', item_id:<?php echo $val['id']; ?>});">其他</li>
+                    </ul>
+                </div>
                 <?php } ?>
             </div>
             <?php } ?>
@@ -389,8 +417,17 @@
                                     <?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
                                     <i class="icon icon-favor"></i>
                                     收藏 &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="javascript:;" class="text-color-999" onclick="AWS.dialog('report', {item_type:'article', item_id:<?php echo $val['article_id']; ?>})"><i class="icon icon-report"></i>举报</a>
+                                    <a href="javascript:;" class="text-color-999 report-btn"><i class="icon icon-report"></i>举报</a>
                                     &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
+                                    <div class="report-panel hide">
+                                        <ul>
+                                            <li onclick="saveCustomReport('article','广告等垃圾信息','<?php echo $val['article_id']; ?>')">广告等垃圾信息</li>
+                                            <li onclick="saveCustomReport('article','不友善内容','<?php echo $val['article_id']; ?>')">不友善内容</li>
+                                            <li onclick="saveCustomReport('article','违反法律法规的内容','<?php echo $val['article_id']; ?>')">违反法律法规的内容</li>
+                                            <li onclick="saveCustomReport('article','不宜公开讨论的政治内容','<?php echo $val['article_id']; ?>')">不宜公开讨论的政治内容</li>
+                                            <li onclick="AWS.dialog('report', {item_type:'article', item_id:<?php echo $val['article_id']; ?>});">其他</li>
+                                        </ul>
+                                    </div>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -587,3 +624,21 @@
 <?php } ?>
 <?php } ?>
 <?php echo($this->pagination);?>
+<script type="text/javascript">
+    $(".report-btn").on('click', function () {
+        // AWS.dialog('report', {item_type:'question', item_id:<?php echo $val['question_id']; ?>});
+        if ($(this).parents().children(".report-panel").attr('class') != 'report-panel') {
+            $(".report-panel").addClass('hide');
+            $(this).parents().children(".report-panel").removeClass('hide');
+        } else {
+            $(".report-panel").addClass('hide');
+            $(this).parents().children(".report-panel").addClass('hide');
+        }
+    });
+
+    var saveCustomReport = function (type, reason, target_id) {
+        AWS.ajax_request('?/question/ajax/save_report/', $.param({type:type,reason:reason,target_id:target_id}));
+        $(".report-panel").addClass('hide');
+    }
+
+</script>
