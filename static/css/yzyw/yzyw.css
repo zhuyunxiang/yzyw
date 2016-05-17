@@ -772,6 +772,12 @@ em.badge.badge-info {
 .custom-article-modal .article-author-panel .modal-body .aw-item {
   padding-left: 0;
 }
+.custom-article-modal .article-author-panel .custom-circle-img {
+  margin-left: 0 !important;
+}
+.custom-article-modal .article-author-panel .a-aw-user-name {
+  margin-left: 50px !important;
+}
 .custom-article-modal .article-author-panel .favor-btn-panel,
 .custom-article-modal .article-author-panel .message-btn-panel {
   margin-top: 20px;
@@ -1096,6 +1102,20 @@ em.badge.badge-info {
   background-position: 0 2px;
 }
 .icon-report:before {
+  content: none;
+}
+.icon-pencil {
+  background: url("img/ico/pencil.png") no-repeat;
+  background-position: 0 0;
+}
+.icon-pencil:before {
+  content: none;
+}
+.icon-trush {
+  background: url("img/ico/trush.png") no-repeat;
+  background-position: 0 0;
+}
+.icon-trush:before {
   content: none;
 }
 .icon-draft {

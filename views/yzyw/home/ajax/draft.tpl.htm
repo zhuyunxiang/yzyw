@@ -12,8 +12,8 @@
 		 ?></div>
 	<div class="meta">
 		<span class="pull-right">
-			<a class="text-color-999" onclick="AWS.User.delete_draft(<?php echo $val['id']; ?>, '<?php echo $val['type']; ?>'); $(this).parents('.aw-item').fadeOut();"><?php _e('删除草稿'); ?></a> •
-			<a class="text-color-999" href="question/<?php echo $val['item_id']; ?>#!answer_form"><?php _e('编辑草稿'); ?></a>
+			<a class="text-color-999" href="question/<?php echo $val['item_id']; ?>#!answer_form" style="margin-right:15px;"><i class="icon icon-pencil"></i></a>
+			<a class="text-color-999" onclick="AWS.User.delete_draft(<?php echo $val['id']; ?>, '<?php echo $val['type']; ?>'); $(this).parents('.aw-item').fadeOut();"><i class="icon icon-trush"></i></a>
 		</span>
 		<?php echo date_friendly($val['time']); ?>
 	</div>

@@ -378,9 +378,7 @@
                             </div>
                             <div class="custom-options-panel">
                                 <div class="custom-comment hot-article-custom-comment custom-detail">
-                                    <span class="agree-span">
-                                        <i class="icon icon-agree"></i>
-                                        赞<?php echo $val['votes']; ?></span>
+                                    <a href="javascript:;" class="agree<?php if ($val['votes'] >= 1) { ?> active<?php } ?>" onclick="AWS.User.article_vote($(this), <?php echo $val['id']; ?>, 1);"><i class="icon icon-agree"></i> <b><?php echo $val['votes']; ?></b></a>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <span class="share-to-others">
                                         <i class="my-icon share"></i>
@@ -415,8 +413,9 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <i class="icon icon-comment"></i>
                                     <?php echo($val['comments']); ?>评论 &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <i class="icon icon-favor"></i>
-                                    收藏 &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <!-- <i class="icon icon-favor"></i> 收藏  -->
+                                    <a href="javascript:;" onclick="AWS.dialog('favorite', {item_id:<?php echo $val['id']; ?>, item_type:'article'});" class="text-color-999"><i class="icon icon-favor"></i> 收藏</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
                                     <a href="javascript:;" class="text-color-999 report-btn"><i class="icon icon-report"></i>举报</a>
                                     &nbsp;&nbsp;&nbsp;&nbsp; 禁止转载
                                     <div class="report-panel hide">
@@ -609,8 +608,8 @@
         <div class="img pull-right"></div>
         <?php echo subString_UTF8(nl2br(trim(strip_tags(FORMAT::parse_attachs(FORMAT::parse_bbcode($val['message']))))), 0, 130); ?>
         <?php if (cjk_strlen($val['message']) > 130) { ?>
-        <a class="more" href="article/<?php echo $val['id']; ?>">查看全部</a>
-        <!-- <a data-toggle="modal" data-target="#login_help_<?php echo $val['id']; ?>">查看全部</a> -->
+        <!-- <a class="more" href="article/<?php echo $val['id']; ?>">查看全部</a> -->
+        <a data-toggle="modal" data-target="#login_help_<?php echo $val['id']; ?>">查看全部</a>
         <?php } ?>
     </div>
 
